@@ -1,10 +1,425 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-08-06T21:33:28+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hamilton</title><subtitle>A minimal and beautiful Jekyll theme best for writing and note-taking.</subtitle><author><name>Shangzhi Huang</name></author><entry><title type="html">My Example Post</title><link href="http://localhost:4000/2016/05/20/my-example-post.html" rel="alternate" type="text/html" title="My Example Post" /><published>2016-05-20T00:00:00+00:00</published><updated>2016-05-20T00:00:00+00:00</updated><id>http://localhost:4000/2016/05/20/my-example-post</id><content type="html" xml:base="http://localhost:4000/2016/05/20/my-example-post.html"><![CDATA[<p>Eos eu docendi tractatos sapientem, brute option menandri in vix, quando vivendo accommodare te ius. Nec melius fastidii constituam id, viderer theophrastus ad sit, hinc semper periculis cum id. Noluisse postulant assentior est in, no choro sadipscing repudiandae vix. Vis in euismod delenit dignissim. Ex quod nostrum sit, suas decore animal id ius, nobis solet detracto quo te.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-08-06T22:59:40+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jérémie N. Mabiala</title><subtitle>A minimal and beautiful Jekyll theme best for writing and note-taking.</subtitle><author><name>Jeremie N. Mabiala</name></author><entry><title type="html">Linear Regression in Python</title><link href="http://localhost:4000/junk/2024/08/06/LinReg-in-Python.html" rel="alternate" type="text/html" title="Linear Regression in Python" /><published>2024-08-06T00:00:00+00:00</published><updated>2024-08-06T00:00:00+00:00</updated><id>http://localhost:4000/junk/2024/08/06/LinReg-in-Python</id><content type="html" xml:base="http://localhost:4000/junk/2024/08/06/LinReg-in-Python.html"><![CDATA[<h1 id="linear-regression-in-python">Linear Regression in Python</h1>
 
-<p>No laudem altera adolescens has, volumus lucilius eum no. Eam ei nulla audiam efficiantur. Suas affert per no, ei tale nibh sea. Sea ne magna harum, in denique scriptorem sea, cetero alienum tibique ei eos. Labores persequeris referrentur eos ei.</p>]]></content><author><name>Shangzhi Huang</name></author><summary type="html"><![CDATA[Eos eu docendi tractatos sapientem, brute option menandri in vix, quando vivendo accommodare te ius. Nec melius fastidii constituam id, viderer theophrastus ad sit, hinc semper periculis cum id. Noluisse postulant assentior est in, no choro sadipscing repudiandae vix. Vis in euismod delenit dignissim. Ex quod nostrum sit, suas decore animal id ius, nobis solet detracto quo te.]]></summary></entry><entry><title type="html">Some articles are just so long they deserve a really long title to see if things will break well</title><link href="http://localhost:4000/misc/2016/05/20/super-long-article.html" rel="alternate" type="text/html" title="Some articles are just so long they deserve a really long title to see if things will break well" /><published>2016-05-20T00:00:00+00:00</published><updated>2016-05-20T00:00:00+00:00</updated><id>http://localhost:4000/misc/2016/05/20/super-long-article</id><content type="html" xml:base="http://localhost:4000/misc/2016/05/20/super-long-article.html"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit. Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum. In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris. Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc. Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.</p>
+<p>Linear Regression is a simple yet powerful technique used for predicting a quantitative response. In this tutorial, we will implement Linear Regression from scratch and also using the <code class="language-plaintext highlighter-rouge">scikit-learn</code> library in Python.</p>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit. Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum. In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris. Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc. Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+  <li><a href="#introduction-to-linear-regression">Introduction to Linear Regression</a></li>
+  <li><a href="#mathematical-background">Mathematical Background</a></li>
+  <li><a href="#implementing-linear-regression-from-scratch">Implementing Linear Regression from Scratch</a></li>
+  <li><a href="#linear-regression-using-scikit-learn">Linear Regression Using scikit-learn</a></li>
+  <li><a href="#evaluation-metrics">Evaluation Metrics</a></li>
+  <li><a href="#conclusion">Conclusion</a></li>
+</ol>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit. Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum. In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris. Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc. Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.</p>]]></content><author><name>Shangzhi Huang</name></author><category term="misc" /><summary type="html"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit. Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum. In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris. Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc. Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.]]></summary></entry><entry><title type="html">This post demonstrates post content styles</title><link href="http://localhost:4000/junk/2016/05/20/this-post-demonstrates-post-content-styles.html" rel="alternate" type="text/html" title="This post demonstrates post content styles" /><published>2016-05-20T00:00:00+00:00</published><updated>2016-05-20T00:00:00+00:00</updated><id>http://localhost:4000/junk/2016/05/20/this-post-demonstrates-post-content-styles</id><content type="html" xml:base="http://localhost:4000/junk/2016/05/20/this-post-demonstrates-post-content-styles.html"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit.</p>
+<h2 id="introduction-to-linear-regression">Introduction to Linear Regression</h2>
+
+<p>Linear Regression is a linear approach to modeling the relationship between a dependent variable and one or more independent variables. If we have a single independent variable, it’s called Simple Linear Regression. If there are multiple independent variables, it’s called Multiple Linear Regression.</p>
+
+<h2 id="mathematical-background">Mathematical Background</h2>
+
+<p>The equation for a linear model is:</p>
+
+<p>$ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \ldots + \beta_n x_n + \epsilon $</p>
+
+<ul>
+  <li>$ y $: Dependent variable</li>
+  <li>$ x_i $: Independent variables</li>
+  <li>$ \beta_i $: Coefficients</li>
+  <li>$ \epsilon $: Error term</li>
+</ul>
+
+<h2 id="implementing-linear-regression-from-scratch">Implementing Linear Regression from Scratch</h2>
+
+<p>Let’s start by generating some sample data and implementing Linear Regression using NumPy.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="c1"># Generate sample data
+</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">X</span> <span class="o">+</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Plot the sample data
+</span><span class="n">plt</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"X"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"y"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Sample Data"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="step-1-compute-the-cost-function">Step 1: Compute the Cost Function</h3>
+<p>The cost function for Linear Regression is the Mean Squared Error (MSE):</p>
+
+<p>[ J(\beta) = \frac{1}{2m} \sum_{i=1}^{m} (h_\beta(x^{(i)}) - y^{(i)})^2 ]</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">compute_cost</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">beta</span><span class="p">):</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">predictions</span> <span class="o">=</span> <span class="n">X</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span>
+    <span class="n">cost</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">m</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">square</span><span class="p">(</span><span class="n">predictions</span> <span class="o">-</span> <span class="n">y</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">cost</span>
+</code></pre></div></div>
+
+<h3 id="step-2-gradient-descent">Step 2: Gradient Descent</h3>
+<p>Gradient Descent is used to minimize the cost function:</p>
+
+<p>[ \beta_j := \beta_j - \alpha \frac{\partial}{\partial \beta_j} J(\beta) ]</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">gradient_descent</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">,</span> <span class="n">iterations</span><span class="p">):</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">cost_history</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">iterations</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">iterations</span><span class="p">):</span>
+        <span class="n">predictions</span> <span class="o">=</span> <span class="n">X</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span>
+        <span class="n">errors</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">.</span><span class="n">transpose</span><span class="p">(),</span> <span class="p">(</span><span class="n">predictions</span> <span class="o">-</span> <span class="n">y</span><span class="p">))</span>
+        <span class="n">beta</span> <span class="o">-=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">m</span><span class="p">)</span> <span class="o">*</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="n">errors</span>
+        <span class="n">cost_history</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">compute_cost</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">beta</span><span class="p">,</span> <span class="n">cost_history</span>
+</code></pre></div></div>
+
+<h3 id="step-3-training-the-model">Step 3: Training the Model</h3>
+<p>Let’s normalize the feature and add a bias term to the data.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X_b</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">c_</span><span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="n">ones</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="mi">1</span><span class="p">)),</span> <span class="n">X</span><span class="p">]</span>  <span class="c1"># Add bias term
+</span><span class="n">beta_initial</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">iterations</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="n">beta_optimal</span><span class="p">,</span> <span class="n">cost_history</span> <span class="o">=</span> <span class="n">gradient_descent</span><span class="p">(</span><span class="n">X_b</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">beta_initial</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">,</span> <span class="n">iterations</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Optimal coefficients:"</span><span class="p">,</span> <span class="n">beta_optimal</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="step-4-plot-the-cost-function">Step 4: Plot the Cost Function</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">iterations</span><span class="p">),</span> <span class="n">cost_history</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"Iterations"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"Cost"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Cost Function"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="step-5-predictions">Step 5: Predictions</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">predictions</span> <span class="o">=</span> <span class="n">X_b</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">beta_optimal</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">predictions</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'red'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"X"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"y"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Linear Regression Fit"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="linear-regression-using-scikit-learn">Linear Regression Using scikit-learn</h2>
+
+<p>Now, let’s use the <code class="language-plaintext highlighter-rouge">scikit-learn</code> library to perform Linear Regression.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+
+<span class="c1"># Create and fit the model
+</span><span class="n">lin_reg</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+<span class="n">lin_reg</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># Print the coefficients
+</span><span class="k">print</span><span class="p">(</span><span class="s">"Intercept:"</span><span class="p">,</span> <span class="n">lin_reg</span><span class="p">.</span><span class="n">intercept_</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Coefficient:"</span><span class="p">,</span> <span class="n">lin_reg</span><span class="p">.</span><span class="n">coef_</span><span class="p">)</span>
+
+<span class="c1"># Predictions
+</span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">lin_reg</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="c1"># Plot the results
+</span><span class="n">plt</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'red'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"X"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"y"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Linear Regression Fit with scikit-learn"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="evaluation-metrics">Evaluation Metrics</h2>
+
+<p>To evaluate the performance of a Linear Regression model, we use metrics like:</p>
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td><strong>Mean Absolute Error (MAE)</strong>: $ \frac{1}{m} \sum_{i=1}^{m}</td>
+          <td>y^{(i)} - \hat{y}^{(i)}</td>
+          <td>$</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li><strong>Mean Squared Error (MSE)</strong>: $ \frac{1}{m} \sum_{i=1}^{m} (y^{(i)} - \hat{y}^{(i)})^2 $</li>
+  <li><strong>R-squared (R²)</strong>: Proportion of variance explained by the model.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_error</span><span class="p">,</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span>
+
+<span class="n">mae</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="n">mse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Mean Absolute Error: </span><span class="si">{</span><span class="n">mae</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Mean Squared Error: </span><span class="si">{</span><span class="n">mse</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"R-squared: </span><span class="si">{</span><span class="n">r2</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>In this tutorial, we covered the basics of Linear Regression, implemented it from scratch, and also used the <code class="language-plaintext highlighter-rouge">scikit-learn</code> library. We also discussed how to evaluate the model using different metrics.</p>
+
+<p>For further reading, you may refer to:</p>
+<ul>
+  <li><a href="https://www.statlearning.com/">Introduction to Statistical Learning</a></li>
+  <li><a href="https://scikit-learn.org/stable/documentation.html">scikit-learn Documentation</a></li>
+</ul>
+
+<p>```</p>]]></content><author><name>[&quot;Jérémie N. Mabiala&quot;]</name></author><category term="junk" /><category term="Python" /><summary type="html"><![CDATA[Linear Regression in Python]]></summary></entry><entry><title type="html">A Comprehensive PyTorch Tutorial</title><link href="http://localhost:4000/misc/2024/08/05/A-Comprehensive-Pytorch-Tutorial.html" rel="alternate" type="text/html" title="A Comprehensive PyTorch Tutorial" /><published>2024-08-05T00:00:00+00:00</published><updated>2024-08-05T00:00:00+00:00</updated><id>http://localhost:4000/misc/2024/08/05/A%20-Comprehensive-Pytorch-Tutorial</id><content type="html" xml:base="http://localhost:4000/misc/2024/08/05/A-Comprehensive-Pytorch-Tutorial.html"><![CDATA[<h1 id="a-comprehensive-pytorch-tutorial">A Comprehensive PyTorch Tutorial</h1>
+<p>PyTorch is a popular deep learning framework developed by Facebook’s AI Research lab. It offers flexibility and efficiency in building and training neural networks. This tutorial will guide you through the key aspects of PyTorch, including installation, tensor operations, neural network creation, training, evaluation, and model management.</p>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+  <li><a href="#introduction-to-pytorch">Introduction to PyTorch</a></li>
+  <li><a href="#setting-up-pytorch">Setting Up PyTorch</a></li>
+  <li><a href="#basic-tensor-operations">Basic Tensor Operations</a></li>
+  <li><a href="#building-neural-networks">Building Neural Networks</a></li>
+  <li><a href="#training-a-model">Training a Model</a></li>
+  <li><a href="#evaluating-a-model">Evaluating a Model</a></li>
+  <li><a href="#saving-and-loading-models">Saving and Loading Models</a></li>
+  <li><a href="#conclusion">Conclusion</a></li>
+</ol>
+
+<h2 id="introduction-to-pytorch">Introduction to PyTorch</h2>
+
+<p>PyTorch is an open-source deep learning framework that provides a flexible and dynamic approach to building and training neural networks. Its core features include:</p>
+
+<ul>
+  <li><strong>Tensors:</strong> Multi-dimensional arrays similar to NumPy arrays.</li>
+  <li><strong>Autograd:</strong> Automatic differentiation for gradient computation.</li>
+  <li><strong>Neural Network Module:</strong> A high-level API for building neural networks.</li>
+  <li><strong>Optimization:</strong> Tools for optimizing and training models.</li>
+</ul>
+
+<h2 id="setting-up-pytorch">Setting Up PyTorch</h2>
+
+<p>To use PyTorch, you’ll need to install it along with its dependencies. Follow these steps to set up PyTorch:</p>
+
+<ol>
+  <li>
+    <p><strong>Install PyTorch</strong></p>
+
+    <p>Visit the <a href="https://pytorch.org/get-started/locally/">PyTorch installation page</a> and select your configuration (OS, Package Manager, Python Version, CUDA Version). You will get the installation command specific to your setup. For example:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>torch torchvision torchaudio
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>Verify the Installation</strong></p>
+
+    <p>Run the following Python code to ensure PyTorch is installed correctly:</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">torch</span>
+<span class="k">print</span><span class="p">(</span><span class="n">torch</span><span class="p">.</span><span class="n">__version__</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">torch</span><span class="p">.</span><span class="n">cuda</span><span class="p">.</span><span class="n">is_available</span><span class="p">())</span>
+</code></pre></div>    </div>
+
+    <p>The first line prints the PyTorch version, and the second line checks if CUDA (GPU support) is available.</p>
+  </li>
+</ol>
+
+<h2 id="basic-tensor-operations">Basic Tensor Operations</h2>
+
+<p>Tensors are the fundamental data structures in PyTorch. Here’s how to create and manipulate tensors.</p>
+
+<h3 id="creating-tensors">Creating Tensors</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">torch</span>
+
+<span class="c1"># Create a tensor filled with zeros
+</span><span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Tensor of zeros:"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Create a tensor filled with random values
+</span><span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Tensor of random values:"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># Create a tensor from a Python list
+</span><span class="n">z</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">tensor</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Tensor from list:"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="tensor-operations">Tensor Operations</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Basic arithmetic operations
+</span><span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">tensor</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">tensor</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+
+<span class="c1"># Addition
+</span><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Addition:"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+
+<span class="c1"># Element-wise multiplication
+</span><span class="n">d</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Element-wise multiplication:"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+<span class="c1"># Matrix multiplication
+</span><span class="n">e</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">view</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">b</span><span class="p">.</span><span class="n">view</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Matrix multiplication:"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="reshaping-and-indexing">Reshaping and Indexing</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Reshape a tensor
+</span><span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">9</span><span class="p">).</span><span class="n">view</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Reshaped tensor:"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Indexing
+</span><span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Element at position (1, 2):"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+
+<span class="c1"># Slicing
+</span><span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Slice of tensor:"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h2 id="building-neural-networks">Building Neural Networks</h2>
+
+<p>PyTorch’s <code class="language-plaintext highlighter-rouge">torch.nn</code> module provides the tools to create and train neural networks. Here’s a step-by-step guide to building a simple feedforward neural network.</p>
+
+<h3 id="defining-the-network">Defining the Network</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="n">nn</span>
+<span class="kn">import</span> <span class="nn">torch.optim</span> <span class="k">as</span> <span class="n">optim</span>
+
+<span class="k">class</span> <span class="nc">SimpleNN</span><span class="p">(</span><span class="n">nn</span><span class="p">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">SimpleNN</span><span class="p">,</span> <span class="bp">self</span><span class="p">).</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">fc1</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1"># First fully connected layer
+</span>        <span class="bp">self</span><span class="p">.</span><span class="n">fc2</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Second fully connected layer
+</span>
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">fc1</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>  <span class="c1"># Apply ReLU activation
+</span>        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">fc2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">x</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">SimpleNN</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Model architecture:"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="forward-pass">Forward Pass</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Create a dummy input tensor
+</span><span class="n">input_tensor</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">tensor</span><span class="p">([[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">]])</span>
+
+<span class="c1"># Forward pass through the network
+</span><span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">input_tensor</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Output of the network:"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="training-a-model">Training a Model</h2>
+
+<p>To train a model, you need to define a loss function and an optimizer. Here’s how to set up and run a training loop.</p>
+
+<h3 id="creating-a-dataset">Creating a Dataset</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span><span class="p">,</span> <span class="n">TensorDataset</span>
+
+<span class="c1"># Create some sample data
+</span><span class="n">X</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">tensor</span><span class="p">([[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">]])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">tensor</span><span class="p">([[</span><span class="mf">3.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">5.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">7.0</span><span class="p">]])</span>
+
+<span class="c1"># Create a dataset and dataloader
+</span><span class="n">dataset</span> <span class="o">=</span> <span class="n">TensorDataset</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">dataloader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="training-loop">Training Loop</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Define the loss function and optimizer
+</span><span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="n">MSELoss</span><span class="p">()</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="p">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">model</span><span class="p">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+
+<span class="c1"># Training loop
+</span><span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">targets</span> <span class="ow">in</span> <span class="n">dataloader</span><span class="p">:</span>
+        <span class="n">optimizer</span><span class="p">.</span><span class="n">zero_grad</span><span class="p">()</span>
+        <span class="n">outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">targets</span><span class="p">)</span>
+        <span class="n">loss</span><span class="p">.</span><span class="n">backward</span><span class="p">()</span>
+        <span class="n">optimizer</span><span class="p">.</span><span class="n">step</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">epoch</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'Epoch </span><span class="si">{</span><span class="n">epoch</span><span class="si">}</span><span class="s">, Loss: </span><span class="si">{</span><span class="n">loss</span><span class="p">.</span><span class="n">item</span><span class="p">()</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="evaluating-a-model">Evaluating a Model</h2>
+
+<p>After training, evaluate the model’s performance using metrics such as accuracy or loss. Here’s an example of evaluating a trained model:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Evaluate the model
+</span><span class="k">with</span> <span class="n">torch</span><span class="p">.</span><span class="n">no_grad</span><span class="p">():</span>
+    <span class="n">test_input</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">tensor</span><span class="p">([[</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">]])</span>
+    <span class="n">test_output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">test_input</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Model prediction for test input [4.0, 5.0]:"</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">test_output</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="saving-and-loading-models">Saving and Loading Models</h2>
+
+<p>Saving and loading models allows you to reuse trained models without retraining.</p>
+
+<h3 id="saving-a-model">Saving a Model</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Save the model's state_dict
+</span><span class="n">torch</span><span class="p">.</span><span class="n">save</span><span class="p">(</span><span class="n">model</span><span class="p">.</span><span class="n">state_dict</span><span class="p">(),</span> <span class="s">'model.pth'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Model saved to model.pth"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="loading-a-model">Loading a Model</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Create a new model instance and load the saved state_dict
+</span><span class="n">model_loaded</span> <span class="o">=</span> <span class="n">SimpleNN</span><span class="p">()</span>
+<span class="n">model_loaded</span><span class="p">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">torch</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s">'model.pth'</span><span class="p">))</span>
+<span class="n">model_loaded</span><span class="p">.</span><span class="nb">eval</span><span class="p">()</span>  <span class="c1"># Set the model to evaluation mode
+</span>
+<span class="c1"># Test the loaded model
+</span><span class="k">with</span> <span class="n">torch</span><span class="p">.</span><span class="n">no_grad</span><span class="p">():</span>
+    <span class="n">test_input</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">tensor</span><span class="p">([[</span><span class="mf">6.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">]])</span>
+    <span class="n">test_output</span> <span class="o">=</span> <span class="n">model_loaded</span><span class="p">(</span><span class="n">test_input</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Model prediction for test input [6.0, 7.0]:"</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">test_output</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>In this comprehensive tutorial, we covered the essentials of PyTorch, including tensor operations, building neural networks, training models, and saving/loading models. PyTorch’s flexibility and dynamic nature make it a powerful tool for deep learning tasks.</p>
+
+<p>For further exploration, consider diving into more advanced topics such as:</p>
+
+<ul>
+  <li><strong>Custom Loss Functions</strong>: Create custom loss functions to suit specific needs.</li>
+  <li><strong>Advanced Model Architectures</strong>: Experiment with convolutional neural networks (CNNs), recurrent neural networks (RNNs), and transformers.</li>
+  <li><strong>Hyperparameter Tuning</strong>: Optimize model performance through hyperparameter tuning.</li>
+  <li><strong>Deployment</strong>: Explore ways to deploy PyTorch models for production use.</li>
+</ul>
+
+<p>Additional resources:</p>
+<ul>
+  <li><a href="https://pytorch.org/docs/stable/index.html">PyTorch Documentation</a></li>
+  <li><a href="https://pytorch.org/deep-learning-with-pytorch">Deep Learning with PyTorch Book</a></li>
+  <li><a href="https://pytorch.org/tutorials/">PyTorch Tutorials</a></li>
+</ul>]]></content><author><name>[&quot;Jérémie N. Mabiala&quot;]</name></author><category term="misc" /><summary type="html"><![CDATA[A Comprehensive PyTorch Tutorial PyTorch is a popular deep learning framework developed by Facebook’s AI Research lab. It offers flexibility and efficiency in building and training neural networks. This tutorial will guide you through the key aspects of PyTorch, including installation, tensor operations, neural network creation, training, evaluation, and model management.]]></summary></entry><entry><title type="html">This post demonstrates post content styles</title><link href="http://localhost:4000/junk/2024/08/05/this-post-demonstrates-post-content-styles.html" rel="alternate" type="text/html" title="This post demonstrates post content styles" /><published>2024-08-05T00:00:00+00:00</published><updated>2024-08-05T00:00:00+00:00</updated><id>http://localhost:4000/junk/2024/08/05/this-post-demonstrates-post-content-styles</id><content type="html" xml:base="http://localhost:4000/junk/2024/08/05/this-post-demonstrates-post-content-styles.html"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit.</p>
 
 <h2 id="some-great-heading-h2">Some great heading (h2)</h2>
 
@@ -169,19 +584,132 @@
       <td>lorem ipsum dolor sit amet consectetur</td>
     </tr>
   </tbody>
-</table>]]></content><author><name>[&quot;Bart Simpson&quot;, &quot;Nelson Mandela Muntz&quot;]</name></author><category term="junk" /><category term="markdown" /><category term="css" /><category term="html" /><summary type="html"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit.]]></summary></entry><entry><title type="html">Welcome To Jekyll</title><link href="http://localhost:4000/2016/05/20/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome To Jekyll" /><published>2016-05-20T00:00:00+00:00</published><updated>2016-05-20T00:00:00+00:00</updated><id>http://localhost:4000/2016/05/20/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/2016/05/20/welcome-to-jekyll.html"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+</table>]]></content><author><name>[&quot;Bart Simpson&quot;, &quot;Nelson Mandela Muntz&quot;]</name></author><category term="junk" /><category term="markdown" /><category term="css" /><category term="html" /><summary type="html"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit.]]></summary></entry><entry><title type="html">Flask and Machine Learning Integration</title><link href="http://localhost:4000/2024/06/06/flask-ml-integration.html" rel="alternate" type="text/html" title="Flask and Machine Learning Integration" /><published>2024-06-06T00:00:00+00:00</published><updated>2024-06-06T00:00:00+00:00</updated><id>http://localhost:4000/2024/06/06/flask-ml-integration</id><content type="html" xml:base="http://localhost:4000/2024/06/06/flask-ml-integration.html"><![CDATA[<h1 id="flask-and-machine-learning-integration">Flask and Machine Learning Integration</h1>
 
-<p>To add new posts, simply add a file in the <code class="language-plaintext highlighter-rouge">_posts</code> directory that follows the convention <code class="language-plaintext highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+<p>In this tutorial, we will learn how to integrate a Machine Learning model with a Flask web application. We will build a simple machine learning model using <code class="language-plaintext highlighter-rouge">scikit-learn</code>, create a Flask app, and set up endpoints to serve predictions from our model.</p>
 
-<p>Jekyll also offers powerful support for code snippets:</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+  <li><a href="#introduction">Introduction</a></li>
+  <li><a href="#setting-up-the-environment">Setting Up the Environment</a></li>
+  <li><a href="#building-the-machine-learning-model">Building the Machine Learning Model</a></li>
+  <li><a href="#creating-the-flask-application">Creating the Flask Application</a></li>
+  <li><a href="#integrating-the-model-with-flask">Integrating the Model with Flask</a></li>
+  <li><a href="#testing-the-application">Testing the Application</a></li>
+  <li><a href="#conclusion">Conclusion</a></li>
+</ol>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+<h2 id="introduction">Introduction</h2>
 
-<p>Check out the <a href="http://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>]]></content><author><name>Shangzhi Huang</name></author><summary type="html"><![CDATA[You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.]]></summary></entry><entry><title type="html">Some articles are just so short that we have to make the footer stick</title><link href="http://localhost:4000/misc/2016/05/19/super-short-article.html" rel="alternate" type="text/html" title="Some articles are just so short that we have to make the footer stick" /><published>2016-05-19T00:00:00+00:00</published><updated>2016-05-19T00:00:00+00:00</updated><id>http://localhost:4000/misc/2016/05/19/super-short-article</id><content type="html" xml:base="http://localhost:4000/misc/2016/05/19/super-short-article.html"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>]]></content><author><name>Shangzhi Huang</name></author><category term="misc" /><summary type="html"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.]]></summary></entry><entry><title type="html">Task Item List</title><link href="http://localhost:4000/2016/01/11/task-item-list.html" rel="alternate" type="text/html" title="Task Item List" /><published>2016-01-11T00:00:00+00:00</published><updated>2016-01-11T00:00:00+00:00</updated><id>http://localhost:4000/2016/01/11/task-item-list</id><content type="html" xml:base="http://localhost:4000/2016/01/11/task-item-list.html"><![CDATA[<p>This post tests the style of a task item list.</p>
+<p>Flask is a lightweight WSGI web application framework in Python. It is designed with simplicity and flexibility in mind. We will use Flask to create a web service that can serve predictions from a machine learning model.</p>
+
+<h2 id="setting-up-the-environment">Setting Up the Environment</h2>
+
+<p>First, let’s set up our environment. We will need <code class="language-plaintext highlighter-rouge">Flask</code> and <code class="language-plaintext highlighter-rouge">scikit-learn</code>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>Flask scikit-learn
+</code></pre></div></div>
+
+<h2 id="building-the-machine-learning-model">Building the Machine Learning Model</h2>
+
+<p>For this tutorial, we will use a simple linear regression model to predict house prices based on some features.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># model.py
+</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+
+<span class="c1"># Generate sample data
+</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">X</span> <span class="o">+</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Split the data into training and test sets
+</span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Train the model
+</span><span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+<span class="n">model</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Save the model to a file
+</span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'model.pkl'</span><span class="p">,</span> <span class="s">'wb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="p">.</span><span class="n">dump</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="creating-the-flask-application">Creating the Flask Application</h2>
+
+<p>Now, let’s create a basic Flask application structure.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>flask_ml
+<span class="nb">cd </span>flask_ml
+<span class="nb">touch </span>app.py
+</code></pre></div></div>
+
+<p>In <code class="language-plaintext highlighter-rouge">app.py</code>, set up the basic Flask app.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># app.py
+</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">jsonify</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+<span class="c1"># Load the model
+</span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'model.pkl'</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">pickle</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s">"Welcome to the Machine Learning Model API!"</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">app</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="integrating-the-model-with-flask">Integrating the Model with Flask</h2>
+
+<p>We will create an endpoint <code class="language-plaintext highlighter-rouge">/predict</code> that will take input features, pass them to the model, and return the prediction.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># app.py
+</span>
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/predict'</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">'POST'</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">predict</span><span class="p">():</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">get_json</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">features</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">'features'</span><span class="p">]).</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">prediction</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s">'prediction'</span><span class="p">:</span> <span class="n">prediction</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]})</span>
+</code></pre></div></div>
+
+<h2 id="testing-the-application">Testing the Application</h2>
+
+<p>Run the Flask app and test the prediction endpoint using <code class="language-plaintext highlighter-rouge">curl</code> or Postman.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python app.py
+</code></pre></div></div>
+
+<p>Use <code class="language-plaintext highlighter-rouge">curl</code> to test the <code class="language-plaintext highlighter-rouge">/predict</code> endpoint.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST http://127.0.0.1:5000/predict <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="nt">-d</span> <span class="s1">'{"features": [1.5]}'</span>
+</code></pre></div></div>
+
+<p>You should get a response with the prediction.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>In this tutorial, we created a simple linear regression model, saved it, and built a Flask application to serve predictions from the model. This approach can be extended to more complex models and use cases. For a production environment, consider using more advanced techniques like model versioning, authentication, and containerization with Docker.</p>
+
+<p>For further reading, you may refer to:</p>
+<ul>
+  <li><a href="https://flask.palletsprojects.com/">Flask Documentation</a></li>
+  <li><a href="https://scikit-learn.org/stable/documentation.html">scikit-learn Documentation</a></li>
+</ul>
+
+<p>```</p>
+
+<p>You can save this content into a <code class="language-plaintext highlighter-rouge">.md</code> file and view it using any Markdown editor. Let me know if you need any additional details or modifications!</p>]]></content><author><name>[&quot;Jérémie N. Mabiala&quot;]</name></author><category term="Pyhton" /><category term="Flask" /><category term="Html" /><summary type="html"><![CDATA[Flask and Machine Learning Integration]]></summary></entry><entry><title type="html">Some articles are just so short that we have to make the footer stick</title><link href="http://localhost:4000/misc/2016/05/19/super-short-article.html" rel="alternate" type="text/html" title="Some articles are just so short that we have to make the footer stick" /><published>2016-05-19T00:00:00+00:00</published><updated>2016-05-19T00:00:00+00:00</updated><id>http://localhost:4000/misc/2016/05/19/super-short-article</id><content type="html" xml:base="http://localhost:4000/misc/2016/05/19/super-short-article.html"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>]]></content><author><name>Jeremie N. Mabiala</name></author><category term="misc" /><summary type="html"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.]]></summary></entry><entry><title type="html">Task Item List</title><link href="http://localhost:4000/2016/01/11/task-item-list.html" rel="alternate" type="text/html" title="Task Item List" /><published>2016-01-11T00:00:00+00:00</published><updated>2016-01-11T00:00:00+00:00</updated><id>http://localhost:4000/2016/01/11/task-item-list</id><content type="html" xml:base="http://localhost:4000/2016/01/11/task-item-list.html"><![CDATA[<p>This post tests the style of a task item list.</p>
 
 <p>Source:</p>
 
@@ -201,4 +729,4 @@
     </ul>
   </li>
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Sleeping</li>
-</ul>]]></content><author><name>Shangzhi Huang</name></author><category term="to-do list" /><summary type="html"><![CDATA[This post tests the style of a task item list.]]></summary></entry></feed>
+</ul>]]></content><author><name>Jeremie N. Mabiala</name></author><category term="to-do list" /><summary type="html"><![CDATA[This post tests the style of a task item list.]]></summary></entry></feed>
