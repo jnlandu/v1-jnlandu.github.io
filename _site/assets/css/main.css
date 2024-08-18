@@ -29,10 +29,6 @@ main {
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
  */
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0; }
-
 /* Grouping content
    ========================================================================== */
 /**
@@ -62,9 +58,6 @@ pre {
 /**
  * Remove the gray background on active links in IE 10.
  */
-a {
-  background-color: transparent; }
-
 /**
  * 1. Remove the bottom border in Chrome 57-
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
@@ -124,9 +117,6 @@ sup {
 /**
  * Remove the border on images inside links in IE 10.
  */
-img {
-  border-style: none; }
-
 /* Forms
    ========================================================================== */
 /**
@@ -477,15 +467,6 @@ ul.task-list li {
 /**
  * Site header
  */
-.site-header {
-  border-top: 5px solid;
-  border-bottom: 1px solid;
-  min-height: 54px;
-  line-height: 54px; }
-  @media screen and (max-width: 600px) {
-    .site-header {
-      display: flex; } }
-
 .site-sidebar-button {
   position: absolute;
   top: 3px;

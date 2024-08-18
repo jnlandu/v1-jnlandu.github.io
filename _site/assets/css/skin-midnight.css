@@ -212,17 +212,6 @@
   color: #f8f8f2;
   background-color: #49483e; }
 
-body {
-  color: lightgrey;
-  background-color: #121212; }
-
-a {
-  color: #00b1c9; }
-  a:visited {
-    color: #009bb0; }
-  a:hover {
-    color: lightgrey; }
-
 blockquote {
   color: silver;
   border-left-color: #3f3f3f; }

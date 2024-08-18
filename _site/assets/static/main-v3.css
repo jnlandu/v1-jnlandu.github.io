@@ -1,0 +1,576 @@
+/* GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    font-size: 16px;
+    color: #B8B8B8;
+}
+
+
+body {
+    min-height: 100%;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    background-color: #444;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+    color: white;
+}
+
+header {
+    /* position: fixed; */
+    border-bottom: 1px solid #222;
+    margin-bottom: 5px;
+    color: #DDD;
+    background-color: #333;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 20px 30px 20px 30px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+}
+a:hover{
+    cursor:pointer;
+}
+.footer{
+    background-color: #444;
+}
+.bg-prim{
+    background-color: #444;
+}
+/*  Links  */
+.nav-link:hover,
+.nav-link:active{
+    text-decoration: underline;
+    color: #F90;
+    font-weight: bold;
+}
+
+.post-link{
+    text-decoration: none;
+}
+
+.post-link:active, .post-link:hover{
+    text-decoration: underline;
+}
+
+.nav-link{
+    /* color: white; */
+    color: black;
+}
+.code:hover, .code{
+    text-decoration: none;
+    color: #F90;
+}
+.link{
+    text-decoration: none;
+    color: #F90;
+}
+.link:hover, .link:active{
+    text-decoration: underline; 
+}
+
+.nav-item-active-color{
+    text-decoration: underline;
+    color: #F90;
+    font-weight: bold;
+}
+div.logo {
+    width: 200px;
+    height: 200px;
+}
+
+.yellow {
+    color: #F90;
+}
+
+/*  Backgrounds  */
+.bg-yellow{
+    background-color: #F90;
+    /* border: none; */
+  }
+
+.bg-standard{
+    background-color: #444;
+}
+.btn:hover, .btn:active, .btn::after{
+    background-color:  #F90;
+}
+.rs-click{
+    width: 24px;
+    height: 24px;
+}
+
+.footer{
+    background-color: #333;
+    margin-top: 2vh;
+  
+  }
+ 
+.img-el{
+    /* padding-right: 80%; */
+    padding-left: 10wh;
+
+  }
+
+#btn-back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    color: #ffff;
+  }
+
+
+/*  styles for cv/resume  */
+.cv-section-head{
+    border-bottom: 1px solid #222;
+
+}
+.section{
+    background-color: #333; 
+    border:1px solid; 
+    border-color: #222;
+}
+.bleft{
+    border-right: 1px solid;
+    width: 25vw;
+}
+
+.rounded-div {
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.top-post-item {
+    margin-top: 220px !important;
+}
+.post-item{
+    border: 1px solid #333;
+    border-radius: 22.5px;
+    /* background-color: ; */
+}
+.post-item:hover{
+    /* padding: 20px; */
+    border: 3px solid #333;
+    border-radius: 22.5px;
+    /* box-shadow: 30px 30px 20px red !important; */
+}
+
+
+.page-item{
+    background-color: #F90 !important;
+}
+.position, .post-submenu{
+    position:fixed;
+    z-index: 100;
+}
+
+
+
+/* 
+.markdown-body {
+    background-color: #444 !important;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+} */
+ h1, h2 > .post-content-div{
+    color: #F90;
+ }
+code {
+    /* background-color: gray !important; */
+    
+    /* overflow-x: auto; */
+    /* padding: 16px; */
+    margin: 0;
+}
+
+
+
+pre {
+    position: relative;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    /* padding-top: 30px;
+    padding-top: 20px; */
+  }
+  /* .code-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #f7f7f7;
+    border-bottom: 1px solid #ccc;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-family: monospace;
+    color: #333;
+    border-bottom: none;
+  } */
+  .copy-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 0;
+    background: #eee;
+    padding: 5px 10px;
+    /* padding-top: 10px;
+    padding-bottom: 5px; */
+    margin-bottom: 0;
+    margin-top: 0;
+    cursor: pointer;
+    font-size: 12px;
+    /* border-bottom: none; */
+    border: .5px solid;
+    border-radius: 3px;
+  }
+
+
+
+
+/*  For codes and images in the posts */
+
+/* .markdown-body {
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+} */
+
+
+/* .markdown-body {
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+
+.markdown-content {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+pre {
+    background-color: #f6f8fa;
+    border: 1px solid #dcdcdc;
+    border-radius: 3px;
+    overflow-x: auto;
+    padding: 16px;
+    margin: 0;
+}
+
+code {
+    background-color: #f6f8fa;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.highlight {
+    background-color: #f6f8fa;
+    border-radius: 3px;
+}
+
+.highlight pre {
+    background-color: #404040;
+    border: 1px solid #dcdcdc;
+} */
+
+
+/* img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px 0;
+} */
+
+
+
+
+
+  /*  media queries for mobiles */
+
+/***** MEDIA QUERY *****/
+/*  for mobile and devices with  */
+
+@media  screen and (min-width:100px) and  (max-width:650px) {
+ 
+    .me{
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .bio, .post-context-text{
+        text-align:justify;
+        /* text-justify:kashida; */
+        /* margin-right: 20px; */
+    }
+
+    /* .home{
+        width: 50vh;
+    }
+     */
+    .menu{
+       display: inline;
+       width: fit-content;
+       margin-right: 25px;
+
+    }
+    /* .nav-rs-container{
+        display: flex;
+
+    } */
+
+    .nav-rs-container{
+        display: flex;
+        margin-left: 12vw;
+
+    }
+    .rs-mobile{
+        position: absolute;
+        margin-left: 17lvw;
+        margin-top: 15px;
+    }
+    .rs-other-device{
+        display: none;
+    }
+    .contact-btn-mobile {
+        height: 40px;
+        width: 100%;
+    }
+
+    .content-div{
+        margin-left: 40px;
+    }
+
+
+    .img-content{
+        width: 100%;
+        height: 30lvh;
+      }
+    .latest-posts{
+        text-align: center;
+    }
+    .post-content {
+        /* text-justify: auto; */
+        text-align: center;
+    }
+    .footer-other-device {
+        display: none;
+    }
+
+    .left-side-all-device{
+        width: 75vw;
+    }
+    .right-side-all-device{
+    width: 75vw;
+    }
+    .contact-other-device{
+        display: none;
+    }
+    .contact-other-device-container{
+        display: none;
+        margin: 0px 0px 0px 0px;
+    }
+    .post-div-mobile{
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    .post-submenu{
+        margin-top: 175px;
+        width: 100%;
+        background-color: #333;
+    }
+    /* .post-submenu-sg {
+        margin-top: 149px !important; 
+    } */
+    .post-container{
+        margin-top: 280px;
+        margin-left: 5vh;
+        margin-right: 5vh;
+    }
+    .off-submenu {
+        margin-top: 200px;
+        border: 2px solid #333;
+        max-width: 40vh;
+        margin-left: 2vh;
+        margin-right: 2vh;
+    }
+    .table-content{
+        border-left: 2px solid red;
+        /* overflow: scroll; */
+    }
+    .off-body-scroll{
+        max-height: 30vh;
+        overflow: scroll;
+        /* opacity: 0.5; */
+    }
+
+    .feedback-mobile{
+        border: 1px solid #333;
+        border-radius: 7px;
+        margin-left: 5vh;
+        margin-right: 5vh;
+        margin-top: 70px;
+    }
+
+    .follow-next-posts{
+        border: 1px solid black;
+        /* margin-left: 3px; */
+        width: 200px;
+    }
+    .btn-yes{
+        margin-left: 3em;
+    }
+    .btn-no{
+        margin-right: 3em;
+    }
+    .prev-next-btn-mobile{
+        margin-left: 4vh;
+        margin-right: 4vh;
+    }
+
+    
+    
+
+
+}
+
+
+/*  For ipads and other devices r devices */
+@media only  screen and (min-width:651px) and (max-width:766px) {
+    .bio-container{
+      display: flex;
+      flex-direction: column;
+      margin-left: 0px;
+
+        /* width: auto; */
+    }
+    
+     /* .menu{
+        display: inline;
+        width: fit-content;
+        margin-right: 25px;
+ 
+     } */
+
+    .me{
+        text-align: center;
+        /* margin-top: 10px; */
+    }
+
+    .bio{
+        text-align:justify;
+        /* text-justify:newspaper; */
+    }
+
+    /* .menu-body{
+        display: flex;
+        margin-left: auto;
+        margin-right: 10px;
+        width: fit-content;
+    } */
+    .nav-rs-container{
+        display: flex;
+        margin-left: 25vw;
+
+    }
+    .rs-mobile{
+        position: absolute;
+        margin-left: 15lvw;
+        margin-top: 15px;
+    }
+    .rs-other-device{
+        display: none;
+    }
+    
+    .footer-mobile{
+        display: none;
+    }
+    .left-side-all-device{
+        width: 75vw;
+    }
+    .right-side-all-device{
+    width: 75vw;
+    }
+    .img-content{
+        width: 100%;
+        height: 30lvh;
+      }
+
+    .contact-form-mobile{
+        display: none;
+    }
+    
+
+}
+
+
+
+@media screen and (min-width:767px) {
+
+    .rs-mobile{
+        display: none;
+
+    }
+    .footer-mobile{
+        display: none;
+    }
+    .left-side-all-device{
+        width: 50vw;
+        margin-right: 0px;
+    }
+    .right-side-all-device{
+        margin-left: 5px;
+        margin-right: 8vw;
+        /* width: auto; */
+        /* margin-right: 4px; */
+     }
+    .img-content{
+        /* position: relative; */
+        width: 100vw;
+        height: 30vh;
+        margin-top: 15px;
+        /* margin-bottom: -10px; */
+      }
+      .nav-rs-container{
+        /* border: 1px solid; */
+        /* position:sticky; */
+        min-width: 25vw; 
+        width: fit-content;
+        /* margin: 0 auto 0 0; */
+        /* margin-left: 30vw; */
+        margin-right: 8vw;
+        /* padding-left: ; */
+        float:right;
+      }
+      .contact-form-mobile{
+        display: none;
+      }
+      /* .profile-div{
+       
+        border: 1px solid ;
+      }
+      .bio-div{
+
+        border: 1px solid red;
+      } */
+}

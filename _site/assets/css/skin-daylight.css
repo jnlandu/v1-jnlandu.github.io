@@ -211,17 +211,6 @@
 .highlight {
   background-color: #f8f8f8; }
 
-body {
-  color: #111;
-  background-color: #fff; }
-
-a {
-  color: #003be4; }
-  a:visited {
-    color: #002798; }
-  a:hover {
-    color: #111; }
-
 blockquote {
   color: #666;
   border-left-color: #e8e8e8; }

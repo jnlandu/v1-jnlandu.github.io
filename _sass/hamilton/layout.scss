@@ -12,16 +12,16 @@
 /**
  * Site header
  */
-.site-header {
-  border-top: 5px solid;
-  border-bottom: 1px solid;
-  min-height: $base-font-size * 3;
-  line-height: $base-font-size * 3;
+// .site-header {
+//   border-top: 5px solid;
+//   border-bottom: 1px solid;
+//   min-height: $base-font-size * 3;
+//   line-height: $base-font-size * 3;
 
-  @include media-query($on-small) {
-    display: flex;
-  }
-}
+//   @include media-query($on-small) {
+//     display: flex;
+//   }
+// }
 
 .site-sidebar-button {
   position: absolute;
