@@ -7,23 +7,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Linear Regression in Python | N. Mabiala</title>
+<title>Mastering Text Processing in Python: An Introduction to NLTK | N. Mabiala</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Linear Regression in Python" />
+<meta property="og:title" content="Mastering Text Processing in Python: An Introduction to NLTK" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Linear Regression in Python" />
-<meta property="og:description" content="Linear Regression in Python" />
-<link rel="canonical" href="http://localhost:4000/junk/2024/08/06/LinReg-in-Python.html" />
-<meta property="og:url" content="http://localhost:4000/junk/2024/08/06/LinReg-in-Python.html" />
+<meta name="description" content="Introduction to NLTK (Natural Language Toolkit)" />
+<meta property="og:description" content="Introduction to NLTK (Natural Language Toolkit)" />
+<link rel="canonical" href="http://localhost:4000/junk/2024/08/19/An-Introduction-nltk.html" />
+<meta property="og:url" content="http://localhost:4000/junk/2024/08/19/An-Introduction-nltk.html" />
 <meta property="og:site_name" content="N. Mabiala" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-08-06T00:00:00+02:00" />
+<meta property="article:published_time" content="2024-08-19T00:00:00+02:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Linear Regression in Python" />
+<meta property="twitter:title" content="Mastering Text Processing in Python: An Introduction to NLTK" />
 <meta name="twitter:site" content="@Valentinmabiala" />
 <meta name="google-site-verification" content="u4WXQl0Eu66rsQo2kRdCNx" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-08-06T00:00:00+02:00","datePublished":"2024-08-06T00:00:00+02:00","description":"Linear Regression in Python","headline":"Linear Regression in Python","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/junk/2024/08/06/LinReg-in-Python.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/logo.png"}},"url":"http://localhost:4000/junk/2024/08/06/LinReg-in-Python.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-08-19T00:00:00+02:00","datePublished":"2024-08-19T00:00:00+02:00","description":"Introduction to NLTK (Natural Language Toolkit)","headline":"Mastering Text Processing in Python: An Introduction to NLTK","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/junk/2024/08/19/An-Introduction-nltk.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/logo.png"}},"url":"http://localhost:4000/junk/2024/08/19/An-Introduction-nltk.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -260,21 +260,7 @@ id="btn-back-to-top"
             <h3 class="toc-title">Table of Contents</h3>
 <nav class="toc-nav">
   <ul class="toc">
-  <li><a href="#table-of-contents">Table of Contents</a></li>
-  <li><a href="#introduction-to-linear-regression">Introduction to Linear Regression</a></li>
-  <li><a href="#mathematical-background">Mathematical Background</a></li>
-  <li><a href="#implementing-linear-regression-from-scratch">Implementing Linear Regression from Scratch</a>
-    <ul>
-      <li><a href="#step-1-compute-the-cost-function">Step 1: Compute the Cost Function</a></li>
-      <li><a href="#step-2-gradient-descent">Step 2: Gradient Descent</a></li>
-      <li><a href="#step-3-training-the-model">Step 3: Training the Model</a></li>
-      <li><a href="#step-4-plot-the-cost-function">Step 4: Plot the Cost Function</a></li>
-      <li><a href="#step-5-predictions">Step 5: Predictions</a></li>
-    </ul>
-  </li>
-  <li><a href="#linear-regression-using-scikit-learn">Linear Regression Using scikit-learn</a></li>
-  <li><a href="#evaluation-metrics">Evaluation Metrics</a></li>
-  <li><a href="#conclusion">Conclusion</a></li>
+  <li><a href="#introduction-to-nltk-natural-language-toolkit">Introduction to NLTK (Natural Language Toolkit)</a></li>
 </ul>
 
 </nav>
@@ -288,9 +274,9 @@ id="btn-back-to-top"
 
   <header class="post-header">
 
-    <h1 class="post-title p-name" itemprop="name headline">Linear Regression in Python</h1>
-    <p class="post-meta"><time class="dt-published" datetime="2024-08-06T00:00:00+02:00" itemprop="datePublished">
-        Aug 6, 2024
+    <h1 class="post-title p-name" itemprop="name headline">Mastering Text Processing in Python: An Introduction to NLTK</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2024-08-19T00:00:00+02:00" itemprop="datePublished">
+        Aug 19, 2024
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
             <span class="p-author h-card" itemprop="name">Jérémie N. Mabiala</span></span></p>
@@ -298,185 +284,166 @@ id="btn-back-to-top"
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <h1 id="linear-regression-in-python">Linear Regression in Python</h1>
+    <h3 id="introduction-to-nltk-natural-language-toolkit">Introduction to NLTK (Natural Language Toolkit)</h3>
 
-<p>Linear Regression is a simple yet powerful technique used for predicting a quantitative response. In this tutorial, we will implement Linear Regression from scratch and also using the <code class="language-plaintext highlighter-rouge">scikit-learn</code> library in Python.</p>
+<p><strong>Natural Language Toolkit (NLTK)</strong> is a comprehensive library in Python for working with human language data, known as natural language processing (NLP). NLTK provides easy-to-use interfaces to over 50 corpora and lexical resources, along with a suite of text processing libraries for classification, tokenization, stemming, tagging, parsing, and semantic reasoning.</p>
 
-<h2 id="table-of-contents">Table of Contents</h2>
-<ol>
-  <li><a href="#introduction-to-linear-regression">Introduction to Linear Regression</a></li>
-  <li><a href="#mathematical-background">Mathematical Background</a></li>
-  <li><a href="#implementing-linear-regression-from-scratch">Implementing Linear Regression from Scratch</a></li>
-  <li><a href="#linear-regression-using-scikit-learn">Linear Regression Using scikit-learn</a></li>
-  <li><a href="#evaluation-metrics">Evaluation Metrics</a></li>
-  <li><a href="#conclusion">Conclusion</a></li>
-</ol>
+<h4 id="1-installation-and-setup">1. <strong>Installation and Setup</strong></h4>
 
-<h2 id="introduction-to-linear-regression">Introduction to Linear Regression</h2>
+<p>Before using NLTK, you need to install it. NLTK can be installed using pip:</p>
 
-<p>Linear Regression is a linear approach to modeling the relationship between a dependent variable and one or more independent variables. If we have a single independent variable, it’s called Simple Linear Regression. If there are multiple independent variables, it’s called Multiple Linear Regression.</p>
-
-<h2 id="mathematical-background">Mathematical Background</h2>
-
-<p>The equation for a linear model is:</p>
-
-<p>$ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \ldots + \beta_n x_n + \epsilon $</p>
-
-<ul>
-  <li>$ y $: Dependent variable</li>
-  <li>$ x_i $: Independent variables</li>
-  <li>$ \beta_i $: Coefficients</li>
-  <li>$ \epsilon $: Error term</li>
-</ul>
-
-<h2 id="implementing-linear-regression-from-scratch">Implementing Linear Regression from Scratch</h2>
-
-<p>Let’s start by generating some sample data and implementing Linear Regression using NumPy.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-
-<span class="c1"># Generate sample data
-</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">X</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">X</span> <span class="o">+</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-
-<span class="c1"># Plot the sample data
-</span><span class="n">plt</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"X"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"y"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Sample Data"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>nltk
 </code></pre></div></div>
 
-<h3 id="step-1-compute-the-cost-function">Step 1: Compute the Cost Function</h3>
-<p>The cost function for Linear Regression is the Mean Squared Error (MSE):</p>
+<p>After installation, you can import the library and download the necessary datasets and models:</p>
 
-<p>[ J(\beta) = \frac{1}{2m} \sum_{i=1}^{m} (h_\beta(x^{(i)}) - y^{(i)})^2 ]</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="n">nltk</span><span class="p">.</span><span class="n">download</span><span class="p">(</span><span class="s">'all'</span><span class="p">)</span>  <span class="c1"># This downloads all NLTK resources, but you can download specific ones as needed.
+</span></code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">compute_cost</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">beta</span><span class="p">):</span>
-    <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-    <span class="n">predictions</span> <span class="o">=</span> <span class="n">X</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span>
-    <span class="n">cost</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">m</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">square</span><span class="p">(</span><span class="n">predictions</span> <span class="o">-</span> <span class="n">y</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">cost</span>
-</code></pre></div></div>
+<h4 id="2-basic-components-of-nltk">2. <strong>Basic Components of NLTK</strong></h4>
 
-<h3 id="step-2-gradient-descent">Step 2: Gradient Descent</h3>
-<p>Gradient Descent is used to minimize the cost function:</p>
-
-<p>[ \beta_j := \beta_j - \alpha \frac{\partial}{\partial \beta_j} J(\beta) ]</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">gradient_descent</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">,</span> <span class="n">iterations</span><span class="p">):</span>
-    <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-    <span class="n">cost_history</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">iterations</span><span class="p">)</span>
-    
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">iterations</span><span class="p">):</span>
-        <span class="n">predictions</span> <span class="o">=</span> <span class="n">X</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span>
-        <span class="n">errors</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">.</span><span class="n">transpose</span><span class="p">(),</span> <span class="p">(</span><span class="n">predictions</span> <span class="o">-</span> <span class="n">y</span><span class="p">))</span>
-        <span class="n">beta</span> <span class="o">-=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">m</span><span class="p">)</span> <span class="o">*</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="n">errors</span>
-        <span class="n">cost_history</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">compute_cost</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">beta</span><span class="p">,</span> <span class="n">cost_history</span>
-</code></pre></div></div>
-
-<h3 id="step-3-training-the-model">Step 3: Training the Model</h3>
-<p>Let’s normalize the feature and add a bias term to the data.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X_b</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">c_</span><span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="n">ones</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="mi">1</span><span class="p">)),</span> <span class="n">X</span><span class="p">]</span>  <span class="c1"># Add bias term
-</span><span class="n">beta_initial</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.01</span>
-<span class="n">iterations</span> <span class="o">=</span> <span class="mi">1000</span>
-
-<span class="n">beta_optimal</span><span class="p">,</span> <span class="n">cost_history</span> <span class="o">=</span> <span class="n">gradient_descent</span><span class="p">(</span><span class="n">X_b</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">beta_initial</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">,</span> <span class="n">iterations</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"Optimal coefficients:"</span><span class="p">,</span> <span class="n">beta_optimal</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="step-4-plot-the-cost-function">Step 4: Plot the Cost Function</h3>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">iterations</span><span class="p">),</span> <span class="n">cost_history</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"Iterations"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"Cost"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Cost Function"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div></div>
-
-<h3 id="step-5-predictions">Step 5: Predictions</h3>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">predictions</span> <span class="o">=</span> <span class="n">X_b</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">beta_optimal</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">predictions</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'red'</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"X"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"y"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Linear Regression Fit"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div></div>
-
-<h2 id="linear-regression-using-scikit-learn">Linear Regression Using scikit-learn</h2>
-
-<p>Now, let’s use the <code class="language-plaintext highlighter-rouge">scikit-learn</code> library to perform Linear Regression.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
-
-<span class="c1"># Create and fit the model
-</span><span class="n">lin_reg</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
-<span class="n">lin_reg</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-
-<span class="c1"># Print the coefficients
-</span><span class="k">print</span><span class="p">(</span><span class="s">"Intercept:"</span><span class="p">,</span> <span class="n">lin_reg</span><span class="p">.</span><span class="n">intercept_</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"Coefficient:"</span><span class="p">,</span> <span class="n">lin_reg</span><span class="p">.</span><span class="n">coef_</span><span class="p">)</span>
-
-<span class="c1"># Predictions
-</span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">lin_reg</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-
-<span class="c1"># Plot the results
-</span><span class="n">plt</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'red'</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"X"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"y"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Linear Regression Fit with scikit-learn"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div></div>
-
-<h2 id="evaluation-metrics">Evaluation Metrics</h2>
-
-<p>To evaluate the performance of a Linear Regression model, we use metrics like:</p>
+<h5 id="21-tokenization"><strong>2.1. Tokenization</strong></h5>
+<p>Tokenization is the process of breaking text into individual words or sentences.</p>
 
 <ul>
   <li>
-    <table>
-      <tbody>
-        <tr>
-          <td><strong>Mean Absolute Error (MAE)</strong>: $ \frac{1}{m} \sum_{i=1}^{m}</td>
-          <td>y^{(i)} - \hat{y}^{(i)}</td>
-          <td>$</td>
-        </tr>
-      </tbody>
-    </table>
+    <p><strong>Word Tokenization</strong>: Breaks a text into individual words.</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+  
+<span class="n">text</span> <span class="o">=</span> <span class="s">"Hello, how are you?"</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+<span class="c1"># Output: ['Hello', ',', 'how', 'are', 'you', '?']
+</span></code></pre></div>    </div>
   </li>
-  <li><strong>Mean Squared Error (MSE)</strong>: $ \frac{1}{m} \sum_{i=1}^{m} (y^{(i)} - \hat{y}^{(i)})^2 $</li>
-  <li><strong>R-squared (R²)</strong>: Proportion of variance explained by the model.</li>
+  <li>
+    <p><strong>Sentence Tokenization</strong>: Breaks a text into individual sentences.</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">sent_tokenize</span>
+  
+<span class="n">text</span> <span class="o">=</span> <span class="s">"Hello. How are you? I'm fine, thank you."</span>
+<span class="n">sentences</span> <span class="o">=</span> <span class="n">sent_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">sentences</span><span class="p">)</span>
+<span class="c1"># Output: ['Hello.', 'How are you?', "I'm fine, thank you."]
+</span></code></pre></div>    </div>
+  </li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_error</span><span class="p">,</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span>
+<h5 id="22-stop-words"><strong>2.2. Stop Words</strong></h5>
+<p>Stop words are common words like “the”, “is”, “in”, and “and” that are often removed from text data to focus on more informative words.</p>
 
-<span class="n">mae</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
-<span class="n">mse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
-<span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
 
-<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Mean Absolute Error: </span><span class="si">{</span><span class="n">mae</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Mean Squared Error: </span><span class="si">{</span><span class="n">mse</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"R-squared: </span><span class="si">{</span><span class="n">r2</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+<span class="n">stop_words</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">stopwords</span><span class="p">.</span><span class="n">words</span><span class="p">(</span><span class="s">'english'</span><span class="p">))</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s">"This is a simple sentence."</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+<span class="n">filtered_words</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">word</span><span class="p">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stop_words</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">filtered_words</span><span class="p">)</span>
+<span class="c1"># Output: ['This', 'simple', 'sentence', '.']
+</span></code></pre></div></div>
+
+<h5 id="23-stemming"><strong>2.3. Stemming</strong></h5>
+<p>Stemming is the process of reducing words to their root form.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">nltk.stem</span> <span class="kn">import</span> <span class="n">PorterStemmer</span>
+
+<span class="n">stemmer</span> <span class="o">=</span> <span class="n">PorterStemmer</span><span class="p">()</span>
+<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s">"running"</span><span class="p">,</span> <span class="s">"runs"</span><span class="p">,</span> <span class="s">"easily"</span><span class="p">,</span> <span class="s">"fairly"</span><span class="p">]</span>
+<span class="n">stems</span> <span class="o">=</span> <span class="p">[</span><span class="n">stemmer</span><span class="p">.</span><span class="n">stem</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">stems</span><span class="p">)</span>
+<span class="c1"># Output: ['run', 'run', 'easili', 'fairli']
+</span></code></pre></div></div>
+
+<h5 id="24-lemmatization"><strong>2.4. Lemmatization</strong></h5>
+<p>Lemmatization is similar to stemming but returns a real word rather than just the root form.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">nltk.stem</span> <span class="kn">import</span> <span class="n">WordNetLemmatizer</span>
+
+<span class="n">lemmatizer</span> <span class="o">=</span> <span class="n">WordNetLemmatizer</span><span class="p">()</span>
+<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s">"running"</span><span class="p">,</span> <span class="s">"runs"</span><span class="p">,</span> <span class="s">"better"</span><span class="p">,</span> <span class="s">"fairly"</span><span class="p">]</span>
+<span class="n">lemmas</span> <span class="o">=</span> <span class="p">[</span><span class="n">lemmatizer</span><span class="p">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="s">'v'</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">]</span>  <span class="c1"># 'v' indicates verb
+</span><span class="k">print</span><span class="p">(</span><span class="n">lemmas</span><span class="p">)</span>
+<span class="c1"># Output: ['run', 'run', 'better', 'fairly']
+</span></code></pre></div></div>
+
+<h5 id="25-part-of-speech-tagging"><strong>2.5. Part-of-Speech Tagging</strong></h5>
+<p>Part-of-Speech (POS) tagging labels each word in a sentence with its part of speech.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">nltk</span> <span class="kn">import</span> <span class="n">pos_tag</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s">"I am learning NLP using NLTK."</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="n">pos_tags</span> <span class="o">=</span> <span class="n">pos_tag</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">pos_tags</span><span class="p">)</span>
+<span class="c1"># Output: [('I', 'PRP'), ('am', 'VBP'), ('learning', 'VBG'), ('NLP', 'NNP'), ('using', 'VBG'), ('NLTK', 'NNP')]
+</span></code></pre></div></div>
+
+<h5 id="26-named-entity-recognition"><strong>2.6. Named Entity Recognition</strong></h5>
+<p>Named Entity Recognition (NER) identifies proper nouns like names of people, organizations, locations, etc.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">nltk</span> <span class="kn">import</span> <span class="n">ne_chunk</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+<span class="kn">from</span> <span class="nn">nltk</span> <span class="kn">import</span> <span class="n">pos_tag</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s">"Barack Obama was born in Hawaii."</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="n">pos_tags</span> <span class="o">=</span> <span class="n">pos_tag</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+<span class="n">ner</span> <span class="o">=</span> <span class="n">ne_chunk</span><span class="p">(</span><span class="n">pos_tags</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">ner</span><span class="p">)</span>
+<span class="c1"># Output: (S (PERSON Barack/NNP) (PERSON Obama/NNP) was/VBD born/VBN in/IN (GPE Hawaii/NNP) ./.)
+</span></code></pre></div></div>
+
+<h5 id="27-parsing"><strong>2.7. Parsing</strong></h5>
+<p>Parsing is the process of analyzing the grammatical structure of a sentence.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">nltk</span> <span class="kn">import</span> <span class="n">CFG</span><span class="p">,</span> <span class="n">ChartParser</span>
+
+<span class="n">grammar</span> <span class="o">=</span> <span class="n">CFG</span><span class="p">.</span><span class="n">fromstring</span><span class="p">(</span><span class="s">"""
+  S -&gt; NP VP
+  NP -&gt; DT NN
+  VP -&gt; VBZ NP
+  DT -&gt; 'the'
+  NN -&gt; 'cat' | 'dog'
+  VBZ -&gt; 'chases'
+"""</span><span class="p">)</span>
+
+<span class="n">parser</span> <span class="o">=</span> <span class="n">ChartParser</span><span class="p">(</span><span class="n">grammar</span><span class="p">)</span>
+<span class="n">sentence</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="s">"the cat chases the dog"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">tree</span> <span class="ow">in</span> <span class="n">parser</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="n">sentence</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span>
+    <span class="n">tree</span><span class="p">.</span><span class="n">draw</span><span class="p">()</span>
 </code></pre></div></div>
 
-<h2 id="conclusion">Conclusion</h2>
+<h5 id="28-working-with-corpora"><strong>2.8. Working with Corpora</strong></h5>
+<p>NLTK provides several text corpora for linguistic analysis.</p>
 
-<p>In this tutorial, we covered the basics of Linear Regression, implemented it from scratch, and also used the <code class="language-plaintext highlighter-rouge">scikit-learn</code> library. We also discussed how to evaluate the model using different metrics.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">gutenberg</span>
 
-<p>For further reading, you may refer to:</p>
-<ul>
-  <li><a href="https://www.statlearning.com/">Introduction to Statistical Learning</a></li>
-  <li><a href="https://scikit-learn.org/stable/documentation.html">scikit-learn Documentation</a></li>
-</ul>
+<span class="c1"># Accessing the text of "Moby Dick"
+</span><span class="n">moby_dick</span> <span class="o">=</span> <span class="n">gutenberg</span><span class="p">.</span><span class="n">words</span><span class="p">(</span><span class="s">'melville-moby_dick.txt'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">moby_dick</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>
+<span class="c1"># Output: ['[', 'Moby', 'Dick', 'by', 'Herman', 'Melville', '1851', ']', 'ETYMOLOGY', '.']
+</span></code></pre></div></div>
 
-<p>```</p>
+<h4 id="3-advanced-features">3. <strong>Advanced Features</strong></h4>
+
+<h5 id="31-text-classification"><strong>3.1. Text Classification</strong></h5>
+<p>NLTK supports various classification algorithms, such as Naive Bayes, Decision Trees, and more. You can train a classifier to categorize text data into predefined categories.</p>
+
+<h5 id="32-language-modeling"><strong>3.2. Language Modeling</strong></h5>
+<p>NLTK provides tools for building n-gram language models that predict the next word in a sequence.</p>
+
+<h5 id="33-sentiment-analysis"><strong>3.3. Sentiment Analysis</strong></h5>
+<p>With NLTK, you can perform sentiment analysis to determine the sentiment (positive, negative, neutral) expressed in text.</p>
+
+<h4 id="4-conclusion">4. <strong>Conclusion</strong></h4>
+
+<p>NLTK is a powerful and flexible tool for working with natural language in Python. It provides an extensive suite of libraries and resources that make it a go-to library for anyone working in the field of NLP. Whether you’re building simple text processing applications or complex language models, NLTK offers the tools you need to get started.</p>
 
   </div>
 
@@ -507,29 +474,26 @@ id="btn-back-to-top"
               <a href="/tags/#python">python</a>
             </li>
           
+            <li class="post-tag">
+              
+              <a href="/tags/#nltk">nltk</a>
+            </li>
+          
         </ul>
       </div>
     
 
     <nav class="post-pagination" role="navigation">
       
-        <a class="post-previous" href="/junk/2024/08/05/this-post-demonstrates-post-content-styles.html">
+        <a class="post-previous" href="/junk/2024/08/06/LinReg-in-Python.html">
           <h4 class="post-pagination-label">Prev</h4>
           <span class="post-pagination-title">
-            <i class="fas fa-arrow-left"></i> This post demonstrates post content styles
+            <i class="fas fa-arrow-left"></i> Linear Regression in Python
 
           </span>
         </a>
       
 
-      
-        <a class="post-next" href="/junk/2024/08/19/An-Introduction-nltk.html">
-          <h4 class="post-pagination-label">Next</h4>
-          <span class="post-pagination-title">
-            Mastering Text Processing in Python: An Introduction to NLTK
- <i class="fas fa-arrow-right"></i>
-          </span>
-        </a>
       
     </nav>
   </footer>

@@ -7,23 +7,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Linear Regression in Python | N. Mabiala</title>
+<title>A very interesting title to talk about very amazing subject on Mathematics. | N. Mabiala</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Linear Regression in Python" />
+<meta property="og:title" content="A very interesting title to talk about very amazing subject on Mathematics." />
+<meta name="author" content="unkmown" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Linear Regression in Python" />
-<meta property="og:description" content="Linear Regression in Python" />
-<link rel="canonical" href="http://localhost:4000/junk/2024/08/06/LinReg-in-Python.html" />
-<meta property="og:url" content="http://localhost:4000/junk/2024/08/06/LinReg-in-Python.html" />
+<meta name="description" content="This post tests the style of a task item list." />
+<meta property="og:description" content="This post tests the style of a task item list." />
+<link rel="canonical" href="http://localhost:4000/2016/01/11/task-item-list.html" />
+<meta property="og:url" content="http://localhost:4000/2016/01/11/task-item-list.html" />
 <meta property="og:site_name" content="N. Mabiala" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-08-06T00:00:00+02:00" />
+<meta property="article:published_time" content="2016-01-11T00:00:00+02:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Linear Regression in Python" />
+<meta property="twitter:title" content="A very interesting title to talk about very amazing subject on Mathematics." />
 <meta name="twitter:site" content="@Valentinmabiala" />
+<meta name="twitter:creator" content="@unkmown" />
 <meta name="google-site-verification" content="u4WXQl0Eu66rsQo2kRdCNx" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-08-06T00:00:00+02:00","datePublished":"2024-08-06T00:00:00+02:00","description":"Linear Regression in Python","headline":"Linear Regression in Python","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/junk/2024/08/06/LinReg-in-Python.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/logo.png"}},"url":"http://localhost:4000/junk/2024/08/06/LinReg-in-Python.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"unkmown"},"dateModified":"2016-01-11T00:00:00+02:00","datePublished":"2016-01-11T00:00:00+02:00","description":"This post tests the style of a task item list.","headline":"A very interesting title to talk about very amazing subject on Mathematics.","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2016/01/11/task-item-list.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/logo.png"},"name":"unkmown"},"url":"http://localhost:4000/2016/01/11/task-item-list.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -257,27 +259,38 @@ id="btn-back-to-top"
 
       <aside class="site-sidebar sidebar-mobile-off" id="site-sidebar">
           
-            <h3 class="toc-title">Table of Contents</h3>
-<nav class="toc-nav">
-  <ul class="toc">
-  <li><a href="#table-of-contents">Table of Contents</a></li>
-  <li><a href="#introduction-to-linear-regression">Introduction to Linear Regression</a></li>
-  <li><a href="#mathematical-background">Mathematical Background</a></li>
-  <li><a href="#implementing-linear-regression-from-scratch">Implementing Linear Regression from Scratch</a>
-    <ul>
-      <li><a href="#step-1-compute-the-cost-function">Step 1: Compute the Cost Function</a></li>
-      <li><a href="#step-2-gradient-descent">Step 2: Gradient Descent</a></li>
-      <li><a href="#step-3-training-the-model">Step 3: Training the Model</a></li>
-      <li><a href="#step-4-plot-the-cost-function">Step 4: Plot the Cost Function</a></li>
-      <li><a href="#step-5-predictions">Step 5: Predictions</a></li>
-    </ul>
-  </li>
-  <li><a href="#linear-regression-using-scikit-learn">Linear Regression Using scikit-learn</a></li>
-  <li><a href="#evaluation-metrics">Evaluation Metrics</a></li>
-  <li><a href="#conclusion">Conclusion</a></li>
-</ul>
+            <div class="sidebar-section"><img src="/logo.jpeg" class="author-avatar u-photo align-center" alt="Jeremie N. Mabiala">
+  </div>
 
-</nav>
+<div class="sidebar-section">
+  <ul class="contact-list">
+    <li>
+        <i class="sidebar-icon fas fa-at"></i>
+        <span class="contact-info p-name">Jeremie N. Mabiala</span>
+      </li>
+    <li>
+        <i class="sidebar-icon fas fa-envelope"></i>
+        <a class="contact-info u-email" href="mailto:jeremie@aims.ac.za, jnlandu00@gmail.com">jeremie@aims.ac.za, jnlandu00@gmail.com</a>
+      </li>
+    
+  </ul>
+</div>
+
+<div class="sidebar-section feed-subscribe">
+  <a href="/feed.xml">
+    <i class="sidebar-icon fas fa-rss"></i><span>Subscribe</span>
+  </a>
+</div>
+
+<div class="sidebar-section">
+    <ul class="social-icons">
+      <li>
+          <a class="social-icon" href="https://twitter.com/ngzhio"><i class="fab fa-twitter fa-2x" title="Twitter"></i></a>
+        </li><li>
+          <a class="social-icon" href="https://github.com/ngzhio/jekyll-theme-hamilton"><i class="fab fa-github fa-2x" title="GitHub"></i></a>
+        </li>
+    </ul>
+  </div>
 
           
       </aside>
@@ -288,212 +301,41 @@ id="btn-back-to-top"
 
   <header class="post-header">
 
-    <h1 class="post-title p-name" itemprop="name headline">Linear Regression in Python</h1>
-    <p class="post-meta"><time class="dt-published" datetime="2024-08-06T00:00:00+02:00" itemprop="datePublished">
-        Aug 6, 2024
+    <h1 class="post-title p-name" itemprop="name headline">A very interesting title to talk about very amazing subject on Mathematics.</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2016-01-11T00:00:00+02:00" itemprop="datePublished">
+        Jan 11, 2016
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <span class="p-author h-card" itemprop="name">Jérémie N. Mabiala</span></span></p>
+            <span class="p-author h-card" itemprop="name">unkmown</span></span></p>
 
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <h1 id="linear-regression-in-python">Linear Regression in Python</h1>
+    <p>This post tests the style of a task item list.</p>
 
-<p>Linear Regression is a simple yet powerful technique used for predicting a quantitative response. In this tutorial, we will implement Linear Regression from scratch and also using the <code class="language-plaintext highlighter-rouge">scikit-learn</code> library in Python.</p>
+<p>Source:</p>
 
-<h2 id="table-of-contents">Table of Contents</h2>
-<ol>
-  <li><a href="#introduction-to-linear-regression">Introduction to Linear Regression</a></li>
-  <li><a href="#mathematical-background">Mathematical Background</a></li>
-  <li><a href="#implementing-linear-regression-from-scratch">Implementing Linear Regression from Scratch</a></li>
-  <li><a href="#linear-regression-using-scikit-learn">Linear Regression Using scikit-learn</a></li>
-  <li><a href="#evaluation-metrics">Evaluation Metrics</a></li>
-  <li><a href="#conclusion">Conclusion</a></li>
-</ol>
-
-<h2 id="introduction-to-linear-regression">Introduction to Linear Regression</h2>
-
-<p>Linear Regression is a linear approach to modeling the relationship between a dependent variable and one or more independent variables. If we have a single independent variable, it’s called Simple Linear Regression. If there are multiple independent variables, it’s called Multiple Linear Regression.</p>
-
-<h2 id="mathematical-background">Mathematical Background</h2>
-
-<p>The equation for a linear model is:</p>
-
-<p>$ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \ldots + \beta_n x_n + \epsilon $</p>
-
-<ul>
-  <li>$ y $: Dependent variable</li>
-  <li>$ x_i $: Independent variables</li>
-  <li>$ \beta_i $: Coefficients</li>
-  <li>$ \epsilon $: Error term</li>
-</ul>
-
-<h2 id="implementing-linear-regression-from-scratch">Implementing Linear Regression from Scratch</h2>
-
-<p>Let’s start by generating some sample data and implementing Linear Regression using NumPy.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-
-<span class="c1"># Generate sample data
-</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">X</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">X</span> <span class="o">+</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-
-<span class="c1"># Plot the sample data
-</span><span class="n">plt</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"X"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"y"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Sample Data"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">-</span> [x] Eating
+<span class="p">-</span> [ ] Walking
+<span class="p">  -</span> [ ] Running
+<span class="p">-</span> [ ] Sleeping
 </code></pre></div></div>
 
-<h3 id="step-1-compute-the-cost-function">Step 1: Compute the Cost Function</h3>
-<p>The cost function for Linear Regression is the Mean Squared Error (MSE):</p>
+<p>Rendered:</p>
 
-<p>[ J(\beta) = \frac{1}{2m} \sum_{i=1}^{m} (h_\beta(x^{(i)}) - y^{(i)})^2 ]</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">compute_cost</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">beta</span><span class="p">):</span>
-    <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-    <span class="n">predictions</span> <span class="o">=</span> <span class="n">X</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span>
-    <span class="n">cost</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">m</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">square</span><span class="p">(</span><span class="n">predictions</span> <span class="o">-</span> <span class="n">y</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">cost</span>
-</code></pre></div></div>
-
-<h3 id="step-2-gradient-descent">Step 2: Gradient Descent</h3>
-<p>Gradient Descent is used to minimize the cost function:</p>
-
-<p>[ \beta_j := \beta_j - \alpha \frac{\partial}{\partial \beta_j} J(\beta) ]</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">gradient_descent</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">,</span> <span class="n">iterations</span><span class="p">):</span>
-    <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-    <span class="n">cost_history</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">iterations</span><span class="p">)</span>
-    
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">iterations</span><span class="p">):</span>
-        <span class="n">predictions</span> <span class="o">=</span> <span class="n">X</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span>
-        <span class="n">errors</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">.</span><span class="n">transpose</span><span class="p">(),</span> <span class="p">(</span><span class="n">predictions</span> <span class="o">-</span> <span class="n">y</span><span class="p">))</span>
-        <span class="n">beta</span> <span class="o">-=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">m</span><span class="p">)</span> <span class="o">*</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="n">errors</span>
-        <span class="n">cost_history</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">compute_cost</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">beta</span><span class="p">,</span> <span class="n">cost_history</span>
-</code></pre></div></div>
-
-<h3 id="step-3-training-the-model">Step 3: Training the Model</h3>
-<p>Let’s normalize the feature and add a bias term to the data.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X_b</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">c_</span><span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="n">ones</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="mi">1</span><span class="p">)),</span> <span class="n">X</span><span class="p">]</span>  <span class="c1"># Add bias term
-</span><span class="n">beta_initial</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.01</span>
-<span class="n">iterations</span> <span class="o">=</span> <span class="mi">1000</span>
-
-<span class="n">beta_optimal</span><span class="p">,</span> <span class="n">cost_history</span> <span class="o">=</span> <span class="n">gradient_descent</span><span class="p">(</span><span class="n">X_b</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">beta_initial</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">,</span> <span class="n">iterations</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"Optimal coefficients:"</span><span class="p">,</span> <span class="n">beta_optimal</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="step-4-plot-the-cost-function">Step 4: Plot the Cost Function</h3>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">iterations</span><span class="p">),</span> <span class="n">cost_history</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"Iterations"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"Cost"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Cost Function"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div></div>
-
-<h3 id="step-5-predictions">Step 5: Predictions</h3>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">predictions</span> <span class="o">=</span> <span class="n">X_b</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">beta_optimal</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">predictions</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'red'</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"X"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"y"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Linear Regression Fit"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div></div>
-
-<h2 id="linear-regression-using-scikit-learn">Linear Regression Using scikit-learn</h2>
-
-<p>Now, let’s use the <code class="language-plaintext highlighter-rouge">scikit-learn</code> library to perform Linear Regression.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
-
-<span class="c1"># Create and fit the model
-</span><span class="n">lin_reg</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
-<span class="n">lin_reg</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-
-<span class="c1"># Print the coefficients
-</span><span class="k">print</span><span class="p">(</span><span class="s">"Intercept:"</span><span class="p">,</span> <span class="n">lin_reg</span><span class="p">.</span><span class="n">intercept_</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"Coefficient:"</span><span class="p">,</span> <span class="n">lin_reg</span><span class="p">.</span><span class="n">coef_</span><span class="p">)</span>
-
-<span class="c1"># Predictions
-</span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">lin_reg</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-
-<span class="c1"># Plot the results
-</span><span class="n">plt</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'red'</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"X"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"y"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Linear Regression Fit with scikit-learn"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div></div>
-
-<h2 id="evaluation-metrics">Evaluation Metrics</h2>
-
-<p>To evaluate the performance of a Linear Regression model, we use metrics like:</p>
-
-<ul>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td><strong>Mean Absolute Error (MAE)</strong>: $ \frac{1}{m} \sum_{i=1}^{m}</td>
-          <td>y^{(i)} - \hat{y}^{(i)}</td>
-          <td>$</td>
-        </tr>
-      </tbody>
-    </table>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Eating</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Walking
+    <ul class="task-list">
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Running</li>
+    </ul>
   </li>
-  <li><strong>Mean Squared Error (MSE)</strong>: $ \frac{1}{m} \sum_{i=1}^{m} (y^{(i)} - \hat{y}^{(i)})^2 $</li>
-  <li><strong>R-squared (R²)</strong>: Proportion of variance explained by the model.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Sleeping</li>
 </ul>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_error</span><span class="p">,</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span>
-
-<span class="n">mae</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
-<span class="n">mse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
-<span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
-
-<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Mean Absolute Error: </span><span class="si">{</span><span class="n">mae</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Mean Squared Error: </span><span class="si">{</span><span class="n">mse</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"R-squared: </span><span class="si">{</span><span class="n">r2</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h2 id="conclusion">Conclusion</h2>
-
-<p>In this tutorial, we covered the basics of Linear Regression, implemented it from scratch, and also used the <code class="language-plaintext highlighter-rouge">scikit-learn</code> library. We also discussed how to evaluate the model using different metrics.</p>
-
-<p>For further reading, you may refer to:</p>
-<ul>
-  <li><a href="https://www.statlearning.com/">Introduction to Statistical Learning</a></li>
-  <li><a href="https://scikit-learn.org/stable/documentation.html">scikit-learn Documentation</a></li>
-</ul>
-
-<p>```</p>
 
   </div>
 
   <footer class="post-footer">
-    
-      <div class="post-meta">
-        <i class="fas fa-folder"></i>
-        <ul class="post-taxonomies post-categories">
-          
-          
-            <li class="post-category">
-              
-              <a href="/categories/#junk">junk</a>
-            </li>
-          
-        </ul>
-      </div>
     
 
     
@@ -504,7 +346,7 @@ id="btn-back-to-top"
           
             <li class="post-tag">
               
-              <a href="/tags/#python">python</a>
+              <a href="/tags/#to-do-list">to-do-list</a>
             </li>
           
         </ul>
@@ -513,20 +355,12 @@ id="btn-back-to-top"
 
     <nav class="post-pagination" role="navigation">
       
-        <a class="post-previous" href="/junk/2024/08/05/this-post-demonstrates-post-content-styles.html">
-          <h4 class="post-pagination-label">Prev</h4>
-          <span class="post-pagination-title">
-            <i class="fas fa-arrow-left"></i> This post demonstrates post content styles
-
-          </span>
-        </a>
-      
 
       
-        <a class="post-next" href="/junk/2024/08/19/An-Introduction-nltk.html">
+        <a class="post-next" href="/misc/2016/05/19/super-short-article.html">
           <h4 class="post-pagination-label">Next</h4>
           <span class="post-pagination-title">
-            Mastering Text Processing in Python: An Introduction to NLTK
+            Some articles are just so short that we have to make the footer stick
  <i class="fas fa-arrow-right"></i>
           </span>
         </a>

@@ -1,149 +1,163 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-08-19T10:17:35+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">N. Mabiala</title><subtitle>A minimal and beautiful Jekyll theme best for writing and note-taking.</subtitle><author><name>Jeremie N. Mabiala</name></author><entry><title type="html"></title><link href="http://localhost:4000/2024/08/19/2016-01-11-task-item-list.html" rel="alternate" type="text/html" title="" /><published>2024-08-19T10:17:35+02:00</published><updated>2024-08-19T10:17:35+02:00</updated><id>http://localhost:4000/2024/08/19/2016-01-11-task-item-list</id><content type="html" xml:base="http://localhost:4000/2024/08/19/2016-01-11-task-item-list.html"><![CDATA[<p>This post tests the style of a task item list.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-08-20T00:13:50+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">N. Mabiala</title><subtitle>A minimal and beautiful Jekyll theme best for writing and note-taking.</subtitle><author><name>Jeremie N. Mabiala</name></author><entry><title type="html">Mastering Text Processing in Python: An Introduction to NLTK</title><link href="http://localhost:4000/junk/2024/08/19/An-Introduction-nltk.html" rel="alternate" type="text/html" title="Mastering Text Processing in Python: An Introduction to NLTK" /><published>2024-08-19T00:00:00+02:00</published><updated>2024-08-19T00:00:00+02:00</updated><id>http://localhost:4000/junk/2024/08/19/An-Introduction-nltk</id><content type="html" xml:base="http://localhost:4000/junk/2024/08/19/An-Introduction-nltk.html"><![CDATA[<h3 id="introduction-to-nltk-natural-language-toolkit">Introduction to NLTK (Natural Language Toolkit)</h3>
 
-<p>Source:</p>
+<p><strong>Natural Language Toolkit (NLTK)</strong> is a comprehensive library in Python for working with human language data, known as natural language processing (NLP). NLTK provides easy-to-use interfaces to over 50 corpora and lexical resources, along with a suite of text processing libraries for classification, tokenization, stemming, tagging, parsing, and semantic reasoning.</p>
 
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">-</span> [x] Eating
-<span class="p">-</span> [ ] Walking
-<span class="p">  -</span> [ ] Running
-<span class="p">-</span> [ ] Sleeping
+<h4 id="1-installation-and-setup">1. <strong>Installation and Setup</strong></h4>
+
+<p>Before using NLTK, you need to install it. NLTK can be installed using pip:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>nltk
 </code></pre></div></div>
 
-<p>Rendered:</p>
+<p>After installation, you can import the library and download the necessary datasets and models:</p>
 
-<ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Eating</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Walking
-    <ul class="task-list">
-      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Running</li>
-    </ul>
-  </li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Sleeping</li>
-</ul>]]></content><author><name>Jeremie N. Mabiala</name></author></entry><entry><title type="html"></title><link href="http://localhost:4000/2024/08/19/2016-05-19-super-short-article.html" rel="alternate" type="text/html" title="" /><published>2024-08-19T10:17:35+02:00</published><updated>2024-08-19T10:17:35+02:00</updated><id>http://localhost:4000/2024/08/19/2016-05-19-super-short-article</id><content type="html" xml:base="http://localhost:4000/2024/08/19/2016-05-19-super-short-article.html"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>]]></content><author><name>Jeremie N. Mabiala</name></author></entry><entry><title type="html"></title><link href="http://localhost:4000/2024/08/19/2024-06-06-flask-ml-integration.html" rel="alternate" type="text/html" title="" /><published>2024-08-19T10:17:35+02:00</published><updated>2024-08-19T10:17:35+02:00</updated><id>http://localhost:4000/2024/08/19/2024-06-06-flask-ml-integration</id><content type="html" xml:base="http://localhost:4000/2024/08/19/2024-06-06-flask-ml-integration.html"><![CDATA[<h1 id="flask-and-machine-learning-integration">Flask and Machine Learning Integration</h1>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="n">nltk</span><span class="p">.</span><span class="n">download</span><span class="p">(</span><span class="s">'all'</span><span class="p">)</span>  <span class="c1"># This downloads all NLTK resources, but you can download specific ones as needed.
+</span></code></pre></div></div>
 
-<p>In this tutorial, we will learn how to integrate a Machine Learning model with a Flask web application. We will build a simple machine learning model using <code class="language-plaintext highlighter-rouge">scikit-learn</code>, create a Flask app, and set up endpoints to serve predictions from our model.</p>
+<h4 id="2-basic-components-of-nltk">2. <strong>Basic Components of NLTK</strong></h4>
 
-<h2 id="table-of-contents">Table of Contents</h2>
-<ol>
-  <li><a href="#introduction">Introduction</a></li>
-  <li><a href="#setting-up-the-environment">Setting Up the Environment</a></li>
-  <li><a href="#building-the-machine-learning-model">Building the Machine Learning Model</a></li>
-  <li><a href="#creating-the-flask-application">Creating the Flask Application</a></li>
-  <li><a href="#integrating-the-model-with-flask">Integrating the Model with Flask</a></li>
-  <li><a href="#testing-the-application">Testing the Application</a></li>
-  <li><a href="#conclusion">Conclusion</a></li>
-</ol>
+<h5 id="21-tokenization"><strong>2.1. Tokenization</strong></h5>
+<p>Tokenization is the process of breaking text into individual words or sentences.</p>
 
-<h2 id="introduction">Introduction</h2>
-
-<p>Flask is a lightweight WSGI web application framework in Python. It is designed with simplicity and flexibility in mind. We will use Flask to create a web service that can serve predictions from a machine learning model.</p>
-
-<h2 id="setting-up-the-environment">Setting Up the Environment</h2>
-
-<p>First, let’s set up our environment. We will need <code class="language-plaintext highlighter-rouge">Flask</code> and <code class="language-plaintext highlighter-rouge">scikit-learn</code>.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>Flask scikit-learn
-</code></pre></div></div>
-
-<h2 id="building-the-machine-learning-model">Building the Machine Learning Model</h2>
-
-<p>For this tutorial, we will use a simple linear regression model to predict house prices based on some features.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># model.py
-</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
-<span class="kn">import</span> <span class="nn">pickle</span>
-
-<span class="c1"># Generate sample data
-</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">X</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">X</span> <span class="o">+</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-
-<span class="c1"># Split the data into training and test sets
-</span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
-
-<span class="c1"># Train the model
-</span><span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
-<span class="n">model</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-
-<span class="c1"># Save the model to a file
-</span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'model.pkl'</span><span class="p">,</span> <span class="s">'wb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">pickle</span><span class="p">.</span><span class="n">dump</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h2 id="creating-the-flask-application">Creating the Flask Application</h2>
-
-<p>Now, let’s create a basic Flask application structure.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>flask_ml
-<span class="nb">cd </span>flask_ml
-<span class="nb">touch </span>app.py
-</code></pre></div></div>
-
-<p>In <code class="language-plaintext highlighter-rouge">app.py</code>, set up the basic Flask app.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># app.py
-</span>
-<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">jsonify</span>
-<span class="kn">import</span> <span class="nn">pickle</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
-
-<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
-
-<span class="c1"># Load the model
-</span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'model.pkl'</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">model</span> <span class="o">=</span> <span class="n">pickle</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-
-<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
-    <span class="k">return</span> <span class="s">"Welcome to the Machine Learning Model API!"</span>
-
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
-    <span class="n">app</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h2 id="integrating-the-model-with-flask">Integrating the Model with Flask</h2>
-
-<p>We will create an endpoint <code class="language-plaintext highlighter-rouge">/predict</code> that will take input features, pass them to the model, and return the prediction.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># app.py
-</span>
-<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/predict'</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">'POST'</span><span class="p">])</span>
-<span class="k">def</span> <span class="nf">predict</span><span class="p">():</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">get_json</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-    <span class="n">features</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">'features'</span><span class="p">]).</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">prediction</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s">'prediction'</span><span class="p">:</span> <span class="n">prediction</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]})</span>
-</code></pre></div></div>
-
-<h2 id="testing-the-application">Testing the Application</h2>
-
-<p>Run the Flask app and test the prediction endpoint using <code class="language-plaintext highlighter-rouge">curl</code> or Postman.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python app.py
-</code></pre></div></div>
-
-<p>Use <code class="language-plaintext highlighter-rouge">curl</code> to test the <code class="language-plaintext highlighter-rouge">/predict</code> endpoint.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST http://127.0.0.1:5000/predict <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="nt">-d</span> <span class="s1">'{"features": [1.5]}'</span>
-</code></pre></div></div>
-
-<p>You should get a response with the prediction.</p>
-
-<h2 id="conclusion">Conclusion</h2>
-
-<p>In this tutorial, we created a simple linear regression model, saved it, and built a Flask application to serve predictions from the model. This approach can be extended to more complex models and use cases. For a production environment, consider using more advanced techniques like model versioning, authentication, and containerization with Docker.</p>
-
-<p>For further reading, you may refer to:</p>
 <ul>
-  <li><a href="https://flask.palletsprojects.com/">Flask Documentation</a></li>
-  <li><a href="https://scikit-learn.org/stable/documentation.html">scikit-learn Documentation</a></li>
+  <li>
+    <p><strong>Word Tokenization</strong>: Breaks a text into individual words.</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+  
+<span class="n">text</span> <span class="o">=</span> <span class="s">"Hello, how are you?"</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+<span class="c1"># Output: ['Hello', ',', 'how', 'are', 'you', '?']
+</span></code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>Sentence Tokenization</strong>: Breaks a text into individual sentences.</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">sent_tokenize</span>
+  
+<span class="n">text</span> <span class="o">=</span> <span class="s">"Hello. How are you? I'm fine, thank you."</span>
+<span class="n">sentences</span> <span class="o">=</span> <span class="n">sent_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">sentences</span><span class="p">)</span>
+<span class="c1"># Output: ['Hello.', 'How are you?', "I'm fine, thank you."]
+</span></code></pre></div>    </div>
+  </li>
 </ul>
 
-<p>```</p>
+<h5 id="22-stop-words"><strong>2.2. Stop Words</strong></h5>
+<p>Stop words are common words like “the”, “is”, “in”, and “and” that are often removed from text data to focus on more informative words.</p>
 
-<p>You can save this content into a <code class="language-plaintext highlighter-rouge">.md</code> file and view it using any Markdown editor. Let me know if you need any additional details or modifications!</p>]]></content><author><name>Jeremie N. Mabiala</name></author></entry><entry><title type="html">Linear Regression in Python</title><link href="http://localhost:4000/junk/2024/08/06/LinReg-in-Python.html" rel="alternate" type="text/html" title="Linear Regression in Python" /><published>2024-08-06T00:00:00+02:00</published><updated>2024-08-06T00:00:00+02:00</updated><id>http://localhost:4000/junk/2024/08/06/LinReg-in-Python</id><content type="html" xml:base="http://localhost:4000/junk/2024/08/06/LinReg-in-Python.html"><![CDATA[<h1 id="linear-regression-in-python">Linear Regression in Python</h1>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+
+<span class="n">stop_words</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">stopwords</span><span class="p">.</span><span class="n">words</span><span class="p">(</span><span class="s">'english'</span><span class="p">))</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s">"This is a simple sentence."</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+<span class="n">filtered_words</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">word</span><span class="p">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stop_words</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">filtered_words</span><span class="p">)</span>
+<span class="c1"># Output: ['This', 'simple', 'sentence', '.']
+</span></code></pre></div></div>
+
+<h5 id="23-stemming"><strong>2.3. Stemming</strong></h5>
+<p>Stemming is the process of reducing words to their root form.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">nltk.stem</span> <span class="kn">import</span> <span class="n">PorterStemmer</span>
+
+<span class="n">stemmer</span> <span class="o">=</span> <span class="n">PorterStemmer</span><span class="p">()</span>
+<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s">"running"</span><span class="p">,</span> <span class="s">"runs"</span><span class="p">,</span> <span class="s">"easily"</span><span class="p">,</span> <span class="s">"fairly"</span><span class="p">]</span>
+<span class="n">stems</span> <span class="o">=</span> <span class="p">[</span><span class="n">stemmer</span><span class="p">.</span><span class="n">stem</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">stems</span><span class="p">)</span>
+<span class="c1"># Output: ['run', 'run', 'easili', 'fairli']
+</span></code></pre></div></div>
+
+<h5 id="24-lemmatization"><strong>2.4. Lemmatization</strong></h5>
+<p>Lemmatization is similar to stemming but returns a real word rather than just the root form.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">nltk.stem</span> <span class="kn">import</span> <span class="n">WordNetLemmatizer</span>
+
+<span class="n">lemmatizer</span> <span class="o">=</span> <span class="n">WordNetLemmatizer</span><span class="p">()</span>
+<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s">"running"</span><span class="p">,</span> <span class="s">"runs"</span><span class="p">,</span> <span class="s">"better"</span><span class="p">,</span> <span class="s">"fairly"</span><span class="p">]</span>
+<span class="n">lemmas</span> <span class="o">=</span> <span class="p">[</span><span class="n">lemmatizer</span><span class="p">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="s">'v'</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">]</span>  <span class="c1"># 'v' indicates verb
+</span><span class="k">print</span><span class="p">(</span><span class="n">lemmas</span><span class="p">)</span>
+<span class="c1"># Output: ['run', 'run', 'better', 'fairly']
+</span></code></pre></div></div>
+
+<h5 id="25-part-of-speech-tagging"><strong>2.5. Part-of-Speech Tagging</strong></h5>
+<p>Part-of-Speech (POS) tagging labels each word in a sentence with its part of speech.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">nltk</span> <span class="kn">import</span> <span class="n">pos_tag</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s">"I am learning NLP using NLTK."</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="n">pos_tags</span> <span class="o">=</span> <span class="n">pos_tag</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">pos_tags</span><span class="p">)</span>
+<span class="c1"># Output: [('I', 'PRP'), ('am', 'VBP'), ('learning', 'VBG'), ('NLP', 'NNP'), ('using', 'VBG'), ('NLTK', 'NNP')]
+</span></code></pre></div></div>
+
+<h5 id="26-named-entity-recognition"><strong>2.6. Named Entity Recognition</strong></h5>
+<p>Named Entity Recognition (NER) identifies proper nouns like names of people, organizations, locations, etc.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">nltk</span> <span class="kn">import</span> <span class="n">ne_chunk</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+<span class="kn">from</span> <span class="nn">nltk</span> <span class="kn">import</span> <span class="n">pos_tag</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s">"Barack Obama was born in Hawaii."</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="n">pos_tags</span> <span class="o">=</span> <span class="n">pos_tag</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+<span class="n">ner</span> <span class="o">=</span> <span class="n">ne_chunk</span><span class="p">(</span><span class="n">pos_tags</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">ner</span><span class="p">)</span>
+<span class="c1"># Output: (S (PERSON Barack/NNP) (PERSON Obama/NNP) was/VBD born/VBN in/IN (GPE Hawaii/NNP) ./.)
+</span></code></pre></div></div>
+
+<h5 id="27-parsing"><strong>2.7. Parsing</strong></h5>
+<p>Parsing is the process of analyzing the grammatical structure of a sentence.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">nltk</span> <span class="kn">import</span> <span class="n">CFG</span><span class="p">,</span> <span class="n">ChartParser</span>
+
+<span class="n">grammar</span> <span class="o">=</span> <span class="n">CFG</span><span class="p">.</span><span class="n">fromstring</span><span class="p">(</span><span class="s">"""
+  S -&gt; NP VP
+  NP -&gt; DT NN
+  VP -&gt; VBZ NP
+  DT -&gt; 'the'
+  NN -&gt; 'cat' | 'dog'
+  VBZ -&gt; 'chases'
+"""</span><span class="p">)</span>
+
+<span class="n">parser</span> <span class="o">=</span> <span class="n">ChartParser</span><span class="p">(</span><span class="n">grammar</span><span class="p">)</span>
+<span class="n">sentence</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="s">"the cat chases the dog"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">tree</span> <span class="ow">in</span> <span class="n">parser</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="n">sentence</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span>
+    <span class="n">tree</span><span class="p">.</span><span class="n">draw</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h5 id="28-working-with-corpora"><strong>2.8. Working with Corpora</strong></h5>
+<p>NLTK provides several text corpora for linguistic analysis.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">gutenberg</span>
+
+<span class="c1"># Accessing the text of "Moby Dick"
+</span><span class="n">moby_dick</span> <span class="o">=</span> <span class="n">gutenberg</span><span class="p">.</span><span class="n">words</span><span class="p">(</span><span class="s">'melville-moby_dick.txt'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">moby_dick</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>
+<span class="c1"># Output: ['[', 'Moby', 'Dick', 'by', 'Herman', 'Melville', '1851', ']', 'ETYMOLOGY', '.']
+</span></code></pre></div></div>
+
+<h4 id="3-advanced-features">3. <strong>Advanced Features</strong></h4>
+
+<h5 id="31-text-classification"><strong>3.1. Text Classification</strong></h5>
+<p>NLTK supports various classification algorithms, such as Naive Bayes, Decision Trees, and more. You can train a classifier to categorize text data into predefined categories.</p>
+
+<h5 id="32-language-modeling"><strong>3.2. Language Modeling</strong></h5>
+<p>NLTK provides tools for building n-gram language models that predict the next word in a sequence.</p>
+
+<h5 id="33-sentiment-analysis"><strong>3.3. Sentiment Analysis</strong></h5>
+<p>With NLTK, you can perform sentiment analysis to determine the sentiment (positive, negative, neutral) expressed in text.</p>
+
+<h4 id="4-conclusion">4. <strong>Conclusion</strong></h4>
+
+<p>NLTK is a powerful and flexible tool for working with natural language in Python. It provides an extensive suite of libraries and resources that make it a go-to library for anyone working in the field of NLP. Whether you’re building simple text processing applications or complex language models, NLTK offers the tools you need to get started.</p>]]></content><author><name>[&quot;Jérémie N. Mabiala&quot;]</name></author><category term="junk" /><category term="Python" /><category term="nltk" /><summary type="html"><![CDATA[Introduction to NLTK (Natural Language Toolkit)]]></summary></entry><entry><title type="html">Linear Regression in Python</title><link href="http://localhost:4000/junk/2024/08/06/LinReg-in-Python.html" rel="alternate" type="text/html" title="Linear Regression in Python" /><published>2024-08-06T00:00:00+02:00</published><updated>2024-08-06T00:00:00+02:00</updated><id>http://localhost:4000/junk/2024/08/06/LinReg-in-Python</id><content type="html" xml:base="http://localhost:4000/junk/2024/08/06/LinReg-in-Python.html"><![CDATA[<h1 id="linear-regression-in-python">Linear Regression in Python</h1>
 
 <p>Linear Regression is a simple yet powerful technique used for predicting a quantitative response. In this tutorial, we will implement Linear Regression from scratch and also using the <code class="language-plaintext highlighter-rouge">scikit-learn</code> library in Python.</p>
 
@@ -729,4 +743,149 @@
       <td>lorem ipsum dolor sit amet consectetur</td>
     </tr>
   </tbody>
-</table>]]></content><author><name>[&quot;Bart Simpson&quot;, &quot;Nelson Mandela Muntz&quot;]</name></author><category term="junk" /><category term="markdown" /><category term="css" /><category term="html" /><summary type="html"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit.]]></summary></entry></feed>
+</table>]]></content><author><name>[&quot;Bart Simpson&quot;, &quot;Nelson Mandela Muntz&quot;]</name></author><category term="junk" /><category term="markdown" /><category term="css" /><category term="html" /><summary type="html"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit.]]></summary></entry><entry><title type="html">Flask and Machine Learning Integration</title><link href="http://localhost:4000/2024/06/06/flask-ml-integration.html" rel="alternate" type="text/html" title="Flask and Machine Learning Integration" /><published>2024-06-06T00:00:00+02:00</published><updated>2024-06-06T00:00:00+02:00</updated><id>http://localhost:4000/2024/06/06/flask-ml-integration</id><content type="html" xml:base="http://localhost:4000/2024/06/06/flask-ml-integration.html"><![CDATA[<h1 id="flask-and-machine-learning-integration">Flask and Machine Learning Integration</h1>
+
+<p>In this tutorial, we will learn how to integrate a Machine Learning model with a Flask web application. We will build a simple machine learning model using <code class="language-plaintext highlighter-rouge">scikit-learn</code>, create a Flask app, and set up endpoints to serve predictions from our model.</p>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+  <li><a href="#introduction">Introduction</a></li>
+  <li><a href="#setting-up-the-environment">Setting Up the Environment</a></li>
+  <li><a href="#building-the-machine-learning-model">Building the Machine Learning Model</a></li>
+  <li><a href="#creating-the-flask-application">Creating the Flask Application</a></li>
+  <li><a href="#integrating-the-model-with-flask">Integrating the Model with Flask</a></li>
+  <li><a href="#testing-the-application">Testing the Application</a></li>
+  <li><a href="#conclusion">Conclusion</a></li>
+</ol>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Flask is a lightweight WSGI web application framework in Python. It is designed with simplicity and flexibility in mind. We will use Flask to create a web service that can serve predictions from a machine learning model.</p>
+
+<h2 id="setting-up-the-environment">Setting Up the Environment</h2>
+
+<p>First, let’s set up our environment. We will need <code class="language-plaintext highlighter-rouge">Flask</code> and <code class="language-plaintext highlighter-rouge">scikit-learn</code>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>Flask scikit-learn
+</code></pre></div></div>
+
+<h2 id="building-the-machine-learning-model">Building the Machine Learning Model</h2>
+
+<p>For this tutorial, we will use a simple linear regression model to predict house prices based on some features.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># model.py
+</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+
+<span class="c1"># Generate sample data
+</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">X</span> <span class="o">+</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Split the data into training and test sets
+</span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Train the model
+</span><span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+<span class="n">model</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Save the model to a file
+</span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'model.pkl'</span><span class="p">,</span> <span class="s">'wb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="p">.</span><span class="n">dump</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="creating-the-flask-application">Creating the Flask Application</h2>
+
+<p>Now, let’s create a basic Flask application structure.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>flask_ml
+<span class="nb">cd </span>flask_ml
+<span class="nb">touch </span>app.py
+</code></pre></div></div>
+
+<p>In <code class="language-plaintext highlighter-rouge">app.py</code>, set up the basic Flask app.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># app.py
+</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">jsonify</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+<span class="c1"># Load the model
+</span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'model.pkl'</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">pickle</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s">"Welcome to the Machine Learning Model API!"</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">app</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="integrating-the-model-with-flask">Integrating the Model with Flask</h2>
+
+<p>We will create an endpoint <code class="language-plaintext highlighter-rouge">/predict</code> that will take input features, pass them to the model, and return the prediction.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># app.py
+</span>
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/predict'</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">'POST'</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">predict</span><span class="p">():</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">get_json</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">features</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">'features'</span><span class="p">]).</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">prediction</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s">'prediction'</span><span class="p">:</span> <span class="n">prediction</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]})</span>
+</code></pre></div></div>
+
+<h2 id="testing-the-application">Testing the Application</h2>
+
+<p>Run the Flask app and test the prediction endpoint using <code class="language-plaintext highlighter-rouge">curl</code> or Postman.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python app.py
+</code></pre></div></div>
+
+<p>Use <code class="language-plaintext highlighter-rouge">curl</code> to test the <code class="language-plaintext highlighter-rouge">/predict</code> endpoint.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST http://127.0.0.1:5000/predict <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="nt">-d</span> <span class="s1">'{"features": [1.5]}'</span>
+</code></pre></div></div>
+
+<p>You should get a response with the prediction.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>In this tutorial, we created a simple linear regression model, saved it, and built a Flask application to serve predictions from the model. This approach can be extended to more complex models and use cases. For a production environment, consider using more advanced techniques like model versioning, authentication, and containerization with Docker.</p>
+
+<p>For further reading, you may refer to:</p>
+<ul>
+  <li><a href="https://flask.palletsprojects.com/">Flask Documentation</a></li>
+  <li><a href="https://scikit-learn.org/stable/documentation.html">scikit-learn Documentation</a></li>
+</ul>
+
+<p>```</p>
+
+<p>You can save this content into a <code class="language-plaintext highlighter-rouge">.md</code> file and view it using any Markdown editor. Let me know if you need any additional details or modifications!</p>]]></content><author><name>[&quot;Jérémie N. Mabiala&quot;]</name></author><category term="Pyhton" /><category term="Flask" /><category term="Html" /><summary type="html"><![CDATA[Flask and Machine Learning Integration]]></summary></entry><entry><title type="html">Some articles are just so short that we have to make the footer stick</title><link href="http://localhost:4000/misc/2016/05/19/super-short-article.html" rel="alternate" type="text/html" title="Some articles are just so short that we have to make the footer stick" /><published>2016-05-19T00:00:00+02:00</published><updated>2016-05-19T00:00:00+02:00</updated><id>http://localhost:4000/misc/2016/05/19/super-short-article</id><content type="html" xml:base="http://localhost:4000/misc/2016/05/19/super-short-article.html"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>]]></content><author><name>unkmown</name></author><category term="misc" /><summary type="html"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.]]></summary></entry><entry><title type="html">A very interesting title to talk about very amazing subject on Mathematics.</title><link href="http://localhost:4000/2016/01/11/task-item-list.html" rel="alternate" type="text/html" title="A very interesting title to talk about very amazing subject on Mathematics." /><published>2016-01-11T00:00:00+02:00</published><updated>2016-01-11T00:00:00+02:00</updated><id>http://localhost:4000/2016/01/11/task-item-list</id><content type="html" xml:base="http://localhost:4000/2016/01/11/task-item-list.html"><![CDATA[<p>This post tests the style of a task item list.</p>
+
+<p>Source:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">-</span> [x] Eating
+<span class="p">-</span> [ ] Walking
+<span class="p">  -</span> [ ] Running
+<span class="p">-</span> [ ] Sleeping
+</code></pre></div></div>
+
+<p>Rendered:</p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Eating</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Walking
+    <ul class="task-list">
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Running</li>
+    </ul>
+  </li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Sleeping</li>
+</ul>]]></content><author><name>unkmown</name></author><category term="to-do list" /><summary type="html"><![CDATA[This post tests the style of a task item list.]]></summary></entry></feed>

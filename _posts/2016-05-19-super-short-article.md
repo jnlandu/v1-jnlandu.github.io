@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Some articles are just so short that we have to make the footer stick"
-author_profile: ![author](/assets/static/logo.jpeg)
+author: unkmown
+author_profile: "./assets/static/logo.jpeg"
 categories: misc
 summary: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus 
   sint impedit doloremque reprehenderit, facilis quo optio veritatis molestias 

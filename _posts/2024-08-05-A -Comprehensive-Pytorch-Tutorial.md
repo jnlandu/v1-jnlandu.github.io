@@ -5,6 +5,8 @@ toc: true
 categories: misc
 author:
   - Jérémie N. Mabiala
+author_profile: "./assets/static/logo.jpeg"
+summary: PyTorch is a popular deep learning framework developed by Facebook’s AI Research lab. It offers flexibility and efficiency in building and training neural networks. This tutorial will guide you through the key aspects of PyTorch, including installation, tensor operations, neural network creation, training, evaluation, and model management.
 ---
 # A Comprehensive PyTorch Tutorial
 PyTorch is a popular deep learning framework developed by Facebook’s AI Research lab. It offers flexibility and efficiency in building and training neural networks. This tutorial will guide you through the key aspects of PyTorch, including installation, tensor operations, neural network creation, training, evaluation, and model management.

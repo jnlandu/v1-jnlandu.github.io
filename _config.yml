@@ -44,3 +44,16 @@ social:
     - https://github.com/ngzhio
 google_site_verification: u4WXQl0Eu66rsQo2kRdCNx
 lang: en
+
+collections:
+  events:
+    output: true
+    permalink: /events/:title/
+  tutorials:
+    output: true
+    permalink: /tutorials/:title/
+  projects:
+    output: true
+    permalink: /projects/:title/
+
+  

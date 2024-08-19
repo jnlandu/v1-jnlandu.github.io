@@ -7,7 +7,7 @@ tags: [Pyhton, Flask, Html]
 author:
   - Jérémie N. Mabiala
 #   - Nelson Mandela Muntz
-author_profile: ![author](/assets/static/logo.jpeg)
+author_profile: "./assets/static/logo.jpeg"
 summary: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus 
   sint impedit doloremque reprehenderit, facilis quo optio veritatis molestias 
   autem sit amet magni laborum veniam corporis quam nostrum nam iure incidunt.

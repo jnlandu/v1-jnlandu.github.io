@@ -25,10 +25,10 @@
 <link rel="stylesheet" href="{{ '/assets/css/main-v3.css' | relative_url }}">
 
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-<link rel="stylesheet" href="{{ '/assets/css/skin.css' | relative_url }}">
+<!-- <link rel="stylesheet" href="{{ '/assets/css/skin.css' | relative_url }}"> -->
 
-{% if title %}
-      <title> Jérémie N. Mabiala - {{ title }}</title>
+{% if page.title %}
+      <title> {{ site.firstName }} {{ site.lastName }} </title>
   {% else %}
       <title> Welcome </title>
 {% endif %}

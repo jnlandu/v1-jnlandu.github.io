@@ -7,23 +7,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Linear Regression in Python | N. Mabiala</title>
+<title>Flask and Machine Learning Integration | N. Mabiala</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Linear Regression in Python" />
+<meta property="og:title" content="Flask and Machine Learning Integration" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Linear Regression in Python" />
-<meta property="og:description" content="Linear Regression in Python" />
-<link rel="canonical" href="http://localhost:4000/junk/2024/08/06/LinReg-in-Python.html" />
-<meta property="og:url" content="http://localhost:4000/junk/2024/08/06/LinReg-in-Python.html" />
+<meta name="description" content="Flask and Machine Learning Integration" />
+<meta property="og:description" content="Flask and Machine Learning Integration" />
+<link rel="canonical" href="http://localhost:4000/2024/06/06/flask-ml-integration.html" />
+<meta property="og:url" content="http://localhost:4000/2024/06/06/flask-ml-integration.html" />
 <meta property="og:site_name" content="N. Mabiala" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-08-06T00:00:00+02:00" />
+<meta property="article:published_time" content="2024-06-06T00:00:00+02:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Linear Regression in Python" />
+<meta property="twitter:title" content="Flask and Machine Learning Integration" />
 <meta name="twitter:site" content="@Valentinmabiala" />
 <meta name="google-site-verification" content="u4WXQl0Eu66rsQo2kRdCNx" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-08-06T00:00:00+02:00","datePublished":"2024-08-06T00:00:00+02:00","description":"Linear Regression in Python","headline":"Linear Regression in Python","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/junk/2024/08/06/LinReg-in-Python.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/logo.png"}},"url":"http://localhost:4000/junk/2024/08/06/LinReg-in-Python.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-06-06T00:00:00+02:00","datePublished":"2024-06-06T00:00:00+02:00","description":"Flask and Machine Learning Integration","headline":"Flask and Machine Learning Integration","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2024/06/06/flask-ml-integration.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/logo.png"}},"url":"http://localhost:4000/2024/06/06/flask-ml-integration.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -261,19 +261,12 @@ id="btn-back-to-top"
 <nav class="toc-nav">
   <ul class="toc">
   <li><a href="#table-of-contents">Table of Contents</a></li>
-  <li><a href="#introduction-to-linear-regression">Introduction to Linear Regression</a></li>
-  <li><a href="#mathematical-background">Mathematical Background</a></li>
-  <li><a href="#implementing-linear-regression-from-scratch">Implementing Linear Regression from Scratch</a>
-    <ul>
-      <li><a href="#step-1-compute-the-cost-function">Step 1: Compute the Cost Function</a></li>
-      <li><a href="#step-2-gradient-descent">Step 2: Gradient Descent</a></li>
-      <li><a href="#step-3-training-the-model">Step 3: Training the Model</a></li>
-      <li><a href="#step-4-plot-the-cost-function">Step 4: Plot the Cost Function</a></li>
-      <li><a href="#step-5-predictions">Step 5: Predictions</a></li>
-    </ul>
-  </li>
-  <li><a href="#linear-regression-using-scikit-learn">Linear Regression Using scikit-learn</a></li>
-  <li><a href="#evaluation-metrics">Evaluation Metrics</a></li>
+  <li><a href="#introduction">Introduction</a></li>
+  <li><a href="#setting-up-the-environment">Setting Up the Environment</a></li>
+  <li><a href="#building-the-machine-learning-model">Building the Machine Learning Model</a></li>
+  <li><a href="#creating-the-flask-application">Creating the Flask Application</a></li>
+  <li><a href="#integrating-the-model-with-flask">Integrating the Model with Flask</a></li>
+  <li><a href="#testing-the-application">Testing the Application</a></li>
   <li><a href="#conclusion">Conclusion</a></li>
 </ul>
 
@@ -288,9 +281,9 @@ id="btn-back-to-top"
 
   <header class="post-header">
 
-    <h1 class="post-title p-name" itemprop="name headline">Linear Regression in Python</h1>
-    <p class="post-meta"><time class="dt-published" datetime="2024-08-06T00:00:00+02:00" itemprop="datePublished">
-        Aug 6, 2024
+    <h1 class="post-title p-name" itemprop="name headline">Flask and Machine Learning Integration</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2024-06-06T00:00:00+02:00" itemprop="datePublished">
+        Jun 6, 2024
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
             <span class="p-author h-card" itemprop="name">Jérémie N. Mabiala</span></span></p>
@@ -298,202 +291,136 @@ id="btn-back-to-top"
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <h1 id="linear-regression-in-python">Linear Regression in Python</h1>
+    <h1 id="flask-and-machine-learning-integration">Flask and Machine Learning Integration</h1>
 
-<p>Linear Regression is a simple yet powerful technique used for predicting a quantitative response. In this tutorial, we will implement Linear Regression from scratch and also using the <code class="language-plaintext highlighter-rouge">scikit-learn</code> library in Python.</p>
+<p>In this tutorial, we will learn how to integrate a Machine Learning model with a Flask web application. We will build a simple machine learning model using <code class="language-plaintext highlighter-rouge">scikit-learn</code>, create a Flask app, and set up endpoints to serve predictions from our model.</p>
 
 <h2 id="table-of-contents">Table of Contents</h2>
 <ol>
-  <li><a href="#introduction-to-linear-regression">Introduction to Linear Regression</a></li>
-  <li><a href="#mathematical-background">Mathematical Background</a></li>
-  <li><a href="#implementing-linear-regression-from-scratch">Implementing Linear Regression from Scratch</a></li>
-  <li><a href="#linear-regression-using-scikit-learn">Linear Regression Using scikit-learn</a></li>
-  <li><a href="#evaluation-metrics">Evaluation Metrics</a></li>
+  <li><a href="#introduction">Introduction</a></li>
+  <li><a href="#setting-up-the-environment">Setting Up the Environment</a></li>
+  <li><a href="#building-the-machine-learning-model">Building the Machine Learning Model</a></li>
+  <li><a href="#creating-the-flask-application">Creating the Flask Application</a></li>
+  <li><a href="#integrating-the-model-with-flask">Integrating the Model with Flask</a></li>
+  <li><a href="#testing-the-application">Testing the Application</a></li>
   <li><a href="#conclusion">Conclusion</a></li>
 </ol>
 
-<h2 id="introduction-to-linear-regression">Introduction to Linear Regression</h2>
+<h2 id="introduction">Introduction</h2>
 
-<p>Linear Regression is a linear approach to modeling the relationship between a dependent variable and one or more independent variables. If we have a single independent variable, it’s called Simple Linear Regression. If there are multiple independent variables, it’s called Multiple Linear Regression.</p>
+<p>Flask is a lightweight WSGI web application framework in Python. It is designed with simplicity and flexibility in mind. We will use Flask to create a web service that can serve predictions from a machine learning model.</p>
 
-<h2 id="mathematical-background">Mathematical Background</h2>
+<h2 id="setting-up-the-environment">Setting Up the Environment</h2>
 
-<p>The equation for a linear model is:</p>
+<p>First, let’s set up our environment. We will need <code class="language-plaintext highlighter-rouge">Flask</code> and <code class="language-plaintext highlighter-rouge">scikit-learn</code>.</p>
 
-<p>$ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \ldots + \beta_n x_n + \epsilon $</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>Flask scikit-learn
+</code></pre></div></div>
 
-<ul>
-  <li>$ y $: Dependent variable</li>
-  <li>$ x_i $: Independent variables</li>
-  <li>$ \beta_i $: Coefficients</li>
-  <li>$ \epsilon $: Error term</li>
-</ul>
+<h2 id="building-the-machine-learning-model">Building the Machine Learning Model</h2>
 
-<h2 id="implementing-linear-regression-from-scratch">Implementing Linear Regression from Scratch</h2>
+<p>For this tutorial, we will use a simple linear regression model to predict house prices based on some features.</p>
 
-<p>Let’s start by generating some sample data and implementing Linear Regression using NumPy.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># model.py
+</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
 
 <span class="c1"># Generate sample data
 </span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">X</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">X</span> <span class="o">+</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
-<span class="c1"># Plot the sample data
-</span><span class="n">plt</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"X"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"y"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Sample Data"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1"># Split the data into training and test sets
+</span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Train the model
+</span><span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+<span class="n">model</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Save the model to a file
+</span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'model.pkl'</span><span class="p">,</span> <span class="s">'wb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="p">.</span><span class="n">dump</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="step-1-compute-the-cost-function">Step 1: Compute the Cost Function</h3>
-<p>The cost function for Linear Regression is the Mean Squared Error (MSE):</p>
+<h2 id="creating-the-flask-application">Creating the Flask Application</h2>
 
-<p>[ J(\beta) = \frac{1}{2m} \sum_{i=1}^{m} (h_\beta(x^{(i)}) - y^{(i)})^2 ]</p>
+<p>Now, let’s create a basic Flask application structure.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">compute_cost</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">beta</span><span class="p">):</span>
-    <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-    <span class="n">predictions</span> <span class="o">=</span> <span class="n">X</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span>
-    <span class="n">cost</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">m</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">square</span><span class="p">(</span><span class="n">predictions</span> <span class="o">-</span> <span class="n">y</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">cost</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>flask_ml
+<span class="nb">cd </span>flask_ml
+<span class="nb">touch </span>app.py
 </code></pre></div></div>
 
-<h3 id="step-2-gradient-descent">Step 2: Gradient Descent</h3>
-<p>Gradient Descent is used to minimize the cost function:</p>
+<p>In <code class="language-plaintext highlighter-rouge">app.py</code>, set up the basic Flask app.</p>
 
-<p>[ \beta_j := \beta_j - \alpha \frac{\partial}{\partial \beta_j} J(\beta) ]</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># app.py
+</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">jsonify</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">gradient_descent</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">,</span> <span class="n">iterations</span><span class="p">):</span>
-    <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-    <span class="n">cost_history</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">iterations</span><span class="p">)</span>
-    
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">iterations</span><span class="p">):</span>
-        <span class="n">predictions</span> <span class="o">=</span> <span class="n">X</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span>
-        <span class="n">errors</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">.</span><span class="n">transpose</span><span class="p">(),</span> <span class="p">(</span><span class="n">predictions</span> <span class="o">-</span> <span class="n">y</span><span class="p">))</span>
-        <span class="n">beta</span> <span class="o">-=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">m</span><span class="p">)</span> <span class="o">*</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="n">errors</span>
-        <span class="n">cost_history</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">compute_cost</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">beta</span><span class="p">,</span> <span class="n">cost_history</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+<span class="c1"># Load the model
+</span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'model.pkl'</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">pickle</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s">"Welcome to the Machine Learning Model API!"</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">app</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="step-3-training-the-model">Step 3: Training the Model</h3>
-<p>Let’s normalize the feature and add a bias term to the data.</p>
+<h2 id="integrating-the-model-with-flask">Integrating the Model with Flask</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X_b</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">c_</span><span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="n">ones</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="mi">1</span><span class="p">)),</span> <span class="n">X</span><span class="p">]</span>  <span class="c1"># Add bias term
-</span><span class="n">beta_initial</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.01</span>
-<span class="n">iterations</span> <span class="o">=</span> <span class="mi">1000</span>
+<p>We will create an endpoint <code class="language-plaintext highlighter-rouge">/predict</code> that will take input features, pass them to the model, and return the prediction.</p>
 
-<span class="n">beta_optimal</span><span class="p">,</span> <span class="n">cost_history</span> <span class="o">=</span> <span class="n">gradient_descent</span><span class="p">(</span><span class="n">X_b</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">beta_initial</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">,</span> <span class="n">iterations</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"Optimal coefficients:"</span><span class="p">,</span> <span class="n">beta_optimal</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># app.py
+</span>
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/predict'</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">'POST'</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">predict</span><span class="p">():</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">get_json</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">features</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">'features'</span><span class="p">]).</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">prediction</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s">'prediction'</span><span class="p">:</span> <span class="n">prediction</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]})</span>
 </code></pre></div></div>
 
-<h3 id="step-4-plot-the-cost-function">Step 4: Plot the Cost Function</h3>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">iterations</span><span class="p">),</span> <span class="n">cost_history</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"Iterations"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"Cost"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Cost Function"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+<h2 id="testing-the-application">Testing the Application</h2>
+
+<p>Run the Flask app and test the prediction endpoint using <code class="language-plaintext highlighter-rouge">curl</code> or Postman.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python app.py
 </code></pre></div></div>
 
-<h3 id="step-5-predictions">Step 5: Predictions</h3>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">predictions</span> <span class="o">=</span> <span class="n">X_b</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">beta_optimal</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">predictions</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'red'</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"X"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"y"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Linear Regression Fit"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+<p>Use <code class="language-plaintext highlighter-rouge">curl</code> to test the <code class="language-plaintext highlighter-rouge">/predict</code> endpoint.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST http://127.0.0.1:5000/predict <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="nt">-d</span> <span class="s1">'{"features": [1.5]}'</span>
 </code></pre></div></div>
 
-<h2 id="linear-regression-using-scikit-learn">Linear Regression Using scikit-learn</h2>
-
-<p>Now, let’s use the <code class="language-plaintext highlighter-rouge">scikit-learn</code> library to perform Linear Regression.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
-
-<span class="c1"># Create and fit the model
-</span><span class="n">lin_reg</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
-<span class="n">lin_reg</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-
-<span class="c1"># Print the coefficients
-</span><span class="k">print</span><span class="p">(</span><span class="s">"Intercept:"</span><span class="p">,</span> <span class="n">lin_reg</span><span class="p">.</span><span class="n">intercept_</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"Coefficient:"</span><span class="p">,</span> <span class="n">lin_reg</span><span class="p">.</span><span class="n">coef_</span><span class="p">)</span>
-
-<span class="c1"># Predictions
-</span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">lin_reg</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-
-<span class="c1"># Plot the results
-</span><span class="n">plt</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'red'</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"X"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"y"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Linear Regression Fit with scikit-learn"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div></div>
-
-<h2 id="evaluation-metrics">Evaluation Metrics</h2>
-
-<p>To evaluate the performance of a Linear Regression model, we use metrics like:</p>
-
-<ul>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td><strong>Mean Absolute Error (MAE)</strong>: $ \frac{1}{m} \sum_{i=1}^{m}</td>
-          <td>y^{(i)} - \hat{y}^{(i)}</td>
-          <td>$</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li><strong>Mean Squared Error (MSE)</strong>: $ \frac{1}{m} \sum_{i=1}^{m} (y^{(i)} - \hat{y}^{(i)})^2 $</li>
-  <li><strong>R-squared (R²)</strong>: Proportion of variance explained by the model.</li>
-</ul>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_error</span><span class="p">,</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span>
-
-<span class="n">mae</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
-<span class="n">mse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
-<span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
-
-<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Mean Absolute Error: </span><span class="si">{</span><span class="n">mae</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Mean Squared Error: </span><span class="si">{</span><span class="n">mse</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"R-squared: </span><span class="si">{</span><span class="n">r2</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
-</code></pre></div></div>
+<p>You should get a response with the prediction.</p>
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>In this tutorial, we covered the basics of Linear Regression, implemented it from scratch, and also used the <code class="language-plaintext highlighter-rouge">scikit-learn</code> library. We also discussed how to evaluate the model using different metrics.</p>
+<p>In this tutorial, we created a simple linear regression model, saved it, and built a Flask application to serve predictions from the model. This approach can be extended to more complex models and use cases. For a production environment, consider using more advanced techniques like model versioning, authentication, and containerization with Docker.</p>
 
 <p>For further reading, you may refer to:</p>
 <ul>
-  <li><a href="https://www.statlearning.com/">Introduction to Statistical Learning</a></li>
+  <li><a href="https://flask.palletsprojects.com/">Flask Documentation</a></li>
   <li><a href="https://scikit-learn.org/stable/documentation.html">scikit-learn Documentation</a></li>
 </ul>
 
 <p>```</p>
 
+<p>You can save this content into a <code class="language-plaintext highlighter-rouge">.md</code> file and view it using any Markdown editor. Let me know if you need any additional details or modifications!</p>
+
   </div>
 
   <footer class="post-footer">
-    
-      <div class="post-meta">
-        <i class="fas fa-folder"></i>
-        <ul class="post-taxonomies post-categories">
-          
-          
-            <li class="post-category">
-              
-              <a href="/categories/#junk">junk</a>
-            </li>
-          
-        </ul>
-      </div>
     
 
     
@@ -504,7 +431,17 @@ id="btn-back-to-top"
           
             <li class="post-tag">
               
-              <a href="/tags/#python">python</a>
+              <a href="/tags/#flask">flask</a>
+            </li>
+          
+            <li class="post-tag">
+              
+              <a href="/tags/#html">html</a>
+            </li>
+          
+            <li class="post-tag">
+              
+              <a href="/tags/#pyhton">pyhton</a>
             </li>
           
         </ul>
@@ -513,20 +450,20 @@ id="btn-back-to-top"
 
     <nav class="post-pagination" role="navigation">
       
-        <a class="post-previous" href="/junk/2024/08/05/this-post-demonstrates-post-content-styles.html">
+        <a class="post-previous" href="/misc/2016/05/19/super-short-article.html">
           <h4 class="post-pagination-label">Prev</h4>
           <span class="post-pagination-title">
-            <i class="fas fa-arrow-left"></i> This post demonstrates post content styles
+            <i class="fas fa-arrow-left"></i> Some articles are just so short that we have to make the footer stick
 
           </span>
         </a>
       
 
       
-        <a class="post-next" href="/junk/2024/08/19/An-Introduction-nltk.html">
+        <a class="post-next" href="/misc/2024/08/05/A-Comprehensive-Pytorch-Tutorial.html">
           <h4 class="post-pagination-label">Next</h4>
           <span class="post-pagination-title">
-            Mastering Text Processing in Python: An Introduction to NLTK
+            A Comprehensive PyTorch Tutorial
  <i class="fas fa-arrow-right"></i>
           </span>
         </a>

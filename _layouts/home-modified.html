@@ -15,13 +15,17 @@ layout: default
     {% if posts.size > 0 %}
     {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
     {%- for post in posts -%}
-    
     <div class="post-item left-side-all-device container mt-5 mb-1 shadow-lg ">
             <div class="row  d-flex justify-content-center ">
-               
                     <div class="d-flex">
-                        <div class="w-25 h-2 mt-2 float-right">
-                        <img class="img-fluid rounded-circle" src="{{ '/assets/static/profile.jpeg'}}">
+                        <div class="w-25 mt-2 ">
+                            {% if post.author_profile    %}
+                               <a href="/home"><img class="img-fluid rounded-circle"  src="{{ post.author_profile  }}"> </a>
+                               
+                            {% else %}
+                               <a href="/home" ><img class="img-fluid rounded-circle" src="{{ '/assets/static/profile.jpeg' }}"></a>
+                             
+                            {% endif %}
                         </div>
         
                         <div class="mx-2 post-content-div">
@@ -50,8 +54,7 @@ layout: default
                         <br>
                     </p>
                     </div>
-                    <a class="bg-yellow text-center w-50 rounded-top rounded-bottom nav-link text-black mb-3" href="{{ post.url | relative_url }}">Read more<svg width="24" height="24" fill="#black"><use xlink:href="#read"></use></svg></a>
-               
+                    <a class="bg-yellow text-center w-50 rounded-top rounded-bottom nav-link text-black mb-3" href="{{ post.url | relative_url }}">Read more<svg width="24" height="24" fill="#black"><use xlink:href="#read"></use></svg></a>  
            
         </div>    
        
