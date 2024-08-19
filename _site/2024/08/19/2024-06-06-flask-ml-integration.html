@@ -1,0 +1,126 @@
+<h1 id="flask-and-machine-learning-integration">Flask and Machine Learning Integration</h1>
+
+<p>In this tutorial, we will learn how to integrate a Machine Learning model with a Flask web application. We will build a simple machine learning model using <code class="language-plaintext highlighter-rouge">scikit-learn</code>, create a Flask app, and set up endpoints to serve predictions from our model.</p>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+  <li><a href="#introduction">Introduction</a></li>
+  <li><a href="#setting-up-the-environment">Setting Up the Environment</a></li>
+  <li><a href="#building-the-machine-learning-model">Building the Machine Learning Model</a></li>
+  <li><a href="#creating-the-flask-application">Creating the Flask Application</a></li>
+  <li><a href="#integrating-the-model-with-flask">Integrating the Model with Flask</a></li>
+  <li><a href="#testing-the-application">Testing the Application</a></li>
+  <li><a href="#conclusion">Conclusion</a></li>
+</ol>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Flask is a lightweight WSGI web application framework in Python. It is designed with simplicity and flexibility in mind. We will use Flask to create a web service that can serve predictions from a machine learning model.</p>
+
+<h2 id="setting-up-the-environment">Setting Up the Environment</h2>
+
+<p>First, let’s set up our environment. We will need <code class="language-plaintext highlighter-rouge">Flask</code> and <code class="language-plaintext highlighter-rouge">scikit-learn</code>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>Flask scikit-learn
+</code></pre></div></div>
+
+<h2 id="building-the-machine-learning-model">Building the Machine Learning Model</h2>
+
+<p>For this tutorial, we will use a simple linear regression model to predict house prices based on some features.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># model.py
+</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+
+<span class="c1"># Generate sample data
+</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">X</span> <span class="o">+</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Split the data into training and test sets
+</span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Train the model
+</span><span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+<span class="n">model</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Save the model to a file
+</span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'model.pkl'</span><span class="p">,</span> <span class="s">'wb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="p">.</span><span class="n">dump</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="creating-the-flask-application">Creating the Flask Application</h2>
+
+<p>Now, let’s create a basic Flask application structure.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>flask_ml
+<span class="nb">cd </span>flask_ml
+<span class="nb">touch </span>app.py
+</code></pre></div></div>
+
+<p>In <code class="language-plaintext highlighter-rouge">app.py</code>, set up the basic Flask app.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># app.py
+</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">jsonify</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+<span class="c1"># Load the model
+</span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'model.pkl'</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">pickle</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s">"Welcome to the Machine Learning Model API!"</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">app</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="integrating-the-model-with-flask">Integrating the Model with Flask</h2>
+
+<p>We will create an endpoint <code class="language-plaintext highlighter-rouge">/predict</code> that will take input features, pass them to the model, and return the prediction.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># app.py
+</span>
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/predict'</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">'POST'</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">predict</span><span class="p">():</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">get_json</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">features</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">'features'</span><span class="p">]).</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">prediction</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s">'prediction'</span><span class="p">:</span> <span class="n">prediction</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]})</span>
+</code></pre></div></div>
+
+<h2 id="testing-the-application">Testing the Application</h2>
+
+<p>Run the Flask app and test the prediction endpoint using <code class="language-plaintext highlighter-rouge">curl</code> or Postman.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python app.py
+</code></pre></div></div>
+
+<p>Use <code class="language-plaintext highlighter-rouge">curl</code> to test the <code class="language-plaintext highlighter-rouge">/predict</code> endpoint.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST http://127.0.0.1:5000/predict <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="nt">-d</span> <span class="s1">'{"features": [1.5]}'</span>
+</code></pre></div></div>
+
+<p>You should get a response with the prediction.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>In this tutorial, we created a simple linear regression model, saved it, and built a Flask application to serve predictions from the model. This approach can be extended to more complex models and use cases. For a production environment, consider using more advanced techniques like model versioning, authentication, and containerization with Docker.</p>
+
+<p>For further reading, you may refer to:</p>
+<ul>
+  <li><a href="https://flask.palletsprojects.com/">Flask Documentation</a></li>
+  <li><a href="https://scikit-learn.org/stable/documentation.html">scikit-learn Documentation</a></li>
+</ul>
+
+<p>```</p>
+
+<p>You can save this content into a <code class="language-plaintext highlighter-rouge">.md</code> file and view it using any Markdown editor. Let me know if you need any additional details or modifications!</p>

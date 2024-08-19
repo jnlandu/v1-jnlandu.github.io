@@ -4,33 +4,83 @@ layout: default
 
 {{ content }}
 
+  {% if site.paginate %}
+    {% assign posts = paginator.posts %}
+  {% else %}
+    {% assign posts = site.posts %}
+  {% endif %}
+
 <div class="row mx-auto">
-    <div class="left-side-all-device container col-md-8 mb-1 ">
-             <h1 class="h2 latest-posts mb-4">Latests posts </h1>
-          <div class=" row  d-flex justify-content-center ">
-            <div class="post-img-div-other-device col-md-4 ">
-              <img class="img-fluid img-content " src="{{ url_for('static', filename='flask-1.png')}}">
-            </div>
-            <div class="post-content-div col-md-8">
-            <h1 class="h1 mb-0"> <a class=" yellow post-link" href="#">Html and Css</a></h1>
-              <span class="yellow mt-0 post-content"> <svg  width="17" height="17" fill="#F90"><use xlink:href="#time"></use></svg>  7 min read | 
-                <svg  width="17" height="17" fill="#F90"><use xlink:href="#calendar"></use></svg> July 14, 2024 | by Jeremie Mabiala</span>
-                <p class="post-context-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus 
-                  sint impedit doloremque reprehenderit, facilis quo optio veritatis molestias 
-                  autem sit amet magni laborum veniam corporis quam nostrum nam iure incidunt.
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed autem atque fuga quam 
-                  ab architecto repudiandae amet perferendis, ea excepturi cupiditate nisi
-                  dolorem? Earum error adipisci nobis, dignissimos culpa quidem?<br>
-                  <a class="link" href="#">Read more<svg width="24" height="24" fill="#F90"><use xlink:href="#read"></use></svg></a>
-              </p>
-            </div>
-          </div>
-
-
-      </div>
+<div class="left-side-all-device container col-md-8 mb-1 ">
+    {% if posts.size > 0 %}
+    {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
+    {%- for post in posts -%}
+    
+    <div class="post-item left-side-all-device container mt-5 mb-1 shadow-lg ">
+            <div class="row  d-flex justify-content-center ">
+               
+                    <div class="d-flex">
+                        <div class="w-25 h-2 mt-2 float-right">
+                        <img class="img-fluid rounded-circle" src="{{ '/assets/static/profile.jpeg'}}">
+                        </div>
+        
+                        <div class="mx-2 post-content-div">
+                        <h1 class=" h4 mb-0 mt-2"> <a class=" text-white post-link" href="{{ post.url | relative_url }}">
+                            
+                            {{ post.title | escape  }}
+                        
+                        </a></h1>
+                        <small class=" text-white mt-0 post-content">
+                            Posted on 
+                           <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePulished">
+                            {{ post.date | date: date_format }} 
+                           </time>
+                           {%-  if jekyll.environment == "production" and site.disqus   -%}
+                           <a href="{{ post.url | relative_url }}#disqus_thread">
+                            <span class="disqus-comment-count" data-disqus-url="{{ post.url | absolute_url }}"></span>
+                          </a>
+                          {%- endif -%}
+                            | By  <a class="link" href="/home" > {{ post.author }}. </a></small>
+                        
+                        </div>
+                    </div>
+                    <div>
+                        <p class="post-context-text mt-3">
+                            {{ post.summary }}
+                        <br>
+                    </p>
+                    </div>
+                    <a class="bg-yellow text-center w-50 rounded-top rounded-bottom nav-link text-black mb-3" href="{{ post.url | relative_url }}">Read more<svg width="24" height="24" fill="#black"><use xlink:href="#read"></use></svg></a>
+               
+           
+        </div>    
+       
+    
+     </div>
+     {%- endfor -%} 
+     {%- endif -%}
+</div>  
+{% if site.paginate %}
+<div class="pager">
+  <ul class="pagination">
+  {%- if paginator.previous_page %}
+    <li><a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page">{{ paginator.previous_page }}</a></li>
+  {%- else %}
+    <li><div class="pager-edge">•</div></li>
+  {%- endif %}
+    <li><div class="current-page">{{ paginator.page }}</div></li>
+  {%- if paginator.next_page %}
+    <li><a href="{{ paginator.next_page_path | relative_url }}" class="next-page">{{ paginator.next_page }}</a></li>
+  {%- else %}
+    <li><div class="pager-edge">•</div></li>
+  {%- endif %}
+  </ul>
+</div>
+{%- endif %}  
+   
       <!--  Right side  -->
 
-      <div class="right-side-all-device container col-md-4 bg-dark mb-2 mt-0 ">
+      <div class="right-side-all-device container col-md-4 bg-dark mb-2 mt-0 rounded">
         {% include sidebar-modified.html %}
 
     </div>

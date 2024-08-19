@@ -7,6 +7,7 @@ tags: [markdown, css, html]
 author:
   - Bart Simpson
   - Nelson Mandela Muntz
+summary: Linear Regression is a simple yet powerful technique used for predicting a quantitative response.
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit.
