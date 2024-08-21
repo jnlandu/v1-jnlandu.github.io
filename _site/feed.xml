@@ -1,4 +1,163 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-08-20T00:13:50+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">N. Mabiala</title><subtitle>A minimal and beautiful Jekyll theme best for writing and note-taking.</subtitle><author><name>Jeremie N. Mabiala</name></author><entry><title type="html">Mastering Text Processing in Python: An Introduction to NLTK</title><link href="http://localhost:4000/junk/2024/08/19/An-Introduction-nltk.html" rel="alternate" type="text/html" title="Mastering Text Processing in Python: An Introduction to NLTK" /><published>2024-08-19T00:00:00+02:00</published><updated>2024-08-19T00:00:00+02:00</updated><id>http://localhost:4000/junk/2024/08/19/An-Introduction-nltk</id><content type="html" xml:base="http://localhost:4000/junk/2024/08/19/An-Introduction-nltk.html"><![CDATA[<h3 id="introduction-to-nltk-natural-language-toolkit">Introduction to NLTK (Natural Language Toolkit)</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-08-20T17:22:06+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">N. Mabiala</title><subtitle>A minimal and beautiful Jekyll theme best for writing and note-taking.</subtitle><author><name>Jeremie N. Mabiala</name></author><entry><title type="html">Mastering Text Processing in Python: An Introduction to NLTK</title><link href="http://localhost:4000/junk/2024/08/19/An-Introduction-nltk.html" rel="alternate" type="text/html" title="Mastering Text Processing in Python: An Introduction to NLTK" /><published>2024-08-19T00:00:00+02:00</published><updated>2024-08-19T00:00:00+02:00</updated><id>http://localhost:4000/junk/2024/08/19/An-Introduction-nltk</id><content type="html" xml:base="http://localhost:4000/junk/2024/08/19/An-Introduction-nltk.html"><![CDATA[<h3 id="introduction-to-nltk-natural-language-toolkit">Introduction to NLTK (Natural Language Toolkit)</h3>
+
+<p><strong>Natural Language Toolkit (NLTK)</strong> is a comprehensive library in Python for working with human language data, known as natural language processing (NLP). NLTK provides easy-to-use interfaces to over 50 corpora and lexical resources, along with a suite of text processing libraries for classification, tokenization, stemming, tagging, parsing, and semantic reasoning.</p>
+
+<h4 id="1-installation-and-setup">1. <strong>Installation and Setup</strong></h4>
+
+<p>Before using NLTK, you need to install it. NLTK can be installed using pip:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>nltk
+</code></pre></div></div>
+
+<p>After installation, you can import the library and download the necessary datasets and models:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="n">nltk</span><span class="p">.</span><span class="n">download</span><span class="p">(</span><span class="s">'all'</span><span class="p">)</span>  <span class="c1"># This downloads all NLTK resources, but you can download specific ones as needed.
+</span></code></pre></div></div>
+
+<h4 id="2-basic-components-of-nltk">2. <strong>Basic Components of NLTK</strong></h4>
+
+<h5 id="21-tokenization"><strong>2.1. Tokenization</strong></h5>
+<p>Tokenization is the process of breaking text into individual words or sentences.</p>
+
+<ul>
+  <li>
+    <p><strong>Word Tokenization</strong>: Breaks a text into individual words.</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+  
+<span class="n">text</span> <span class="o">=</span> <span class="s">"Hello, how are you?"</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+<span class="c1"># Output: ['Hello', ',', 'how', 'are', 'you', '?']
+</span></code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>Sentence Tokenization</strong>: Breaks a text into individual sentences.</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">sent_tokenize</span>
+  
+<span class="n">text</span> <span class="o">=</span> <span class="s">"Hello. How are you? I'm fine, thank you."</span>
+<span class="n">sentences</span> <span class="o">=</span> <span class="n">sent_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">sentences</span><span class="p">)</span>
+<span class="c1"># Output: ['Hello.', 'How are you?', "I'm fine, thank you."]
+</span></code></pre></div>    </div>
+  </li>
+</ul>
+
+<h5 id="22-stop-words"><strong>2.2. Stop Words</strong></h5>
+<p>Stop words are common words like “the”, “is”, “in”, and “and” that are often removed from text data to focus on more informative words.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+
+<span class="n">stop_words</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">stopwords</span><span class="p">.</span><span class="n">words</span><span class="p">(</span><span class="s">'english'</span><span class="p">))</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s">"This is a simple sentence."</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+<span class="n">filtered_words</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">word</span><span class="p">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stop_words</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">filtered_words</span><span class="p">)</span>
+<span class="c1"># Output: ['This', 'simple', 'sentence', '.']
+</span></code></pre></div></div>
+
+<h5 id="23-stemming"><strong>2.3. Stemming</strong></h5>
+<p>Stemming is the process of reducing words to their root form.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">nltk.stem</span> <span class="kn">import</span> <span class="n">PorterStemmer</span>
+
+<span class="n">stemmer</span> <span class="o">=</span> <span class="n">PorterStemmer</span><span class="p">()</span>
+<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s">"running"</span><span class="p">,</span> <span class="s">"runs"</span><span class="p">,</span> <span class="s">"easily"</span><span class="p">,</span> <span class="s">"fairly"</span><span class="p">]</span>
+<span class="n">stems</span> <span class="o">=</span> <span class="p">[</span><span class="n">stemmer</span><span class="p">.</span><span class="n">stem</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">stems</span><span class="p">)</span>
+<span class="c1"># Output: ['run', 'run', 'easili', 'fairli']
+</span></code></pre></div></div>
+
+<h5 id="24-lemmatization"><strong>2.4. Lemmatization</strong></h5>
+<p>Lemmatization is similar to stemming but returns a real word rather than just the root form.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">nltk.stem</span> <span class="kn">import</span> <span class="n">WordNetLemmatizer</span>
+
+<span class="n">lemmatizer</span> <span class="o">=</span> <span class="n">WordNetLemmatizer</span><span class="p">()</span>
+<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s">"running"</span><span class="p">,</span> <span class="s">"runs"</span><span class="p">,</span> <span class="s">"better"</span><span class="p">,</span> <span class="s">"fairly"</span><span class="p">]</span>
+<span class="n">lemmas</span> <span class="o">=</span> <span class="p">[</span><span class="n">lemmatizer</span><span class="p">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="s">'v'</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">]</span>  <span class="c1"># 'v' indicates verb
+</span><span class="k">print</span><span class="p">(</span><span class="n">lemmas</span><span class="p">)</span>
+<span class="c1"># Output: ['run', 'run', 'better', 'fairly']
+</span></code></pre></div></div>
+
+<h5 id="25-part-of-speech-tagging"><strong>2.5. Part-of-Speech Tagging</strong></h5>
+<p>Part-of-Speech (POS) tagging labels each word in a sentence with its part of speech.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">nltk</span> <span class="kn">import</span> <span class="n">pos_tag</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s">"I am learning NLP using NLTK."</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="n">pos_tags</span> <span class="o">=</span> <span class="n">pos_tag</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">pos_tags</span><span class="p">)</span>
+<span class="c1"># Output: [('I', 'PRP'), ('am', 'VBP'), ('learning', 'VBG'), ('NLP', 'NNP'), ('using', 'VBG'), ('NLTK', 'NNP')]
+</span></code></pre></div></div>
+
+<h5 id="26-named-entity-recognition"><strong>2.6. Named Entity Recognition</strong></h5>
+<p>Named Entity Recognition (NER) identifies proper nouns like names of people, organizations, locations, etc.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">nltk</span> <span class="kn">import</span> <span class="n">ne_chunk</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+<span class="kn">from</span> <span class="nn">nltk</span> <span class="kn">import</span> <span class="n">pos_tag</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s">"Barack Obama was born in Hawaii."</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="n">pos_tags</span> <span class="o">=</span> <span class="n">pos_tag</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+<span class="n">ner</span> <span class="o">=</span> <span class="n">ne_chunk</span><span class="p">(</span><span class="n">pos_tags</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">ner</span><span class="p">)</span>
+<span class="c1"># Output: (S (PERSON Barack/NNP) (PERSON Obama/NNP) was/VBD born/VBN in/IN (GPE Hawaii/NNP) ./.)
+</span></code></pre></div></div>
+
+<h5 id="27-parsing"><strong>2.7. Parsing</strong></h5>
+<p>Parsing is the process of analyzing the grammatical structure of a sentence.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">nltk</span> <span class="kn">import</span> <span class="n">CFG</span><span class="p">,</span> <span class="n">ChartParser</span>
+
+<span class="n">grammar</span> <span class="o">=</span> <span class="n">CFG</span><span class="p">.</span><span class="n">fromstring</span><span class="p">(</span><span class="s">"""
+  S -&gt; NP VP
+  NP -&gt; DT NN
+  VP -&gt; VBZ NP
+  DT -&gt; 'the'
+  NN -&gt; 'cat' | 'dog'
+  VBZ -&gt; 'chases'
+"""</span><span class="p">)</span>
+
+<span class="n">parser</span> <span class="o">=</span> <span class="n">ChartParser</span><span class="p">(</span><span class="n">grammar</span><span class="p">)</span>
+<span class="n">sentence</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="s">"the cat chases the dog"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">tree</span> <span class="ow">in</span> <span class="n">parser</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="n">sentence</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span>
+    <span class="n">tree</span><span class="p">.</span><span class="n">draw</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h5 id="28-working-with-corpora"><strong>2.8. Working with Corpora</strong></h5>
+<p>NLTK provides several text corpora for linguistic analysis.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">gutenberg</span>
+
+<span class="c1"># Accessing the text of "Moby Dick"
+</span><span class="n">moby_dick</span> <span class="o">=</span> <span class="n">gutenberg</span><span class="p">.</span><span class="n">words</span><span class="p">(</span><span class="s">'melville-moby_dick.txt'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">moby_dick</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>
+<span class="c1"># Output: ['[', 'Moby', 'Dick', 'by', 'Herman', 'Melville', '1851', ']', 'ETYMOLOGY', '.']
+</span></code></pre></div></div>
+
+<h4 id="3-advanced-features">3. <strong>Advanced Features</strong></h4>
+
+<h5 id="31-text-classification"><strong>3.1. Text Classification</strong></h5>
+<p>NLTK supports various classification algorithms, such as Naive Bayes, Decision Trees, and more. You can train a classifier to categorize text data into predefined categories.</p>
+
+<h5 id="32-language-modeling"><strong>3.2. Language Modeling</strong></h5>
+<p>NLTK provides tools for building n-gram language models that predict the next word in a sequence.</p>
+
+<h5 id="33-sentiment-analysis"><strong>3.3. Sentiment Analysis</strong></h5>
+<p>With NLTK, you can perform sentiment analysis to determine the sentiment (positive, negative, neutral) expressed in text.</p>
+
+<h4 id="4-conclusion">4. <strong>Conclusion</strong></h4>
+
+<p>NLTK is a powerful and flexible tool for working with natural language in Python. It provides an extensive suite of libraries and resources that make it a go-to library for anyone working in the field of NLP. Whether you’re building simple text processing applications or complex language models, NLTK offers the tools you need to get started.</p>]]></content><author><name>[&quot;Jérémie N. Mabiala&quot;]</name></author><category term="junk" /><category term="Python" /><category term="nltk" /><summary type="html"><![CDATA[Introduction to NLTK (Natural Language Toolkit)]]></summary></entry><entry><title type="html">Mastering Text Processing in Python: An Introduction to NLTK</title><link href="http://localhost:4000/junk/2024/08/19/matrix.html" rel="alternate" type="text/html" title="Mastering Text Processing in Python: An Introduction to NLTK" /><published>2024-08-19T00:00:00+02:00</published><updated>2024-08-19T00:00:00+02:00</updated><id>http://localhost:4000/junk/2024/08/19/matrix</id><content type="html" xml:base="http://localhost:4000/junk/2024/08/19/matrix.html"><![CDATA[<h3 id="introduction-to-nltk-natural-language-toolkit">Introduction to NLTK (Natural Language Toolkit)</h3>
 
 <p><strong>Natural Language Toolkit (NLTK)</strong> is a comprehensive library in Python for working with human language data, known as natural language processing (NLP). NLTK provides easy-to-use interfaces to over 50 corpora and lexical resources, along with a suite of text processing libraries for classification, tokenization, stemming, tagging, parsing, and semantic reasoning.</p>
 
@@ -335,7 +494,172 @@
   <li><a href="https://scikit-learn.org/stable/documentation.html">scikit-learn Documentation</a></li>
 </ul>
 
-<p>```</p>]]></content><author><name>[&quot;Jérémie N. Mabiala&quot;]</name></author><category term="junk" /><category term="Python" /><summary type="html"><![CDATA[Linear Regression in Python]]></summary></entry><entry><title type="html">A Comprehensive PyTorch Tutorial</title><link href="http://localhost:4000/misc/2024/08/05/A-Comprehensive-Pytorch-Tutorial.html" rel="alternate" type="text/html" title="A Comprehensive PyTorch Tutorial" /><published>2024-08-05T00:00:00+02:00</published><updated>2024-08-05T00:00:00+02:00</updated><id>http://localhost:4000/misc/2024/08/05/A%20-Comprehensive-Pytorch-Tutorial</id><content type="html" xml:base="http://localhost:4000/misc/2024/08/05/A-Comprehensive-Pytorch-Tutorial.html"><![CDATA[<h1 id="a-comprehensive-pytorch-tutorial">A Comprehensive PyTorch Tutorial</h1>
+<p>```</p>]]></content><author><name>[&quot;Jérémie N. Mabiala&quot;]</name></author><category term="junk" /><category term="Python" /><summary type="html"><![CDATA[Linear Regression in Python]]></summary></entry><entry><title type="html">This post demonstrates post content styles</title><link href="http://localhost:4000/junk/2024/08/05/this-post-demonstrates-post-content-styles.html" rel="alternate" type="text/html" title="This post demonstrates post content styles" /><published>2024-08-05T00:00:00+02:00</published><updated>2024-08-05T00:00:00+02:00</updated><id>http://localhost:4000/junk/2024/08/05/this-post-demonstrates-post-content-styles</id><content type="html" xml:base="http://localhost:4000/junk/2024/08/05/this-post-demonstrates-post-content-styles.html"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit.</p>
+
+<h2 id="some-great-heading-h2">Some great heading (h2)</h2>
+
+<p>Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum. In arcu magna, aliquet vel pretium et, molestie et arcu.</p>
+
+<p>Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris. Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc. Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.</p>
+
+<h2 id="another-great-heading-h2">Another great heading (h2)</h2>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit.</p>
+
+<h3 id="some-great-subheading-h3">Some great subheading (h3)</h3>
+
+<p>Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum. In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum.</p>
+
+<p>Phasellus et hendrerit mauris. Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc.</p>
+
+<h3 id="some-great-subheading-h3-1">Some great subheading (h3)</h3>
+
+<p>Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.</p>
+
+<blockquote>
+  <p>This quote will <em>change</em> your life. It will reveal the <i>secrets</i> of the universe, and all the wonders of humanity. Don’t <em>misuse</em> it.</p>
+</blockquote>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt.</p>
+
+<h3 id="some-great-subheading-h3-2">Some great subheading (h3)</h3>
+
+<p>Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit. Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Hello, World!<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.</p>
+
+<h4 id="you-might-want-a-sub-subheading-h4">You might want a sub-subheading (h4)</h4>
+
+<p>In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.</p>
+
+<p>In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.</p>
+
+<h4 id="but-its-probably-overkill-h4">But it’s probably overkill (h4)</h4>
+
+<p>In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.</p>
+
+<h5 id="could-be-a-smaller-sub-heading-pacman-h5">Could be a smaller sub-heading, <code class="language-plaintext highlighter-rouge">pacman</code> (h5)</h5>
+
+<p>In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.</p>
+
+<h6 id="small-yet-significant-sub-heading--h6">Small yet significant sub-heading  (h6)</h6>
+
+<p>In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.</p>
+
+<h3 id="oh-hai-an-unordered-list">Oh hai, an unordered list!!</h3>
+
+<p>In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.</p>
+
+<ul>
+  <li>First item, yo</li>
+  <li>Second item, dawg</li>
+  <li>Third item, what what?!</li>
+  <li>Fourth item, fo sheezy my neezy</li>
+</ul>
+
+<h3 id="oh-hai-an-ordered-list">Oh hai, an ordered list!!</h3>
+
+<p>In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.</p>
+
+<ol>
+  <li>First item, yo</li>
+  <li>Second item, dawg</li>
+  <li>Third item, what what?!</li>
+  <li>Fourth item, fo sheezy my neezy</li>
+</ol>
+
+<h2 id="headings-are-cool-h2">Headings are cool! (h2)</h2>
+
+<p>Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc. Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.</p>
+
+<p>Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.</p>
+
+<p>Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc.</p>
+
+<h3 id="tables">Tables</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title 1</th>
+      <th>Title 2</th>
+      <th>Title 3</th>
+      <th>Title 4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>lorem</td>
+      <td>lorem ipsum</td>
+      <td>lorem ipsum dolor</td>
+      <td>lorem ipsum dolor sit</td>
+    </tr>
+    <tr>
+      <td>lorem ipsum dolor sit</td>
+      <td>lorem ipsum dolor sit</td>
+      <td>lorem ipsum dolor sit</td>
+      <td>lorem ipsum dolor sit</td>
+    </tr>
+    <tr>
+      <td>lorem ipsum dolor sit</td>
+      <td>lorem ipsum dolor sit</td>
+      <td>lorem ipsum dolor sit</td>
+      <td>lorem ipsum dolor sit</td>
+    </tr>
+    <tr>
+      <td>lorem ipsum dolor sit</td>
+      <td>lorem ipsum dolor sit</td>
+      <td>lorem ipsum dolor sit</td>
+      <td>lorem ipsum dolor sit</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title 1</th>
+      <th>Title 2</th>
+      <th>Title 3</th>
+      <th>Title 4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>lorem</td>
+      <td>lorem ipsum</td>
+      <td>lorem ipsum dolor</td>
+      <td>lorem ipsum dolor sit</td>
+    </tr>
+    <tr>
+      <td>lorem ipsum dolor sit amet</td>
+      <td>lorem ipsum dolor sit amet consectetur</td>
+      <td>lorem ipsum dolor sit amet</td>
+      <td>lorem ipsum dolor sit</td>
+    </tr>
+    <tr>
+      <td>lorem ipsum dolor</td>
+      <td>lorem ipsum</td>
+      <td>lorem</td>
+      <td>lorem ipsum</td>
+    </tr>
+    <tr>
+      <td>lorem ipsum dolor</td>
+      <td>lorem ipsum dolor sit</td>
+      <td>lorem ipsum dolor sit amet</td>
+      <td>lorem ipsum dolor sit amet consectetur</td>
+    </tr>
+  </tbody>
+</table>]]></content><author><name>[&quot;Bart Simpson&quot;, &quot;Nelson Mandela Muntz&quot;]</name></author><category term="junk" /><category term="markdown" /><category term="css" /><category term="html" /><summary type="html"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit.]]></summary></entry><entry><title type="html">A Comprehensive PyTorch Tutorial</title><link href="http://localhost:4000/misc/2024/08/05/A-Comprehensive-Pytorch-Tutorial.html" rel="alternate" type="text/html" title="A Comprehensive PyTorch Tutorial" /><published>2024-08-05T00:00:00+02:00</published><updated>2024-08-05T00:00:00+02:00</updated><id>http://localhost:4000/misc/2024/08/05/A%20-Comprehensive-Pytorch-Tutorial</id><content type="html" xml:base="http://localhost:4000/misc/2024/08/05/A-Comprehensive-Pytorch-Tutorial.html"><![CDATA[<h1 id="a-comprehensive-pytorch-tutorial">A Comprehensive PyTorch Tutorial</h1>
 <p>PyTorch is a popular deep learning framework developed by Facebook’s AI Research lab. It offers flexibility and efficiency in building and training neural networks. This tutorial will guide you through the key aspects of PyTorch, including installation, tensor operations, neural network creation, training, evaluation, and model management.</p>
 
 <h2 id="table-of-contents">Table of Contents</h2>
@@ -578,172 +902,7 @@
   <li><a href="https://pytorch.org/docs/stable/index.html">PyTorch Documentation</a></li>
   <li><a href="https://pytorch.org/deep-learning-with-pytorch">Deep Learning with PyTorch Book</a></li>
   <li><a href="https://pytorch.org/tutorials/">PyTorch Tutorials</a></li>
-</ul>]]></content><author><name>[&quot;Jérémie N. Mabiala&quot;]</name></author><category term="misc" /><summary type="html"><![CDATA[A Comprehensive PyTorch Tutorial PyTorch is a popular deep learning framework developed by Facebook’s AI Research lab. It offers flexibility and efficiency in building and training neural networks. This tutorial will guide you through the key aspects of PyTorch, including installation, tensor operations, neural network creation, training, evaluation, and model management.]]></summary></entry><entry><title type="html">This post demonstrates post content styles</title><link href="http://localhost:4000/junk/2024/08/05/this-post-demonstrates-post-content-styles.html" rel="alternate" type="text/html" title="This post demonstrates post content styles" /><published>2024-08-05T00:00:00+02:00</published><updated>2024-08-05T00:00:00+02:00</updated><id>http://localhost:4000/junk/2024/08/05/this-post-demonstrates-post-content-styles</id><content type="html" xml:base="http://localhost:4000/junk/2024/08/05/this-post-demonstrates-post-content-styles.html"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit.</p>
-
-<h2 id="some-great-heading-h2">Some great heading (h2)</h2>
-
-<p>Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum. In arcu magna, aliquet vel pretium et, molestie et arcu.</p>
-
-<p>Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris. Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc. Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.</p>
-
-<h2 id="another-great-heading-h2">Another great heading (h2)</h2>
-
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit.</p>
-
-<h3 id="some-great-subheading-h3">Some great subheading (h3)</h3>
-
-<p>Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum. In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum.</p>
-
-<p>Phasellus et hendrerit mauris. Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc.</p>
-
-<h3 id="some-great-subheading-h3-1">Some great subheading (h3)</h3>
-
-<p>Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.</p>
-
-<blockquote>
-  <p>This quote will <em>change</em> your life. It will reveal the <i>secrets</i> of the universe, and all the wonders of humanity. Don’t <em>misuse</em> it.</p>
-</blockquote>
-
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt.</p>
-
-<h3 id="some-great-subheading-h3-2">Some great subheading (h3)</h3>
-
-<p>Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit. Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum.</p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
-  <span class="nt">&lt;head&gt;</span>
-  <span class="nt">&lt;/head&gt;</span>
-  <span class="nt">&lt;body&gt;</span>
-    <span class="nt">&lt;p&gt;</span>Hello, World!<span class="nt">&lt;/p&gt;</span>
-  <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
-</code></pre></div></div>
-
-<p>In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.</p>
-
-<h4 id="you-might-want-a-sub-subheading-h4">You might want a sub-subheading (h4)</h4>
-
-<p>In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.</p>
-
-<p>In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.</p>
-
-<h4 id="but-its-probably-overkill-h4">But it’s probably overkill (h4)</h4>
-
-<p>In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.</p>
-
-<h5 id="could-be-a-smaller-sub-heading-pacman-h5">Could be a smaller sub-heading, <code class="language-plaintext highlighter-rouge">pacman</code> (h5)</h5>
-
-<p>In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.</p>
-
-<h6 id="small-yet-significant-sub-heading--h6">Small yet significant sub-heading  (h6)</h6>
-
-<p>In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.</p>
-
-<h3 id="oh-hai-an-unordered-list">Oh hai, an unordered list!!</h3>
-
-<p>In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.</p>
-
-<ul>
-  <li>First item, yo</li>
-  <li>Second item, dawg</li>
-  <li>Third item, what what?!</li>
-  <li>Fourth item, fo sheezy my neezy</li>
-</ul>
-
-<h3 id="oh-hai-an-ordered-list">Oh hai, an ordered list!!</h3>
-
-<p>In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.</p>
-
-<ol>
-  <li>First item, yo</li>
-  <li>Second item, dawg</li>
-  <li>Third item, what what?!</li>
-  <li>Fourth item, fo sheezy my neezy</li>
-</ol>
-
-<h2 id="headings-are-cool-h2">Headings are cool! (h2)</h2>
-
-<p>Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc. Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.</p>
-
-<p>Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.</p>
-
-<p>Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc.</p>
-
-<h3 id="tables">Tables</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title 1</th>
-      <th>Title 2</th>
-      <th>Title 3</th>
-      <th>Title 4</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>lorem</td>
-      <td>lorem ipsum</td>
-      <td>lorem ipsum dolor</td>
-      <td>lorem ipsum dolor sit</td>
-    </tr>
-    <tr>
-      <td>lorem ipsum dolor sit</td>
-      <td>lorem ipsum dolor sit</td>
-      <td>lorem ipsum dolor sit</td>
-      <td>lorem ipsum dolor sit</td>
-    </tr>
-    <tr>
-      <td>lorem ipsum dolor sit</td>
-      <td>lorem ipsum dolor sit</td>
-      <td>lorem ipsum dolor sit</td>
-      <td>lorem ipsum dolor sit</td>
-    </tr>
-    <tr>
-      <td>lorem ipsum dolor sit</td>
-      <td>lorem ipsum dolor sit</td>
-      <td>lorem ipsum dolor sit</td>
-      <td>lorem ipsum dolor sit</td>
-    </tr>
-  </tbody>
-</table>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title 1</th>
-      <th>Title 2</th>
-      <th>Title 3</th>
-      <th>Title 4</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>lorem</td>
-      <td>lorem ipsum</td>
-      <td>lorem ipsum dolor</td>
-      <td>lorem ipsum dolor sit</td>
-    </tr>
-    <tr>
-      <td>lorem ipsum dolor sit amet</td>
-      <td>lorem ipsum dolor sit amet consectetur</td>
-      <td>lorem ipsum dolor sit amet</td>
-      <td>lorem ipsum dolor sit</td>
-    </tr>
-    <tr>
-      <td>lorem ipsum dolor</td>
-      <td>lorem ipsum</td>
-      <td>lorem</td>
-      <td>lorem ipsum</td>
-    </tr>
-    <tr>
-      <td>lorem ipsum dolor</td>
-      <td>lorem ipsum dolor sit</td>
-      <td>lorem ipsum dolor sit amet</td>
-      <td>lorem ipsum dolor sit amet consectetur</td>
-    </tr>
-  </tbody>
-</table>]]></content><author><name>[&quot;Bart Simpson&quot;, &quot;Nelson Mandela Muntz&quot;]</name></author><category term="junk" /><category term="markdown" /><category term="css" /><category term="html" /><summary type="html"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit.]]></summary></entry><entry><title type="html">Flask and Machine Learning Integration</title><link href="http://localhost:4000/2024/06/06/flask-ml-integration.html" rel="alternate" type="text/html" title="Flask and Machine Learning Integration" /><published>2024-06-06T00:00:00+02:00</published><updated>2024-06-06T00:00:00+02:00</updated><id>http://localhost:4000/2024/06/06/flask-ml-integration</id><content type="html" xml:base="http://localhost:4000/2024/06/06/flask-ml-integration.html"><![CDATA[<h1 id="flask-and-machine-learning-integration">Flask and Machine Learning Integration</h1>
+</ul>]]></content><author><name>[&quot;Jérémie N. Mabiala&quot;]</name></author><category term="misc" /><summary type="html"><![CDATA[A Comprehensive PyTorch Tutorial PyTorch is a popular deep learning framework developed by Facebook’s AI Research lab. It offers flexibility and efficiency in building and training neural networks. This tutorial will guide you through the key aspects of PyTorch, including installation, tensor operations, neural network creation, training, evaluation, and model management.]]></summary></entry><entry><title type="html">Flask and Machine Learning Integration</title><link href="http://localhost:4000/2024/06/06/flask-ml-integration.html" rel="alternate" type="text/html" title="Flask and Machine Learning Integration" /><published>2024-06-06T00:00:00+02:00</published><updated>2024-06-06T00:00:00+02:00</updated><id>http://localhost:4000/2024/06/06/flask-ml-integration</id><content type="html" xml:base="http://localhost:4000/2024/06/06/flask-ml-integration.html"><![CDATA[<h1 id="flask-and-machine-learning-integration">Flask and Machine Learning Integration</h1>
 
 <p>In this tutorial, we will learn how to integrate a Machine Learning model with a Flask web application. We will build a simple machine learning model using <code class="language-plaintext highlighter-rouge">scikit-learn</code>, create a Flask app, and set up endpoints to serve predictions from our model.</p>
 

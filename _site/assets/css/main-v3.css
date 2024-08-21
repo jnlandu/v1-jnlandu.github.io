@@ -522,7 +522,9 @@ code {
     .contact-form-mobile{
         display: none;
     }
-    
+    .sidebar-mobile-off{
+        display: none !important;
+    } 
 
 }
 

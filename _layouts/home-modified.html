@@ -4,16 +4,18 @@ layout: default
 
 {{ content }}
 
-  {% if site.paginate %}
+  <!-- {% if site.paginate %}
     {% assign posts = paginator.posts %}
   {% else %}
     {% assign posts = site.posts %}
-  {% endif %}
+  {% endif %} -->
+
 
 <div class="row mx-auto">
 <div class="left-side-all-device container col-md-8 mb-1 ">
-    {% if posts.size > 0 %}
     {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
+    {% assign posts = paginator.posts  %}
+    {% if posts.size > 0 %}
     {%- for post in posts -%}
     <div class="post-item left-side-all-device container mt-5 mb-1 shadow-lg ">
             <div class="row  d-flex justify-content-center ">
@@ -45,6 +47,10 @@ layout: default
                           </a>
                           {%- endif -%}
                             | By  <a class="link" href="/home" > {{ post.author }}. </a></small>
+                            
+                            <!-- {%- if post.show_excerpts != false -%}
+                                <div class="post-excerpt">{{ post.excerpt | strip_html }}</div>
+                            {%- endif -%} -->
                         
                         </div>
                     </div>
@@ -62,7 +68,10 @@ layout: default
      </div>
      {%- endfor -%} 
      {%- endif -%}
+
 </div>  
+<!--  Pagination links  -->
+
 {% if site.paginate %}
 <div class="pager">
   <ul class="pagination">
@@ -83,10 +92,10 @@ layout: default
    
       <!--  Right side  -->
 
-      <div class="right-side-all-device container col-md-4 bg-dark mb-2 mt-0 rounded">
-        {% include sidebar-modified.html %}
+<div class="right-side-all-device container col-md-4 bg-dark mb-2 mt-0 rounded">
+    {% include sidebar-modified.html %}
 
-    </div>
+</div>
     
 </div>
 

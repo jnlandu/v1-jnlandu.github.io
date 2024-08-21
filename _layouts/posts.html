@@ -7,11 +7,12 @@ layout: default
 
              <div class="d-flex">
                 <div class="w-25 h-2 mt-2 float-right">
-                    <img class="img-fluid rounded-circle" src="{{ /assets/static/apic.png }}">
+                    <img class="img-fluid rounded-circle" src="{{ '/assets/static/apic.png' }}">
                 </div>
 
                 <div class="mx-2 post-content-div">
-                <h1 class=" h4 mb-0 mt-2" itemprop="name headline"> <a class=" text-white post-link" href="{{ post.url | base_url }}">
+                <h1 class=" h4 mb-0 mt-2" itemprop="name headline">
+                    <a class=" text-white post-link" href="{{ post.url | base_url }}">
                     
                    {{ page.title | escape }} 
                     
@@ -47,10 +48,69 @@ layout: default
 
             <div itemprop="articleBody">
                
-                <p class="post-context-text mt-3">
-                    {{ page.summary }}
-                    <br>
-              </p>
+                <!-- <p class="post-context-text mt-3"> -->
+                    <!-- {{ page.summary }} -->
+                      {{ content }}
+                    <!-- <br> -->
+              <!-- </p> -->
             </div>
-            <a class="bg-yellow text-center w-50 rounded-top rounded-bottom nav-link text-black mb-3" href="{{ url_for('postsContent', blog_name='html')}}">Read more<svg width="24" height="24" fill="#black"><use xlink:href="#read"></use></svg></a>
-</article>
+            <!-- <a class="bg-yellow text-center w-50 rounded-top rounded-bottom nav-link text-black mb-3" href="{{ url_for('postsContent', blog_name='html')}}">Read more<svg width="24" height="24" fill="#black"><use xlink:href="#read"></use></svg></a> -->
+
+            <!--  Post foooter  -->
+            <footer class="post-footer">
+                {% if page.categories.size > 0 %}
+                  <div class="post-meta">
+                    <i class="fas fa-folder"></i>
+                    <ul class="post-taxonomies post-categories">
+                      {% assign categories = page.categories | sort %}
+                      {% for category in categories %}
+                        <li class="post-category">
+                          {% assign slugified_category = category | slugify %}
+                          <a href="{{ '/categories/#:category' | replace: ':category', slugified_category | relative_url }}">{{ category }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                {% endif %}
+            
+                {% if page.tags.size > 0 %}
+                  <div class="post-meta">
+                    <i class="fas fa-tags"></i>
+                    <ul class="post-taxonomies post-tags">
+                      {% assign tags = page.tags | sort %}
+                      {% for tag in tags %}
+                        <li class="post-tag">
+                          {% assign slugified_tag = tag | slugify %}
+                          <a href="{{ '/tags/#:tag' | replace: ':tag', slugified_tag | relative_url }}">{{ slugified_tag }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                {% endif %}
+            
+                <nav class="post-pagination" role="navigation">
+                  {% if page.previous %}
+                    <a class="post-previous" href="{{ page.previous.url | relative_url }}">
+                      <h4 class="post-pagination-label">Prev</h4>
+                      <span class="post-pagination-title">
+                        <i class="fas fa-arrow-left"></i> {{ page.previous.title | markdownify | strip_html }}
+                      </span>
+                    </a>
+                  {% endif %}
+            
+                  {% if page.next %}
+                    <a class="post-next" href="{{ page.next.url | relative_url }}">
+                      <h4 class="post-pagination-label">Next</h4>
+                      <span class="post-pagination-title">
+                        {{ page.next.title | markdownify | strip_html }} <i class="fas fa-arrow-right"></i>
+                      </span>
+                    </a>
+                  {% endif %}
+                </nav>
+              </footer>
+            
+              {% if page.comments != false and jekyll.environment == "production" and site.disqus %}
+                {% include disqus.html %}
+              {% endif %}
+
+        </article>
