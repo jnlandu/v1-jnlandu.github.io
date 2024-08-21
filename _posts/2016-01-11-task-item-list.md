@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: post
 title: A very interesting title to talk about very amazing subject on Mathematics.
 tags: [to-do list]
 author: unkmown

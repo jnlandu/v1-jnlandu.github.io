@@ -2,115 +2,94 @@
 layout: default
 ---
 
-<article class="row  d-flex justify-content-center top-post-item post-item left-side-all-device container mt-5 mb-1 shadow-lg" itemscope itemtype="http://schema.org/BlogPosting">
-        <!--  post header -->
+<article  class="post-content ms-0 me-0" itemscope itemtype="http://schema.org/BlogPosting">
+    <!-- Post header -->
+    <div class="border-bottom mb-3 ">
+        <h1 class="text-center post-title " itemprop="name headline">{{ page.title | escape }}</h1>
+        <p class="post-meta text-center mt-0">
+            {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
+            <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+              {{ page.date | date: date_format }}
+            </time>
+            {%- if page.last_modified_at -%}
+              ~ 
+              {%- assign mdate = page.last_modified_at | date_to_xmlschema -%}
+              <time class="dt-modified" datetime="{{ mdate }}" itemprop="dateModified">
+                {{ mdate | date: date_format }}
+              </time>
+            {%- endif -%}
+            {%- if page.author -%}
+              • {% for author in page.author %}
+                <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
+                  {%- if forloop.last == false %}, {% endif -%}
+              {% endfor %}
+            {%- endif -%}
+          </p>
 
-             <div class="d-flex">
-                <div class="w-25 h-2 mt-2 float-right">
-                    <img class="img-fluid rounded-circle" src="{{ '/assets/static/apic.png' }}">
-                </div>
+    </div>
+    <!--  Body -->
+    <div class=" ">
+        {{ content|safe }}
+        
+     </div>
+    
 
-                <div class="mx-2 post-content-div">
-                <h1 class=" h4 mb-0 mt-2" itemprop="name headline">
-                    <a class=" text-white post-link" href="{{ post.url | base_url }}">
-                    
-                   {{ page.title | escape }} 
-                    
-                    </a>
-                </h1>
-                <small>
-                    {% assign date_format = site.date_format | default: : "%b %-d, %Y" -%}
-                    
-                    <time class="text-white mt-0 post-content" datetime="{{ page.date | date_to_xmlschema}}" itemprop="datePublished">
-                        {{ page.date | date: date_format }} 
-                    </time>
+<footer class="post-footer">
+    {% if page.categories.size > 0 %}
+      <div class="post-meta">
+        <i class="fas fa-folder"></i>
+        <ul class="post-taxonomies post-categories">
+          {% assign categories = page.categories | sort %}
+          {% for category in categories %}
+            <li class="post-category">
+              {% assign slugified_category = category | slugify %}
+              <a href="{{ '/categories/#:category' | replace: ':category', slugified_category | relative_url }}">{{ category }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
 
-                    {%- if page.last_modified_at -%}
-                        ~ 
-                        {%- assign mdate = page.last_modified_at | date_to_xmlschema -%}
-                        <time class="text-white mt-0 post-content" datetime="{{ mdate }}" itemprop="dateModified">
-                        {{ mdate | date: date_format }}
-                        </time>
-                    {%- endif -%}
+    {% if page.tags.size > 0 %}
+      <div class="post-meta">
+        <i class="fas fa-tags"></i>
+        <ul class="post-taxonomies post-tags">
+          {% assign tags = page.tags | sort %}
+          {% for tag in tags %}
+            <li class="post-tag">
+              {% assign slugified_tag = tag | slugify %}
+              <a href="{{ '/tags/#:tag' | replace: ':tag', slugified_tag | relative_url }}">{{ slugified_tag }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
 
-                    {%-  if page.author   -%}
-                        {% for author in page.author %}
-                        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-                        <a class="link" href="/home" itemprop="name" >{{ author }} </a>
-                        </span>
-                        {%- if forloop.last == false %}, {% endif -%}
-                        {%- endfor -%}
-                    {%- endif -%}
-                    </small>   
-                </div>
-            </div>
-            <!--  end post header -->
+    <nav class="post-pagination" role="navigation">
+      {% if page.previous %}
+        <a class="post-previous" href="{{ page.previous.url | relative_url }}">
+          <h4 class="post-pagination-label">Prev</h4>
+          <span class="post-pagination-title">
+            <i class="fas fa-arrow-left"></i> {{ page.previous.title | markdownify | strip_html }}
+          </span>
+        </a>
+      {% endif %}
 
-            <div itemprop="articleBody">
-               
-                <!-- <p class="post-context-text mt-3"> -->
-                    <!-- {{ page.summary }} -->
-                      {{ content }}
-                    <!-- <br> -->
-              <!-- </p> -->
-            </div>
-            <!-- <a class="bg-yellow text-center w-50 rounded-top rounded-bottom nav-link text-black mb-3" href="{{ url_for('postsContent', blog_name='html')}}">Read more<svg width="24" height="24" fill="#black"><use xlink:href="#read"></use></svg></a> -->
+      {% if page.next %}
+        <a class="post-next" href="{{ page.next.url | relative_url }}">
+          <h4 class="post-pagination-label">Next</h4>
+          <span class="post-pagination-title">
+            {{ page.next.title | markdownify | strip_html }} <i class="fas fa-arrow-right"></i>
+          </span>
+        </a>
+      {% endif %}
+    </nav>
+  </footer>
 
-            <!--  Post foooter  -->
-            <footer class="post-footer">
-                {% if page.categories.size > 0 %}
-                  <div class="post-meta">
-                    <i class="fas fa-folder"></i>
-                    <ul class="post-taxonomies post-categories">
-                      {% assign categories = page.categories | sort %}
-                      {% for category in categories %}
-                        <li class="post-category">
-                          {% assign slugified_category = category | slugify %}
-                          <a href="{{ '/categories/#:category' | replace: ':category', slugified_category | relative_url }}">{{ category }}</a>
-                        </li>
-                      {% endfor %}
-                    </ul>
-                  </div>
-                {% endif %}
-            
-                {% if page.tags.size > 0 %}
-                  <div class="post-meta">
-                    <i class="fas fa-tags"></i>
-                    <ul class="post-taxonomies post-tags">
-                      {% assign tags = page.tags | sort %}
-                      {% for tag in tags %}
-                        <li class="post-tag">
-                          {% assign slugified_tag = tag | slugify %}
-                          <a href="{{ '/tags/#:tag' | replace: ':tag', slugified_tag | relative_url }}">{{ slugified_tag }}</a>
-                        </li>
-                      {% endfor %}
-                    </ul>
-                  </div>
-                {% endif %}
-            
-                <nav class="post-pagination" role="navigation">
-                  {% if page.previous %}
-                    <a class="post-previous" href="{{ page.previous.url | relative_url }}">
-                      <h4 class="post-pagination-label">Prev</h4>
-                      <span class="post-pagination-title">
-                        <i class="fas fa-arrow-left"></i> {{ page.previous.title | markdownify | strip_html }}
-                      </span>
-                    </a>
-                  {% endif %}
-            
-                  {% if page.next %}
-                    <a class="post-next" href="{{ page.next.url | relative_url }}">
-                      <h4 class="post-pagination-label">Next</h4>
-                      <span class="post-pagination-title">
-                        {{ page.next.title | markdownify | strip_html }} <i class="fas fa-arrow-right"></i>
-                      </span>
-                    </a>
-                  {% endif %}
-                </nav>
-              </footer>
-            
-              {% if page.comments != false and jekyll.environment == "production" and site.disqus %}
-                {% include disqus.html %}
-              {% endif %}
+  {% if page.comments != false and jekyll.environment == "production" and site.disqus %}
+    {% include disqus.html %}
+  {% endif %}
 
-        </article>
+
+</article>

@@ -11,18 +11,23 @@
     <!-- <div class="site-container"> -->
 
       <header>
+        {%  if page.name == 'home'    %}
+          {% include header.html %}
+        {% else %}
         {% include header.html %}
+        {% endif %}
+        
       </header>
       
     
 
-      <aside class="site-sidebar sidebar-mobile-off" id="site-sidebar">
+      <!-- <aside class="site-sidebar sidebar-mobile-off" id="site-sidebar">
           {% if page.toc %}
             {% include sidebar-toc.html %}
           {% else %}
             {% include sidebar.html %}
           {% endif %}
-      </aside>
+      </aside> -->
 
       <main class="site-main" id="site-main" aria-label="Content" tabindex="1">
 
