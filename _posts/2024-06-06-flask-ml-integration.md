@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: posts
 toc: true
 title: "Flask and Machine Learning Integration"
 categories: 

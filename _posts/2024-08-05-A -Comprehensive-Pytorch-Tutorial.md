@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: posts
 title: "A Comprehensive PyTorch Tutorial"
 toc: true
 categories: misc

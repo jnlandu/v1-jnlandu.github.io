@@ -11,7 +11,6 @@ layout: default
   {% endif %} -->
 
 
-<div class="row mx-auto">
 <div class="left-side-all-device container col-md-8 mb-1 ">
     {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
     {% assign posts = paginator.posts  %}
@@ -69,35 +68,36 @@ layout: default
      {%- endfor -%} 
      {%- endif -%}
 
-</div>  
-<!--  Pagination links  -->
+    <!--  Pagination links  -->
+    <div class="paginate  paginator-off-mobile "
+    {% if site.paginate %}
+    <div class="pager">
+      <ul class="pagination">
+      {%- if paginator.previous_page %}
+        <li><a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page">{{ paginator.previous_page }}</a></li>
+      {%- else %}
+        <li><div class="pager-edge">•</div></li>
+      {%- endif %}
+        <li><div class="current-page">{{ paginator.page }}</div></li>
+      {%- if paginator.next_page %}
+        <li><a href="{{ paginator.next_page_path | relative_url }}" class="next-page">{{ paginator.next_page }}</a></li>
+      {%- else %}
+        <li><div class="pager-edge">•</div></li>
+      {%- endif %}
+      </ul>
+    </div>
+    {%- endif %}  
+    </div>
 
-{% if site.paginate %}
-<div class="pager">
-  <ul class="pagination">
-  {%- if paginator.previous_page %}
-    <li><a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page">{{ paginator.previous_page }}</a></li>
-  {%- else %}
-    <li><div class="pager-edge">•</div></li>
-  {%- endif %}
-    <li><div class="current-page">{{ paginator.page }}</div></li>
-  {%- if paginator.next_page %}
-    <li><a href="{{ paginator.next_page_path | relative_url }}" class="next-page">{{ paginator.next_page }}</a></li>
-  {%- else %}
-    <li><div class="pager-edge">•</div></li>
-  {%- endif %}
-  </ul>
-</div>
-{%- endif %}  
+</div>  
+
    
       <!--  Right side  -->
-
 <div class="right-side-all-device container col-md-4 bg-dark mb-2 mt-0 rounded">
     {% include sidebar-modified.html %}
 
 </div>
     
-</div>
 
 
 

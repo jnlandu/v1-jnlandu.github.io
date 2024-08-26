@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: posts
 toc: true
 title:  "Mastering Text Processing in Python: An Introduction to NLTK"
 categories: junk

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: posts
 toc: true
 title: "Linear Regression in Python"
 categories: junk

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: posts
 title: "Some articles are just so short that we have to make the footer stick"
 author: unkmown
 author_profile: "./assets/static/logo.jpeg"

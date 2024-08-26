@@ -35,19 +35,19 @@ layout: default
      </div>
     
 
-<footer class="post-footer">
+<div class="post-footer">
+
     {% if page.categories.size > 0 %}
-      <div class="post-meta">
-        <i class="fas fa-folder"></i>
-        <ul class="post-taxonomies post-categories">
+    <p class=" ">
+      <svg  width="24" height="24" fill="#F90"><use xlink:href="#menu"></use></svg>
           {% assign categories = page.categories | sort %}
           {% for category in categories %}
-            <li class="post-category">
+            <li class=" post-category">
               {% assign slugified_category = category | slugify %}
               <a href="{{ '/categories/#:category' | replace: ':category', slugified_category | relative_url }}">{{ category }}</a>
             </li>
           {% endfor %}
-        </ul>
+          </p>
       </div>
     {% endif %}
 
@@ -75,7 +75,6 @@ layout: default
           </span>
         </a>
       {% endif %}
-
       {% if page.next %}
         <a class="post-next" href="{{ page.next.url | relative_url }}">
           <h4 class="post-pagination-label">Next</h4>
@@ -85,7 +84,7 @@ layout: default
         </a>
       {% endif %}
     </nav>
-  </footer>
+  </div>
 
   {% if page.comments != false and jekyll.environment == "production" and site.disqus %}
     {% include disqus.html %}
