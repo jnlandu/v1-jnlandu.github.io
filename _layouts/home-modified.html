@@ -10,12 +10,12 @@ layout: default
     {% assign posts = site.posts %}
   {% endif %}
 
-<div class="container col-md-8 mb-1 ">
+<div class="left-side-all-device container col-md-8 mb-1 ">
     {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
     {% assign posts = paginator.posts  %}
     {% if posts.size > 0 %}
     {%- for post in posts -%}
-    <div class="post-item left-side-all-device container mt-5 mb-1 shadow-lg ">
+    <div class="post-item  container mt-5 mb-1 shadow-lg ">
             <div class="row  d-flex justify-content-center ">
                     <div class="d-flex">
                         <div class="mt-2 " style="width:50px;">
@@ -68,7 +68,7 @@ layout: default
      {%- endif -%}
 
     <!--  Pagination links  -->
-    <div class="paginate  paginator-off-mobile "
+    <div class=" container paginate   paginator-off-mobile "
     {% if site.paginate %}
     <div class="pager">
       <ul class="pagination">
@@ -86,13 +86,12 @@ layout: default
       </ul>
     </div>
     {%- endif %}  
-    </div>
 
-</div>  
+  </div>
 
    
       <!--  Right side  -->
-<div class="container col-md-4 bg-dark mb-2 mt-0 rounded">
+<div class="col-md-4 bg-dark mb-2 mt-0 rounded">
     {% include sidebar-modified.html %}
 
 </div>
