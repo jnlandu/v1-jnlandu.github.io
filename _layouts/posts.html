@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<article  class="post-content" itemscope itemtype="http://schema.org/BlogPosting">
+<article  class="container post-container mt-3" itemscope itemtype="http://schema.org/BlogPosting">
     <!-- Post header -->
     <div class="border-bottom mb-3 ">
         <h1 class="text-center post-title " itemprop="name headline">{{ page.title | escape }}</h1>
@@ -29,56 +29,48 @@ layout: default
 
     </div>
     <!--  Body -->
-    <div class=" ">
+    <div class="mb-4 ">
         {{ content|safe }}
         
      </div>
     
 
-<div class="post-footer">
-
+<div class=" border-top mt-3">
     {% if page.categories.size > 0 %}
-    <p class=" ">
-      <svg  width="24" height="24" fill="#F90"><use xlink:href="#menu"></use></svg>
+      <svg  width="24" height="24" fill="#F90"><use xlink:href="#folder"></use></svg>
           {% assign categories = page.categories | sort %}
           {% for category in categories %}
-            <li class=" post-category">
               {% assign slugified_category = category | slugify %}
-              <a href="{{ '/categories/#:category' | replace: ':category', slugified_category | relative_url }}">{{ category }}</a>
-            </li>
+              <a class="text-white" href="{{ '/categories/#:category' | replace: ':category', slugified_category | relative_url }}">{{slugified_category }}</a>
+          {% endfor %}
+     </p>
+
+    {% endif %}
+
+    {% if page.tags.size > 0 %}
+      <div class="post-meta">
+          <svg  width="24" height="24" fill="#F90"><use xlink:href="#tag"></use></svg>
+          {% assign tags = page.tags | sort %}
+          {% for tag in tags %}
+            <span class="post-tag">
+              {% assign slugified_tag = tag | slugify %}
+              <a class="text-white" href="{{ '/tags/#:tag' | replace: ':tag', slugified_tag | relative_url }}">{{ slugified_tag }}</a>
           {% endfor %}
           </p>
       </div>
     {% endif %}
 
-    {% if page.tags.size > 0 %}
-      <div class="post-meta">
-        <i class="fas fa-tags"></i>
-        <ul class="post-taxonomies post-tags">
-          {% assign tags = page.tags | sort %}
-          {% for tag in tags %}
-            <li class="post-tag">
-              {% assign slugified_tag = tag | slugify %}
-              <a href="{{ '/tags/#:tag' | replace: ':tag', slugified_tag | relative_url }}">{{ slugified_tag }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    {% endif %}
-
     <nav class="post-pagination" role="navigation">
       {% if page.previous %}
-        <a class="post-previous" href="{{ page.previous.url | relative_url }}">
-          <h4 class="post-pagination-label">Prev</h4>
+        <a class="post-previous yellow" href="{{ page.previous.url | relative_url }}">
           <span class="post-pagination-title">
             <i class="fas fa-arrow-left"></i> {{ page.previous.title | markdownify | strip_html }}
           </span>
         </a>
       {% endif %}
       {% if page.next %}
-        <a class="post-next" href="{{ page.next.url | relative_url }}">
-          <h4 class="post-pagination-label">Next</h4>
-          <span class="post-pagination-title">
+        <a class="post-next yellow" href="{{ page.next.url | relative_url }}">
+          <span class="">
             {{ page.next.title | markdownify | strip_html }} <i class="fas fa-arrow-right"></i>
           </span>
         </a>
@@ -89,6 +81,8 @@ layout: default
   {% if page.comments != false and jekyll.environment == "production" and site.disqus %}
     {% include disqus.html %}
   {% endif %}
+
+</div>
 
 
 </article>

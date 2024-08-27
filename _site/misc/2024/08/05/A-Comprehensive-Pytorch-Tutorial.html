@@ -170,6 +170,15 @@
     <symbol id="download"  viewBox="0 -960 960 960">
      <path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/>
      </symbol>
+
+     <symbol id="folder" viewBox="0 -960 960 960" >
+       <path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h240l80 80h320q33 0 56.5 23.5T880-640H447l-80-80H160v480l96-320h684L837-217q-8 26-29.5 41.5T760-160H160Zm84-80h516l72-240H316l-72 240Zm0 0 72-240-72 240Zm-84-400v-80 80Z"/>
+     </symbol>
+
+    <symbol id="tag" viewBox="0 0 16 16">
+      <path d="M2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586zm3.5 4a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
+      <path d="M1.293 7.793A1 1 0 0 1 1 7.086V2a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l.043-.043z"/>
+    </symbol>
  
 
   </svg>
@@ -287,7 +296,7 @@ id="btn-back-to-top"
       <!-- <main class="site-main" id="site-main" aria-label="Content" tabindex="1"> -->
         <div class="row">
 
-          <article  class="post-content" itemscope itemtype="http://schema.org/BlogPosting">
+          <article  class="container post-container mt-3" itemscope itemtype="http://schema.org/BlogPosting">
     <!-- Post header -->
     <div class="border-bottom mb-3 ">
         <h1 class="text-center post-title " itemprop="name headline">A Comprehensive PyTorch Tutorial</h1>
@@ -299,7 +308,7 @@ id="btn-back-to-top"
 
     </div>
     <!--  Body -->
-    <div class=" ">
+    <div class="mb-4 ">
         <h1 id="a-comprehensive-pytorch-tutorial">A Comprehensive PyTorch Tutorial</h1>
 <p>PyTorch is a popular deep learning framework developed by Facebook’s AI Research lab. It offers flexibility and efficiency in building and training neural networks. This tutorial will guide you through the key aspects of PyTorch, including installation, tensor operations, neural network creation, training, evaluation, and model management.</p>
 
@@ -550,28 +559,23 @@ id="btn-back-to-top"
      </div>
     
 
-<div class="post-footer">
-
+<div class=" border-top mt-3">
     
-    <p class=" ">
-      <svg  width="24" height="24" fill="#F90"><use xlink:href="#menu"></use></svg>
+      <svg  width="24" height="24" fill="#F90"><use xlink:href="#folder"></use></svg>
           
           
-            <li class=" post-category">
               
-              <a href="/categories/#misc">misc</a>
-            </li>
+              <a class="text-white" href="/categories/#misc">misc</a>
           
-          </p>
-      </div>
+     </p>
+
     
 
     
 
     <nav class="post-pagination" role="navigation">
       
-        <a class="post-previous" href="/2024/06/06/flask-ml-integration.html">
-          <h4 class="post-pagination-label">Prev</h4>
+        <a class="post-previous yellow" href="/2024/06/06/flask-ml-integration.html">
           <span class="post-pagination-title">
             <i class="fas fa-arrow-left"></i> Flask and Machine Learning Integration
 
@@ -579,9 +583,8 @@ id="btn-back-to-top"
         </a>
       
       
-        <a class="post-next" href="/junk/2024/08/05/this-post-demonstrates-post-content-styles.html">
-          <h4 class="post-pagination-label">Next</h4>
-          <span class="post-pagination-title">
+        <a class="post-next yellow" href="/junk/2024/08/05/this-post-demonstrates-post-content-styles.html">
+          <span class="">
             This post demonstrates post content styles
  <i class="fas fa-arrow-right"></i>
           </span>
@@ -591,6 +594,8 @@ id="btn-back-to-top"
   </div>
 
   
+
+</div>
 
 
 </article>

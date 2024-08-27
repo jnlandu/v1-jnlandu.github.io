@@ -1,18 +1,101 @@
 
-<p class="text-white fs-5"> Do you appreciate my work? </p>
+<!--  Events  and News :  -->
+<div class="event-container">
+<p class="yellow text-center mt-3 h2 fs-5">Events and News</span>
+</p>
 
- <div class="pb-2 mb-2">
-    <button class="contact-btn-mobile  bg-yellow text-center w-100 rounded-top rounded-bottom nav-link text-black mb-3 px-4 fs-5" href="{{ event.url | relative_url }}">
-        <svg  width="24" height="28" fill="#D9D9D9">  <use xlink:href="#email"></use></svg> Contact me</button>  
+{% for event in site.events limit:3 %}
+<div class="row  d-flex justify-content-center my-3 ">
+  <!-- <div class="col-md-4 flex-fill mr-0  ">
+    <a href="https://deeplearningindaba.com/2024/workshops/"> <img class="img-fluid" 
+      src="{{ event.picture }}"
+      > </a>
+  </div> -->
+  <div class="col-md-8 flex-fill me-0 border-primary">
+  <h3 class="mb-0" > <a class=" yellow post-link" href="{{ event.url }}">{{ event.title }}</a></h3>
+  <span class="yellow mt-1 post-content"> <svg  width="17" height="17" fill="#F90"><use xlink:href="#location"></use></svg> {{ event.location }}
+    <svg  width="17" height="17" fill="#F90"><use xlink:href="#calendar"></use></svg> {{ event.date }}
+  </span><br>
+  <p class="mt-2">{{ event.description }}
+  
+  <!-- <div class="d-flex justify-content-center">
+  <a class=" bg-yellow text-center w-50 rounded-top rounded-bottom nav-link text-black mb-3" href="{{ event.url | relative_url }}">More<svg width="24" height="24" fill="#black"><use xlink:href="#read"></use></svg></a>  
+  </div> -->
+  <a class=" bg-yellow text-center w-50 rounded-top rounded-bottom text-black mb-3" href="{{ event.url | relative_url }}">More<svg width="24" height="24" fill="#black"><use xlink:href="#read"></use></svg></a>  
+  </p>
+
+   
+
+</div>
+</div>
+{% endfor %}
+</div>
+
+<!-- Tutorials and projects  -->
+<div class="">
+  <p class="text-center yellow h2 fs-5">Tutorials and Courses 
+    <!-- Curious to know what I do? Check out below  my projects and tutorials. -->
+  </p>
+  <!-- <p class="h2 fs-5">Tutorials</p> -->
+   {% for tutorial in site.tutorials limit:3   %}
+      <!-- <div class="row  container-fluid d-flex justify-content-center "> -->
+      <!-- <div class="col-md-4 flex-fill mr-0 my-1  ">
+          <img class="img-fluid" src="{{ tutorial.cover_image }}">
+      </div> -->
+      <div class="col-md-8 flex-fill me-0 my-3 border-primary">
+          {%  if tutorial.paid  %}
+          <span class="yellow">FREE!</span>  {{ tutorial.title }}
+          {% else %}
+          <span class="yellow">PAY!</span> {{ tutorial.title }}
+          {% endif %}
+          <p> {{ tutorial.summary }} </p>
+      </div>
+      <div class="d-flex justify-content-center">
+          <a class=" bg-yellow text-center w-50 rounded-top rounded-bottom nav-link text-black mb-3" href="{{ tutorial.url | relative_url }}">More<svg width="24" height="24" fill="#black"><use xlink:href="#read"></use></svg></a>  
+      </div>
+      <!-- </div> -->
+
+  {% endfor %}
 
 
-      <!-- <button class="contact-btn-mobile  btn btn-sm rounded  text-dark fs-5 bg-yellow mx-auto px-4 w-100 nav-link"> 
-        <svg  width="24" height="28" fill="#D9D9D9">
-      </button> -->
+  <!--  -->
+</div>
+<!--  Projects  -->
+<div class="projects-container">
+<p class="text-center h2 fs-5 yellow">Projects 
+  <!-- Curious to know what I do? Check out below  my projects and tutorials. -->
+</p>
+<!-- <p class="h2 fs-5">Tutorials</p> -->
+<div class="container-fluid my-3 ">
+  <p><a class="code " href="https://www.github.com/jnlandu/">{ code }</a> Aura: AI-powered mobile app <br>
+  A small mobile app developed with React Native and OpenAI APIs to generate human-like images. 
+</div>
+<div class="container-fluid my-3 ">
+  <p><a class="code " href="https://www.github.com/jnlandu/">{ code }</a> Aura: AI-powered mobile app <br>
+  A small mobile app developed with React Native and OpenAI APIs to generate human-like images. 
+</div>
+<div class="container-fluid my-3 ">
+  <p><a class="code " href="https://www.github.com/jnlandu/">{ code }</a> Aura: AI-powered mobile app <br>
+  A small mobile app developed with React Native and OpenAI APIs to generate human-like images. 
+</div>
+</div>  
+
+<!--  -->
+
+<!-- <p class="text-center text-white fs-5">  </p> -->
+
+ <div class="d-flex align-items-between mt-3 ">
+  <p >Do you appreciate my work?</p>
+
+  <button class="contact-btn-mobile  w-25 bg-yellow text-center rounded-top rounded-bottom nav-link text-black mb-3  ms-3" href="{{ event.url | relative_url }}">
+        Contact me
+  </button>  
+
+
   </div>
-  <p class="">
-      <svg  width="24" height="24" fill="#D9D9D9"><use xlink:href="#email"></use></svg>
-      <span class="fs-5 ">Do you want tricks and tutorials?</span> <br>
+  <p >
+    <span class="yellow">Do you want tricks and tutorials? </span>
+     <br>
       Subscribe  to my newsletter to never miss a thing. Tricks, tutorials, snippets in your inbox.
   </p>
       <!--  Form  -->
@@ -22,7 +105,7 @@
     <input type="text" class="form-control text-center" placeholder="Your email address" aria-label="Username" aria-describedby="basic-addon1">
   </div>
   <div class="col-5  flex-fill">
-      <button type="button" class="btn bg-yellow text-dark  ps-5 w-100 fs-5" href="#">Subscribe</button>
+      <button type="button" class="btn bg-yellow text-dark  ps-5 w-100" href="#">Subscribe</button>
   </div>
   <p><small class="fs-6">Worring  about your privacy? Your email is encrypted by our system. It will not be shared with 
     anyone.
@@ -39,85 +122,8 @@
   </p>
   </div>
 
-  <div class="">
-        <p><span class="h2 fs-5">Tutorials and Courses </span>
-          <!-- Curious to know what I do? Check out below  my projects and tutorials. -->
-        </p>
-        <!-- <p class="h2 fs-5">Tutorials</p> -->
-         {% for tutorial in site.tutorials limit:3   %}
-            <!-- <div class="row  container-fluid d-flex justify-content-center "> -->
-            <!-- <div class="col-md-4 flex-fill mr-0 my-1  ">
-                <img class="img-fluid" src="{{ tutorial.cover_image }}">
-            </div> -->
-            <div class="col-md-8 flex-fill me-0 my-3 border-primary">
-                {%  if tutorial.paid  %}
-                <span class="yellow">FREE!</span>  {{ tutorial.title }}
-                {% else %}
-                <span class="yellow">PAY!</span> {{ tutorial.title }}
-                {% endif %}
-                <p> {{ tutorial.summary }} </p>
-            </div>
-            <div class="d-flex justify-content-center">
-                <a class=" bg-yellow text-center w-50 rounded-top rounded-bottom nav-link text-black mb-3" href="{{ tutorial.url | relative_url }}">More<svg width="24" height="24" fill="#black"><use xlink:href="#read"></use></svg></a>  
-            </div>
-            <!-- </div> -->
-
-        {% endfor %}
-
-
-        <!--  -->
-  </div>
-  <!--  Projects  -->
-<div class="">
-      <p><span class="h2 fs-5">Projects </span>
-        <!-- Curious to know what I do? Check out below  my projects and tutorials. -->
-      </p>
-      <!-- <p class="h2 fs-5">Tutorials</p> -->
-      <div class="container-fluid my-3 ">
-        <p><a class="code " href="https://www.github.com/jnlandu/">{ code }</a> Aura: AI-powered mobile app <br>
-        A small mobile app developed with React Native and OpenAI APIs to generate human-like images. 
-      </div>
-      <div class="container-fluid my-3 ">
-        <p><a class="code " href="https://www.github.com/jnlandu/">{ code }</a> Aura: AI-powered mobile app <br>
-        A small mobile app developed with React Native and OpenAI APIs to generate human-like images. 
-      </div>
-      <div class="container-fluid my-3 ">
-        <p><a class="code " href="https://www.github.com/jnlandu/">{ code }</a> Aura: AI-powered mobile app <br>
-        A small mobile app developed with React Native and OpenAI APIs to generate human-like images. 
-      </div>
-</div>    
+    
   
-<!--  Events and news! -->
-  
-      <p><span class="h2 fs-5">Events and News</span>
-      </p>
-
-    {% for event in site.events limit:3 %}
-      <div class="row  d-flex justify-content-center my-3 ">
-        <!-- <div class="col-md-4 flex-fill mr-0  ">
-          <a href="https://deeplearningindaba.com/2024/workshops/"> <img class="img-fluid" 
-            src="{{ event.picture }}"
-            > </a>
-        </div> -->
-        <div class="col-md-8 flex-fill me-0 border-primary">
-        <h3 class="mb-0" > <a class=" yellow post-link" href="{{ event.url }}">{{ event.title }}</a></h3>
-        <span class="yellow mt-1 post-content"> <svg  width="17" height="17" fill="#F90"><use xlink:href="#location"></use></svg> {{ event.location }}
-          <svg  width="17" height="17" fill="#F90"><use xlink:href="#calendar"></use></svg> {{ event.date }}
-        </span><br>
-        <p class="mt-2">{{ event.description }}
-        </p>
-        <div class="d-flex justify-content-center">
-        <a class=" bg-yellow text-center w-50 rounded-top rounded-bottom nav-link text-black mb-3" href="{{ event.url | relative_url }}">More<svg width="24" height="24" fill="#black"><use xlink:href="#read"></use></svg></a>  
-        </div>
-
-         
-
-      </div>
-      </div>
-      {% endfor %}
-
-
-
 
 
       

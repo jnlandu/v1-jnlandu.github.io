@@ -225,10 +225,6 @@ div.logo {
 
 
 
- h2 > .post-content-div{
-    color: #F90;
- }
-
 
 
 
@@ -837,50 +833,7 @@ ul.post-categories li {
     src: url("../fonts/FontAwesome.eot?9h6hxj");
     src: url("../fonts/FontAwesome.eot?9h6hxj#iefix") format("embedded-opentype"),url("../fonts/FontAwesome.woff?9h6hxj") format("woff"),url("../fonts/FontAwesome.ttf?9h6hxj") format("truetype"),url("../fonts/FontAwesome.svg?9h6hxj#FontAwesome") format("svg")
 }
-  
-.post-title,
-.post-content h1 {
-  font-size: 1.8rem;
-  font-family: Roboto, "Noto Sans SC", "Noto Sans TC";
-  font-weight: bold;
-  letter-spacing: -1px;
-  line-height: 54px; }
-  @media screen and (min-width: 1100px) {
-    .post-title,
-    .post-content h1 {
-      font-size: 2rem; } }
 
-.post-content {
-  font-family: "Roboto Slab", "Noto Serif SC", "Noto Serif TC";
-  margin-bottom: 2rem; }
-  .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6 {
-    font-family: Roboto, "Noto Sans SC", "Noto Sans TC"; }
-  .post-content h2 {
-    margin-top: 4rem; }
-  .post-content h3 {
-    margin-top: 3rem; }
-  .post-content h4, .post-content h5, .post-content h6 {
-    margin-top: 2rem; }
-  .post-content h2 {
-    font-size: 1.4rem; }
-    @media screen and (min-width: 1100px) {
-      .post-content h2 {
-        font-size: 1.5rem; } }
-  .post-content h3 {
-    font-size: 1.17rem; }
-  .post-content h4 {
-    font-size: 1.12rem; }
-  .post-content h5 {
-    font-size: 0.83rem; }
-  .post-content h6 {
-    font-size: 0.75rem; }
-  .post-content li {
-    margin-bottom: 0.6666666667rem; }
-    .post-content li > ul,
-    .post-content li > ol {
-      margin-top: 0.6666666667rem; }
-    .post-content li p, .post-content li blockquote, .post-content li pre, .post-content li figure, .post-content li iframe, .post-content li .highlight {
-      margin-bottom: 0.6666666667rem; }
 
 /* pre {
     position: relative;
@@ -1047,14 +1000,13 @@ code {
         display: none;
     }
 
-    /* .left-side-all-device{
-        margin-left: 0px;
+    .left-side-all-device{
         width: 80vw;
-    } */
-    /* .right-side-all-device{
-    margin-left: 10px;
+    }
+    .right-side-all-device{
+
     width: 80vw;
-    } */
+    }
     .contact-other-device{
         display: none;
     }
@@ -1074,11 +1026,7 @@ code {
     /* .post-submenu-sg {
         margin-top: 149px !important; 
     } */
-    /* .post-container{
-        margin-top: 280px;
-        margin-left: .5vh;
-        margin-right: .5vh;
-    } */
+  
     .off-submenu {
         margin-top: 200px;
         border: 2px solid #333;
@@ -1123,7 +1071,10 @@ code {
 .sidebar-mobile-off{
     display: none !important;
 }
-    
+
+.post-container{
+    width: 50vh;
+}
     
 
 

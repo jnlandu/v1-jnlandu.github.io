@@ -11,11 +11,12 @@ layout: default
   {% endif %}
 
 <div class="left-side-all-device container col-md-8 mb-1 ">
+  <p class="text-center mt-3"> Latest posts</p>
     {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
     {% assign posts = paginator.posts  %}
     {% if posts.size > 0 %}
-    {%- for post in posts -%}
-    <div class="post-item  container mt-5 mb-1 shadow-lg ">
+    {%- for post in posts-%}
+    <div class="post-item  container mt-3 mb-1 shadow-lg ">
             <div class="row  d-flex justify-content-center ">
                     <div class="d-flex">
                         <div class="mt-2 " style="width:50px;">
@@ -29,7 +30,7 @@ layout: default
                         </div>
         
                         <div class="mx-2 post-content-div">
-                        <h1 class=" h4 mb-0 mt-2"> <a class=" text-white post-link" href="{{ post.url | relative_url }}">
+                        <h1 class=" h4 mb-0 mt-2"> <a class="yellow post-link" href="{{ post.url | relative_url }}">
                             
                             {{ post.title | escape  }}
                         
@@ -68,30 +69,17 @@ layout: default
      {%- endif -%}
 
     <!--  Pagination links  -->
-    <div class=" container paginate   paginator-off-mobile "
-    {% if site.paginate %}
-    <div class="pager">
-      <ul class="pagination">
-      {%- if paginator.previous_page %}
-        <li><a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page">{{ paginator.previous_page }}</a></li>
-      {%- else %}
-        <li><div class="pager-edge">•</div></li>
-      {%- endif %}
-        <li><div class="current-page">{{ paginator.page }}</div></li>
-      {%- if paginator.next_page %}
-        <li><a href="{{ paginator.next_page_path | relative_url }}" class="next-page">{{ paginator.next_page }}</a></li>
-      {%- else %}
-        <li><div class="pager-edge">•</div></li>
-      {%- endif %}
-      </ul>
+    <div class="container d-flex justify-content-center mt-3  ">
+      <a class="bg-yellow text-center w-50 rounded-top rounded-bottom nav-link text-black mb-3" href="{{ post.url | relative_url }}">More posts <svg width="24" height="24" fill="#black"><use xlink:href="#read"></use></svg></a>  
+
+      <!-- <p class="text-center"> View more <svg  width="24" height="24" fill="#D9D9D9"><use xlink:href="#arrowleft"></use></svg></p> -->
     </div>
-    {%- endif %}  
 
   </div>
 
    
       <!--  Right side  -->
-<div class="col-md-4 bg-dark mb-2 mt-0 rounded">
+<div class="right-side-all-device container col-md-4 bg-dark mb-2 mt-0 rounded">
     {% include sidebar-modified.html %}
 
 </div>
