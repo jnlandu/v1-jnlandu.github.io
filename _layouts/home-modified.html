@@ -10,6 +10,9 @@ layout: default
     {% assign posts = site.posts %}
   {% endif %}
 
+<!--  Display off other devices: -->
+{% include interest.html    %}
+
 <div class="left-side-all-device container col-md-8 mb-1 ">
   <p class="text-center mt-3"> Latest posts</p>
     {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
@@ -47,9 +50,7 @@ layout: default
                           {%- endif -%}
                             | By  <a class="link" href="/home" > {{ post.author }}. </a></small>
                             
-                            <!-- {%- if post.show_excerpts != false -%}
-                                <div class="post-excerpt">{{ post.excerpt | strip_html }}</div>
-                            {%- endif -%} -->
+                        
                         
                         </div>
                     </div>
