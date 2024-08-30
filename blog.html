@@ -1,0 +1,87 @@
+---
+layout: default
+title: Blog post
+permalink: /blog/
+---
+
+<div class="left-side-all-device container col-md-8 mb-1 ">
+  {% if page.title %}
+    <p class="text-center mt-3">{{ page.title }}</p>
+  {% else %}
+  <p class="text-center mt-3">Latest posts</p>
+  {% endif %}
+      {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
+      <!-- {% assign posts = paginator.posts  %} -->
+      {% if site.posts.size > 0 %}
+      {%- for post in site.posts-%}
+      <div class="post-item  container mt-3 mb-1 shadow-lg ">
+              <div class="row  d-flex justify-content-center ">
+                      <div class="d-flex">
+                          <div class="mt-2 " style="width:50px;">
+                              {% if post.author_profile   %}
+                                 <a href="/home"><img class="img-fluid rounded-circle"  src="{{ post.author_profile  }}"> </a>
+                                 
+                              {% else %}
+                                 <a href="/home" ><img class="img-fluid rounded-circle" src="{{ '/assets/static/profile.jpeg' }}"></a>
+                               
+                              {% endif %}
+                          </div>
+          
+                          <div class="mx-2 post-content-div">
+                          <h1 class=" h4 mb-0 mt-2"> <a class="yellow post-link" href="{{ post.url | relative_url }}">
+                              
+                              {{ post.title | escape  }}
+                          
+                          </a></h1>
+                          <small class=" text-white mt-0 post-content">
+                              Posted on 
+                             <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePulished">
+                              {{ post.date | date: date_format }} 
+                             </time>
+                             {%-  if jekyll.environment == "production" and site.disqus   -%}
+                             <a href="{{ post.url | relative_url }}#disqus_thread">
+                              <span class="disqus-comment-count" data-disqus-url="{{ post.url | absolute_url }}"></span>
+                            </a>
+                            {%- endif -%}
+                              | By  <a class="link" href="/home" > {{ post.author }}. </a></small>
+                              
+                          
+                          
+                          </div>
+                      </div>
+                      <div>
+                          <p class="post-context-text mt-3">
+                              {{ post.summary }}
+                          <br>
+                      </p>
+                      </div>
+                      <a class="bg-yellow text-center w-50 rounded-top rounded-bottom nav-link text-black mb-3" href="{{ post.url | relative_url }}">Read more<svg width="24" height="24" fill="#black"><use xlink:href="#read"></use></svg></a>  
+             
+          </div>    
+         
+      
+       </div>
+       {%- endfor -%} 
+       {%- endif -%}
+  
+      <!--  Pagination links  -->
+      <div class="container d-flex justify-content-center mt-3  ">
+        <a class="bg-yellow text-center w-50 rounded-top rounded-bottom nav-link text-black mb-3" href="{{ post.url | relative_url }}">More posts <svg width="24" height="24" fill="#black"><use xlink:href="#read"></use></svg></a>  
+  
+        <!-- <p class="text-center"> View more <svg  width="24" height="24" fill="#D9D9D9"><use xlink:href="#arrowleft"></use></svg></p> -->
+      </div>
+  
+    </div>
+  
+     
+        <!--  Right side  -->
+  <div class="right-side-all-device container col-md-4 bg-dark mb-2 mt-0 rounded">
+     
+  
+  </div>
+      
+  
+  
+  
+  
+  

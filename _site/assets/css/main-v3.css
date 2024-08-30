@@ -221,24 +221,6 @@ div.logo {
 
 
 
-/* 
-.markdown-body {
-    background-color: #444 !important;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-} */
-
-.site-main {
-    padding-left: 2rem;
-    padding-right: 2rem; }
-
-
-
-
-
-
 
 abbr[title] {
   border-bottom: none;
@@ -285,28 +267,6 @@ blockquote {
         margin-bottom: 0; }
     blockquote i, blockquote em {
         font-style: normal; }
-
-/* pre, */
-/* code {
-font-family: Inconsolata;
-border-radius: 0.3em; } */
-
-/* code {
-padding: 0px 5px; } */
-
-/* pre {
-padding: 8px 12px;
-overflow-x: auto; }
-pre > code {
-border: 0;
-padding-right: 0;
-padding-left: 0;
-white-space: pre;
-word-break: normal;
-word-wrap: normal; } */
-
-
-
 
 
 .highlight,.highlighter-rouge .highlight,a>code,p>pre,p>code,p>nobr>code,li>code,li>pre,h5>code,.note>code {
@@ -1015,8 +975,8 @@ ul.post-categories li {
 }
 
 .row {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 1vw;
+    margin-right: 1vw;
 }
     
 
