@@ -31,6 +31,7 @@ body {
 }
 
 
+
 header, footer {
     /* position: fixed; */
     border-bottom: 1px solid #222;
@@ -43,13 +44,6 @@ header, footer {
     
 }
 
-/* footer{
-    background-color: #333;
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
-   
-} */
 b,
 strong {
   font-weight: bolder; }
@@ -84,6 +78,7 @@ p {
 a:hover{
     cursor:pointer;
 }
+
 
 .bg-prim{
     background-color: #444;
@@ -802,27 +797,6 @@ ul.post-categories li {
     src: url("../fonts/FontAwesome.eot?9h6hxj#iefix") format("embedded-opentype"),url("../fonts/FontAwesome.woff?9h6hxj") format("woff"),url("../fonts/FontAwesome.ttf?9h6hxj") format("truetype"),url("../fonts/FontAwesome.svg?9h6hxj#FontAwesome") format("svg")
 }
 
-
-/* pre {
-    position: relative;
-    border: 1px solid #dcdcdc;
-    border-radius: 5px;
-    padding-top: 30px;
-    padding-top: 20px;
-  } */
-
-  /* .code-title {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: #f7f7f7;
-    border-bottom: 1px solid #ccc;
-    padding: 5px 10px;
-    font-size: 12px;
-    font-family: monospace;
-    color: #333;
-    border-bottom: none;
-  } */
   .copy-button {
     position: absolute;
     top: 0;
@@ -891,8 +865,7 @@ ul.post-categories li {
     .latest-posts{
         text-align: center;
     }
-    
-
+   
 
     .left-side-all-device{
         width: 80vw;
@@ -972,6 +945,18 @@ ul.post-categories li {
     margin-left: 1vw;
     margin-right: 1vw;
 }
+/* .mobile-h-rule{
+    position: fixed;
+    border-bottom: 1px solid black !important;
+    margin-bottom: 50%;
+    z-index: 1;
+    opacity: ;
+} */
+
+.mobile-top{
+  margin-top: 30px;
+}
+
     
 
 
