@@ -10,14 +10,13 @@
 
     <!-- <div class="site-container"> -->
 
-      <header >
-        {%  if page.name == 'home'    %}
-          {% include header.html %}
-        {% else %}
-        {% include header.html %}
-        {% endif %}
-        
-      </header>
+     
+        <header >
+            {% include header.html %}
+        </header>
+      
+      
+      
       
     
 
@@ -37,39 +36,14 @@
         </div>
 
       
-<footer>
- <div class="footer footer-mobile text-center py-4 text-white">
-
-  <div class="footer-col">
-    <div class="copyright">
-      {% assign year_from = site.posts[-1].date | date: '%Y' %}
-      {% assign year_to   = site.time | date: '%Y' %}
-      {% if year_from == nil or year_from == year_to %}
-        {% assign year_string = year_from %}
-      {% else %}
-        {% assign year_string = year_from | append: '&nbsp;' | append: '-' | append: '&nbsp;' | append: year_to %}
-      {% endif %}
-      {% if site.author %}
-      <p>Copyright © {{ year_string }} {{ site.author }}; All rights reserved.</p>
-      {% endif %}
-    </div>
-    <p>
-      Powered by <a href="https://jekyllrb.com/">Jekyll</a>
-    </p>
-  </div>
-
-  <div class="footer-col">
-    <p>{{ site.description | escape }}</p>
-  </div>
-</div>
-      
-
+<footer class="mt-4">
+  {% include footer.html %}
 </footer>
 
 
 
-  <script src="{{'/scripts/script.js' | relative_url }}"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script> 
+<script src="{{'/scripts/script.js' | relative_url }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script> 
 
   </body>
 
