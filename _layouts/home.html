@@ -1,15 +1,15 @@
 ---
 layout: default
 ---
-
-<div class="row  mt-3">
-  <h1 class="h3 ">Courses attended</p>
-  <h1 class="h6 text-white "> In this section , you can find some of the courses
-       that attended.
-  </h1>
-  <div class="">
+<div class="col-md-6">
+<!-- <div class="col-md-8 mb-1  "> -->
+    <h1 class="h3 ">Courses attended</h1>
+    <h1 class="h6 text-white "> 
+      In this section , you can find some of the courses that attended.
+    </h1>
+  <div class="course-title">
   <h1 class="h5 yellow"> Foundation of Machine Learning</h1>
-  <div class="h6 text-white">
+  <div class="h6 text-white course-summary">
       This course was provided by Prof. <a class="yellow" href="https://scholar.google.com/citations?user=5wuvTfoAAAAJ&hl=en">Moustapha Cisse</a>. The course had two parts: Statistical learning Theory  and an introductoion to Deep Learning. In the first, we delved into theoretical aspects of machine learning, namely the statistical learning theory,
        where we discussed of supervised and unsupervised learning. We discussed of the ERM problem, Variance-Bias tradeoff, Overfitting and Underfitting, Linear Regression, Classification, Generalized linear models, and dimensionality reduction techiques such:
        <ul class="h6 text-white">
@@ -20,6 +20,9 @@ layout: default
       In the second part, we delved into Neural network, weights initialization, CNN, RCNN, Attention Mechanism and Transformers.<br>
       Please, find <a class="yellow" href="here">here</a> the materials I used and some codes that I implemented. Also check my tutorials below.
   </p>
+  </div>
+</div>
+<div class="course-title">
   <h1 class="h5 yellow">Kernel Methods for Machine Learning </h1>
   <p>
       This courses was given by  <a class="yellow" href="https://jpvert.github.io/">J.P Vert</a> from  <a class="yellow" href="https://www.owkin.com/">Owkin</a> and the T. A  Menegeaux and Juliette-Marie from Inria.
@@ -33,7 +36,8 @@ layout: default
       Reproducing Kernel Hilbert Spaces (RKHS), and related theorems. Please find my <a class="yellow" href="codes">codes</a> and the course page <a class="yellow" href="here">here</a>.
   
   </p>
-
+  </div>
+  <div class="course-title">
   <h1 class="h5 yellow">Optimization for Machine Learning </h1>
   <p>
       Many problems in statistcal learning leatning consists of finding the best set of parameters or the best functions  given some data. These are estimations problems.
@@ -48,6 +52,8 @@ layout: default
        a former student of AMMI. Find <a class="yellow" href="ammi-photos/optim">here</a>, the good byes photos.
   
   </p>
+  </div>
+  <div class="course-title">
   <h1 class="h5 yellow">Computer vision </h1>
   <p>
       This course was split in two:  part one is an introduction to computer vision  and was given by Dr <a class="yellow" href="https://lvdmaaten.github.io/"> Laurens van der Maaten</a> from <a class="yellow" href="https://ai.meta.com/">Meta AI</a> and 
@@ -56,6 +62,8 @@ layout: default
   In the first part, we discussed in depth CNN,  RNN, Unet, and we implemented these architectures and other related from scratch. See my <a class="yellow" href="git">repo</a> for the codes. The last part focused on Detection. We discussed about visional models, diffusion models, distillation, 
   video understanding, etc. The main tools used in this part was the FAIR <a class="yellow" href="https://ai.meta.com/tools/detectron2/">Detectron2</a> with each we experimented vision models such R-CNN, Mask R-CNN, Fast R-CNN, RPN. Please, check my  series of tutorials on  <a class="yellow" href="https://en.wikipedia.org/wiki/Object_detection">Object Detection with Detectron2</a>.
   </p>
+
+  </div>
 
   <!--  Other details  -->
     <p> Other amazing courses that I attended or am attending at AMMI include:</p>
@@ -70,5 +78,27 @@ layout: default
       <li> some codes that I implemented and personal projects  on <a class="yellow" href="githbu.com/jnlandu.git"></a>GitHub</li>
   </ul>
 </div>
+
+
+<div class="col-md-6 bg-dark rounded sidebar-mobile-off">
+
+  {% include sidebar-modified.html  %}
+     
+  
+</div>
+
+<!--  Mobile sidebar  -->
+
+
+
+
+<!--  Include events  -->
+<!-- <div class="header-event row d-flex on-mobile">
+  {% include events.html  %}
+</div> -->
+
+
+ 
+
 
 

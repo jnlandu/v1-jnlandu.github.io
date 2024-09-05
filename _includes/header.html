@@ -1,11 +1,6 @@
-  <!-- <div class="d-flex ">
-    <p>Home</p>
-    <p> About </p>
-  </div> -->
-
-  <div class="row d-flex off-mobile">
+  <div class="row d-flex header-other-device">
     {% if page.title == 'home' or  page.title == 'About'  %}
-      <div class=" col-md-4 mobile-h-rule border-dark">
+      <div class=" col-md-4 mobile-h-rule">
         <!--  Logo image  and profile  -->
           <div   class="img-profile  mx-auto my-auto logo  border-dark ">
             <img src="{{ '/assets/static/jeremie-apic-1.jpeg' | relative_url }}" class="card-img-top  rounded-circle" alt="profile">
@@ -39,14 +34,14 @@
           </p>
          </div>  
         </div>
-        <p class="text-danger"> This site is being currenty updated (and modified). Feel free to 
+        <p class="text-danger"> This site is  currently being updated (and modified). Feel free to 
           contact me, jeremie at aims.ac.za. Sorry, still working on the other devices layout. It only suits for mobile right now.</p>
       {% else %}
         <div class="">
           <!-- <span class="yellow"> Welcome to my blog</span>  -->
           <h1 class="h2 text-center text-white"> AI, Machine Learning, Maths,and Programming Blog </h1>
-          <p> <span class="yellow"> Welcome 👋 </span>  to my blog.  I am   <a  class=" text-white " href="{{ site.baseurl}} /about"> {{ site.firstName }}  </span><span class="yellow"> {{ site.lastName }} </span> </a>, currenty student 
-            in Artifical Inteliligence. You can find below tutorials, tips, and thoughts.
+          <p> <span class="yellow"> Welcome 👋 </span>  to personal my blog.  I am   <a  class=" text-white " href="{{ site.baseurl}} /about"> {{ site.firstName }}  </span><span class="yellow"> {{ site.lastName }} </span> </a>. I am  currenty student 
+            in Artifical Inteliligence. You can find below  my writings: tutorials, tips, thoughs, and videos. Please, don't forget to leave me a feedback. I will appreciate it. It will make me improve.
           </p>
         </div>
       
