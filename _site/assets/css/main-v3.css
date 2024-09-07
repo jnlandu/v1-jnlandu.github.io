@@ -1,10 +1,15 @@
 /* GENERAL */
 * {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    /* color: #333; */
     margin: 0;
     padding: 0;
 }
 
 html {
+    font-family: 'Roboto', sans-serif;
+    /* font-size: 16px; */
     font-size: 18px; 
     height: 100%;
     color: #B8B8B8;
@@ -44,8 +49,6 @@ header, footer{
     
 }
 
-
-
 footer{
     position:sticky;
     top: 98lvh;
@@ -54,16 +57,21 @@ footer{
 a {
     text-decoration: none;
 }
-b,
-strong {
+a:hover{
+    cursor:pointer;
+}
+
+h1, h2 {
+    font-family: 'Merriweather', serif !important;
+    font-weight: 700;
+    /* color: #2c3e50; */
+}
+b, strong {
   font-weight: bolder; }
-code,
-kbd,
-samp {
+code, kbd, samp {
   font-family: monospace, monospace;
-  /* 1 */
   font-size: 1em;
-  /* 2 */ }
+ }
 pre {
     font-family: monospace, monospace;
     /* 1 */
@@ -76,19 +84,56 @@ p {
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto; }
-/* .row :first-child  header{
-    
-        margin-left: 20px !important;
-        margin-right: 20px !important;
-    
-} */
-
-
-
-a:hover{
-    cursor:pointer;
+nav u li a {
+    font-family: 'Open Sans', sans-serif;
 }
 
+blockquote {
+    font-family: 'Lora', serif;
+    font-size: 18px;
+    border-left: 0.1em solid;
+    padding-left: 2rem;
+    font-style: italic; }
+
+blockquote > :last-child {
+        margin-bottom: 0; }
+    
+blockquote i, blockquote em {
+        font-style: normal; }
+
+
+abbr[title] {
+    border-bottom: none;
+    /* 1 */
+    text-decoration: underline;
+    /* 2 */
+    text-decoration: underline dotted;
+    /* 2 */
+}
+          
+          
+legend {
+        box-sizing: border-box;
+        /* 1 */
+        color: inherit;
+        /* 2 */
+        display: table;
+        /* 1 */
+        max-width: 100%;
+        /* 1 */
+        padding: 0;
+        /* 3 */
+        white-space: normal;
+        /* 1 */ }
+progress {
+        vertical-align: baseline;
+     }
+          
+          
+
+.justified-text {
+    text-align: justify;
+}
 
 .bg-prim{
     background-color: #444;
@@ -223,52 +268,6 @@ div.logo {
 
 
 
-abbr[title] {
-  border-bottom: none;
-  /* 1 */
-  text-decoration: underline;
-  /* 2 */
-  text-decoration: underline dotted;
-  /* 2 */ }
-/* 
-  code,
-  kbd,
-  samp {
-    font-family: monospace, monospace;
-    font-size: 1em;
-} */
-
-  /**
-   * Add the correct font size in all browsers.
-   */
-  small {
-    font-size: 80%; }
-
-legend {
-        box-sizing: border-box;
-        /* 1 */
-        color: inherit;
-        /* 2 */
-        display: table;
-        /* 1 */
-        max-width: 100%;
-        /* 1 */
-        padding: 0;
-        /* 3 */
-        white-space: normal;
-        /* 1 */ }
-progress {
-            vertical-align: baseline; }
-
-blockquote {
-    border-left: 0.1em solid;
-    padding-left: 2rem;
-    font-style: italic; }
-    blockquote > :last-child {
-        margin-bottom: 0; }
-    blockquote i, blockquote em {
-        font-style: normal; }
-
 
 .highlight,.highlighter-rouge .highlight,a>code,p>pre,p>code,p>nobr>code,li>code,li>pre,h5>code,.note>code {
     background-color: #272727;
@@ -284,9 +283,9 @@ blockquote {
     box-shadow: inset 0 1px 10px rgba(0,0,0,.3),0 1px 0 rgba(255,255,255,.1),0 -1px 0 rgba(0,0,0,.5)
 }
 
-a>code {
+/* a>code {
     color: inherit
-}
+} */
 
 .note .highlight {
     width: 94%
@@ -331,13 +330,7 @@ pre.highlight,.highlighter-rouge pre.highlight,.highlight>pre,.highlighter-rouge
 div.highlighter-rouge+div.highlighter-rouge {
     margin: 30px 0 0
 }
-blockquote {
-    border-left: 2px solid #777;
-    padding-left: 20px;
-    font-style: italic;
-    font-size: 18px;
-    font-weight: 500
-}
+/*  */
 code.option,th .option,code.filter,th .filter {
     color: #50b600
 }
@@ -807,6 +800,11 @@ ul.post-categories li {
     src: url("../fonts/FontAwesome.eot?9h6hxj#iefix") format("embedded-opentype"),url("../fonts/FontAwesome.woff?9h6hxj") format("woff"),url("../fonts/FontAwesome.ttf?9h6hxj") format("truetype"),url("../fonts/FontAwesome.svg?9h6hxj#FontAwesome") format("svg")
 }
 
+.row {
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
   .copy-button {
     position: absolute;
     top: 0;
@@ -838,6 +836,7 @@ ul.post-categories li {
         text-align: center;
         margin-top: 10px;
     }
+
 
     .bio, .post-context-text{
         text-align:justify;
@@ -950,13 +949,6 @@ ul.post-categories li {
 .post-container{
     width: 50vh;
 }
-
-.row {
-    margin-left: 1vw;
-    margin-right: 1vw;
-}
-
-
 .mobile-top{
   margin-top: 30px;
 }
@@ -986,10 +978,18 @@ ul.post-categories li {
         text-align:justify;
         /* text-justify:newspaper; */
     }
-.row {
+.mobile-margins{
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+/* .b-mobile-margins{
+    margin-left: 0.3vw !important ;
+    margin-right: 10vw !important;
+} */
+/* .row {
     margin-left: 20px;
     margin-right: 20px;
-}
+} */
     .nav-rs-container{
         display: flex;
         margin-left: 25vw;
