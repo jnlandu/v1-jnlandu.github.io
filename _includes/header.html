@@ -1,4 +1,4 @@
-  <div class="row d-flex header-other-device">
+  <div class="row d-flex header-other-device mobile-margins">
     {% if page.title == 'home' or  page.title == 'About'  %}
       <div class=" col-md-4 mobile-h-rule">
         <!--  Logo image  and profile  -->
@@ -25,14 +25,11 @@
       </div>
       
       <div class="bio-div bio-container col-md-8 mobile-top">
- 
-        <div class="about">
           <h1 class="text-white"> About Me </h1>
-          <p class="bio">
+          <p class="justified-text">
           <span class="yellow"> Welcome!</span> 
             {% include bio.html %}
           </p>
-         </div>  
         </div>
         <p class="text-danger"> This site is  currently being updated (and modified). Feel free to 
           contact me, jeremie at aims.ac.za. Sorry, still working on the other devices layout. It only suits for mobile right now.</p>
@@ -45,8 +42,6 @@
           </p>
         </div>
       
-
-       
         {% endif %}
          
          <!-- 
