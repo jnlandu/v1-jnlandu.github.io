@@ -1,14 +1,13 @@
 ---
-layout: post
-title: Summer School on Probability, Information Theory, Combinatorics
-location: Kigali, Rwanda
-url: "https://www.uni-frankfurt.de/147012250/A_PIC_24"
-date: "12 Aug - 21 Aug.24"
-img: "./assets/static/img/aims-rw.jpeg"
-description: I visited the city of Kigali and I was priviledged to attend the The African-Probability, Information Theory and Computations (A-PIC) summer school where I got to reconnect with peers and learn cutting-edge research in Coding-Theory, Automata, and Computations ...
+layout: posts
+title:  I defended my Master's thesis at AIMS South Africa.
+location: Muizenberg, Cape Town.
+date: "Jan 31, 2024"
+img: "./assets/static/img/aims-za-1.jpeg"
+description: In Jan 31, 2024, I completed my degree from the African Institute for Mathematical Sciences (AIMS SA) in the beautifull city of Cape Town. There, I had the priviledge to meet gifted students across africa and researchers from around the world ...
 ---
 
-### What is the Deep Learning Indaba?
+### My journey at AIMS?
 
 The **Deep Learning Indaba** is one of the most significant gatherings in the African AI community, dedicated to fostering excellence in machine learning and artificial intelligence (AI) across the continent. Established in 2017, the Indaba aims to strengthen the African machine learning community by bringing together individuals from diverse backgrounds to share knowledge, collaborate, and drive innovation. The event plays a crucial role in promoting the development of AI in Africa, enabling participants to gain valuable insights, learn from global experts, and contribute to the global AI conversation.
 

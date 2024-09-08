@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://localhost:4000/events/Thesis-defense-AIMS/</loc>
+<lastmod>2024-01-31T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/events/Welcome-to-AMMI/</loc>
+<lastmod>2024-08-12T00:00:00+00:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/events/apic-summer-school/</loc>
 <lastmod>2024-08-12T00:00:00+00:00</lastmod>
 </url>
@@ -39,6 +47,18 @@
 <url>
 <loc>http://localhost:4000/junk/2024/08/19/matrix.html</loc>
 <lastmod>2024-08-19T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/projects/Sora-AI-powered-mobile-app/</loc>
+<lastmod>2024-06-06T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/projects/Sora-AI-powered-mobile-app2/</loc>
+<lastmod>2024-06-06T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/projects/Sora-AI-powered-mobile-app3/</loc>
+<lastmod>2024-06-06T00:00:00+00:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/tutorials/full-tutorials-on-flask/</loc>
