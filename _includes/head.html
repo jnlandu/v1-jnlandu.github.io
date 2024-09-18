@@ -22,9 +22,7 @@
   {% include google-analytics.html %}
 {% endif %}
 
-{% if page.math %}
-  {% include mathjax.html %}
-{% endif %}
+
 
 {% if page.title != %}
       <title> {{ site.firstName }} {{ site.lastName }} </title>
@@ -43,4 +41,5 @@
 <!-- <link rel="stylesheet" href="{{ '/assets/css/skin.css' | relative_url }}"> -->
 <!-- {% include custom-head.html %} -->
  {%  include logos.html  %}
+ {% include katex.html %}
  

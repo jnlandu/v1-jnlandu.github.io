@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: posts
 title: I started a Master's in AI in Senegal
 location: Mbour, Senegal
 url: "https://www.uni-frankfurt.de/147012250/A_PIC_24"

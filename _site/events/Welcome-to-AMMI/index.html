@@ -186,6 +186,24 @@
  
 
   </svg>
+ <script>
+    window.WebFontConfig = {
+      custom: {
+        families: ['KaTeX_AMS', 'KaTeX_Caligraphic:n4,n7', 'KaTeX_Fraktur:n4,n7',
+          'KaTeX_Main:n4,n7,i4,i7', 'KaTeX_Math:i4,i7', 'KaTeX_Script',
+          'KaTeX_SansSerif:n4,n7,i4', 'KaTeX_Size1', 'KaTeX_Size2', 'KaTeX_Size3',
+          'KaTeX_Size4', 'KaTeX_Typewriter'],
+      },
+    };
+  </script>
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+
  
   </head>
 
@@ -211,6 +229,8 @@ id="btn-back-to-top"
             in Artifical Inteliligence. You can find below  my writings: tutorials, tips, thoughs, and videos. Please, don't forget to leave me a feedback. I will appreciate it. It will make me improve.
           </p>
         </div>
+        <p class="text-danger"> I am currently updating the site. Please, feel free to contact me, jeremie at aims.ac.za or jeremy@aimsammi.org, in case of any misconvenience.
+          </p>
       
         
          
@@ -268,61 +288,66 @@ id="btn-back-to-top"
       <!-- <main class="site-main" id="site-main" aria-label="Content" tabindex="1"> -->
         <main class="row d-flex other-device justified-text  b-mobile-margins">
 
-          <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+          <div  class="col-md-8 container post-container mt-3" itemscope itemtype="http://schema.org/BlogPosting">
+    <!-- Post header -->
+    <div class="border-bottom mb-3 ">
+        <h1 class="text-center post-title " itemprop="name headline">I started a Master&#39;s in AI in Senegal</h1>
+        <p class="post-meta text-center mt-0"><time class="dt-published" datetime="2024-08-12T00:00:00+00:00" itemprop="datePublished">
+              Aug 12, 2024
+            </time></p>
 
-  <header class="post-header">
-
-    <h1 class="post-title p-name" itemprop="name headline">I started a Master&#39;s in AI in Senegal</h1>
-    <p class="post-meta"><time class="dt-published" datetime="2024-08-12T00:00:00+00:00" itemprop="datePublished">
-        Aug 12, 2024
-      </time></p>
-
-  </header>
-
-  <div class="post-content e-content" itemprop="articleBody">
-    <h2 id="why-am-i-doing-ammi">Why Am I doing AMMI?</h2>
+    </div>
+    <!--  Body -->
+    <div class="mb-4 ">
+        <h2 id="why-am-i-doing-ammi">Why Am I doing AMMI?</h2>
 
 
-  </div>
+        
+     </div>
+    
 
-  <footer class="post-footer">
+<div class=" border-top mt-3">
     
 
     
 
     <nav class="post-pagination" role="navigation">
       
-        <a class="post-previous" href="/events/Thesis-defense-AIMS/">
-          <h4 class="post-pagination-label">Prev</h4>
+        <a class="post-previous yellow" href="/events/Thesis-defense-AIMS/">
           <span class="post-pagination-title">
             <i class="fas fa-arrow-left"></i> I defended my Master’s thesis at AIMS South Africa.
 
           </span>
         </a>
       
-
       
-        <a class="post-next" href="/events/apic-summer-school/">
-          <h4 class="post-pagination-label">Next</h4>
-          <span class="post-pagination-title">
+        <a class="post-next yellow" href="/events/apic-summer-school/">
+          <span class="">
             Summer School on Probability, Information Theory, Combinatorics
  <i class="fas fa-arrow-right"></i>
           </span>
         </a>
       
     </nav>
-  </footer>
+  </div>
 
   
+
+</div>
+
+
+</div>
+
+<!--  toc -->
   
-</article>
+
 
 
         </main>
     
 
       
-<footer class="mt-4">
+<footer class="mt-4 justify-content-center">
   
  
     
@@ -332,7 +357,7 @@ id="btn-back-to-top"
     <p>Copyright © 2016&nbsp;-&nbsp;2024 Jeremie N. Mabiala; All rights reserved.</p>
     
   <p class="text-white text-center">
-    Powered by <a class="yellow" href="https://jekyllrb.com/">Jekyll</a>. This is a minimal and beautiful jekyll theme I designed. Feel free to steal it from github.</p>
+    Powered by <a class="yellow" href="https://jekyllrb.com/">Jekyll</a>. This is a minimal and beautiful jekyll. Feel free to steal it from github.</p>
 </footer>
 
 

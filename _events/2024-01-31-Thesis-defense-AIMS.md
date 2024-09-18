@@ -4,7 +4,7 @@ title:  I defended my Master's thesis at AIMS South Africa.
 location: Muizenberg, Cape Town.
 date: "Jan 31, 2024"
 img: "./assets/static/img/aims-za-1.jpeg"
-description: In Jan 31, 2024, I completed my degree from the African Institute for Mathematical Sciences (AIMS SA) in the beautifull city of Cape Town. There, I had the priviledge to meet gifted students across africa and researchers from around the world ...
+description: In Jan 31, 2024, I completed my degree from the African Institute for Mathematical Sciences AIMS SA in the beautifull city of Cape Town. There, I had the priviledge to meet gifted students across africa and researchers from around the world ...
 ---
 
 ### My journey at AIMS?

@@ -1084,3 +1084,27 @@ ul.post-categories li {
     }
     
 }
+
+
+.wrapper {
+    /* max-width: calc(100% - 50px); Replace #{$content-width} and #{$spacing-unit} with actual values */
+    /* margin-right: 10% !important;
+    margin-left: 15% !important;
+    padding-right: 5px; 
+    padding-left: 5px;   */
+    z-index: 0;
+  
+    /* Add clearfix functionality manually, or if using a library, ensure it's applied */
+  
+    /* Clearfix hack for modern browsers */
+    overflow: auto;
+  }
+  
+  @media screen and (min-width: 1200px) { /* Replace $on-large with actual value */
+    .wrapper {
+      max-width: calc(100% - 20px); /* Replace #{$spacing-unit * 2} */
+      padding-right: 10px; /* Replace $spacing-unit */
+      padding-left: 10px;  /* Replace $spacing-unit */
+    }
+  }
+  
