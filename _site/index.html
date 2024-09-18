@@ -22,8 +22,8 @@
 <meta property="og:title" content="home" />
 <meta name="author" content="Jeremie N. Mabiala" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="This is a minimal and beautiful jekyll theme I designed. Feel free to steal it from github." />
-<meta property="og:description" content="This is a minimal and beautiful jekyll theme I designed. Feel free to steal it from github." />
+<meta name="description" content="This is a minimal and beautiful jekyll. Feel free to steal it from github." />
+<meta property="og:description" content="This is a minimal and beautiful jekyll. Feel free to steal it from github." />
 <link rel="canonical" href="http://localhost:4000/" />
 <meta property="og:url" content="http://localhost:4000/" />
 <meta property="og:site_name" content="N. Mabiala" />
@@ -34,7 +34,7 @@
 <meta name="twitter:creator" content="@Jeremie N. Mabiala" />
 <meta name="google-site-verification" content="u4WXQl0Eu66rsQo2kRdCNx" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Jeremie N. Mabiala"},"description":"This is a minimal and beautiful jekyll theme I designed. Feel free to steal it from github.","headline":"home","name":"Jeremie Nlandu Mabiala","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/logo.png"},"name":"Jeremie N. Mabiala"},"sameAs":["https://twitter.com/ngzhio","https://www.facebook.com/ngzhio","https://github.com/ngzhio"],"url":"http://localhost:4000/"}</script>
+{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Jeremie N. Mabiala"},"description":"This is a minimal and beautiful jekyll. Feel free to steal it from github.","headline":"home","name":"Jeremie Nlandu Mabiala","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/logo.png"},"name":"Jeremie N. Mabiala"},"sameAs":["https://twitter.com/ngzhio","https://www.facebook.com/ngzhio","https://github.com/ngzhio"],"url":"http://localhost:4000/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -185,6 +185,24 @@
  
 
   </svg>
+ <script>
+    window.WebFontConfig = {
+      custom: {
+        families: ['KaTeX_AMS', 'KaTeX_Caligraphic:n4,n7', 'KaTeX_Fraktur:n4,n7',
+          'KaTeX_Main:n4,n7,i4,i7', 'KaTeX_Math:i4,i7', 'KaTeX_Script',
+          'KaTeX_SansSerif:n4,n7,i4', 'KaTeX_Size1', 'KaTeX_Size2', 'KaTeX_Size3',
+          'KaTeX_Size4', 'KaTeX_Typewriter'],
+      },
+    };
+  </script>
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+
  
   </head>
 
@@ -250,9 +268,9 @@ He is an  aspiring AI researcher. In his hobbies, Jeremie is  a software develop
 
           </p>
         </div>
-        <p class="text-danger"> This site is  currently being updated (and modified). Feel free to 
-          contact me, jeremie at aims.ac.za. Sorry, still working on the other devices layout. It only suits for mobile right now.</p>
-      
+        <p class="text-danger text-center"> I am currently updating the site. Please, feel free to contact me, jeremie at aims.ac.za or jeremy@aimsammi.org, in case of any misconvenience.
+        </p>
+          
          
          <!-- 
         Insert Nav bar here { nav.html}
@@ -309,7 +327,7 @@ He is an  aspiring AI researcher. In his hobbies, Jeremie is  a software develop
         <main class="row d-flex other-device justified-text  b-mobile-margins">
 
           
-<div class="col-md-6">
+<div class="col-md-8">
     <h2 >Cours attended</h2>
     <h1 class="h6 text-white "> 
       In this section , you can find some of the courses that attended.
@@ -381,14 +399,14 @@ He is an  aspiring AI researcher. In his hobbies, Jeremie is  a software develop
     </ul>
   For additional informations, pleasse check:
   <ul>
-      <li> My blog post on <a class=" btn yellow "  href="/blog"> blog post </a></li>
+      <li> My blog post on <a class=" btn yellow disabled"  href="/blog"> blog post </a></li>
       <li> some codes that I implemented and personal projects  on <a class="yellow" href="githbu.com/jnlandu.git"></a>GitHub</li>
   </ul>
 </div>
 
 
 <!--  Add  -->
-<div class="col-md-6 bg-dark rounded sidebar-mobile-off">
+<div class="col-md-4 bg-dark rounded sidebar-mobile-off">
   <!-- 
       <div class="bio-div bio-container col-md-8 mobile-top">
  
@@ -432,7 +450,7 @@ He is an  aspiring AI researcher. In his hobbies, Jeremie is  a software develop
       </small>
    
     <p>
-      In Jan 31, 2024, I completed my degree from the African Institute for Mathematical Sciences (AIMS SA) in the beautifull city of Cape Town. There, I had the priviledge to meet gifted students across africa and researchers from around the world ...
+      In Jan 31, 2024, I completed my degree from the African Institute for Mathematical Sciences AIMS SA in the beautifull city of Cape Town. There, I had the priviledge to meet gifted students across africa and researchers from around the world ...
       <a class=" btn yellow rounded-top rounded-bottom " href="/events/Thesis-defense-AIMS/">plus
         <svg width="24" height="24" fill="#black">
           <use xlink:href="#read"></use>
@@ -505,73 +523,14 @@ He is an  aspiring AI researcher. In his hobbies, Jeremie is  a software develop
 <!--  Tutorials  -->
 
 <!--  Events  and News :  -->
-<div class="event-container">
-  <h2>Tutorials and Courses </h2>
-  
 
-  <div class="row">
-    <h5 class="mb-0">- <a class=" yellow post-link" href="/tutorials/full-tutorials-on-flask/">Become a python web devlopper with Flask</a></h5>
-    
-    <small class="mt-0"> <svg  width="17" height="17" fill="#F90"><use xlink:href="#location"></use></svg> 
-      <svg  width="17" height="17" fill="#F90"><use xlink:href="#calendar"></use></svg> August 14, 2024
-    </small>
-    <p>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus sint impedit doloremque reprehenderit, facilis quo optio veritatis molestias autem sit amet magni laborum veniam corporis quam nostrum nam iure incidunt. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed autem atque fuga quam ab architecto repudiandae amet perferendis, ea excepturi cupiditate nisi dolorem? Earum error adipisci nobis, dignissimos culpa quidem?.
-      <a class=" btn yellow rounded-top rounded-bottom " href="">Learn more
-        <svg width="24" height="24" fill="#black">
-          <use xlink:href="#read">
-          </use>
-        </svg>
-      </a>  
-    </p>
-    
-  </div> 
-  
-
-  <div class="row">
-    <h5 class="mb-0">- <a class=" yellow post-link" href="/tutorials/nextjs-crash-course/">Introduction to nextjs 14</a></h5>
-    
-    <small class="mt-0"> <svg  width="17" height="17" fill="#F90"><use xlink:href="#location"></use></svg> 
-      <svg  width="17" height="17" fill="#F90"><use xlink:href="#calendar"></use></svg> August 14, 2024
-    </small>
-    <p>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus sint impedit doloremque reprehenderit, facilis quo optio veritatis molestias autem sit amet magni laborum veniam corporis quam nostrum nam iure incidunt. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed autem atque fuga quam ab architecto repudiandae amet perferendis, ea excepturi cupiditate nisi dolorem? Earum error adipisci nobis, dignissimos culpa quidem?.
-      <a class=" btn yellow rounded-top rounded-bottom " href="">Learn more
-        <svg width="24" height="24" fill="#black">
-          <use xlink:href="#read">
-          </use>
-        </svg>
-      </a>  
-    </p>
-    
-  </div> 
-  
-
-  <div class="row">
-    <h5 class="mb-0">- <a class=" yellow post-link" href="/tutorials/html-css-js/">Intriduction to Html, Css, and JavaScript</a></h5>
-    
-    <small class="mt-0"> <svg  width="17" height="17" fill="#F90"><use xlink:href="#location"></use></svg> 
-      <svg  width="17" height="17" fill="#F90"><use xlink:href="#calendar"></use></svg> September 01, 2024
-    </small>
-    <p>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus sint impedit doloremque reprehenderit, facilis quo optio veritatis molestias autem sit amet magni laborum veniam corporis quam nostrum nam iure incidunt. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed autem atque fuga quam ab architecto repudiandae amet perferendis, ea excepturi cupiditate nisi dolorem? Earum error adipisci nobis, dignissimos culpa quidem?.
-      <a class=" btn yellow rounded-top rounded-bottom " href="">Learn more
-        <svg width="24" height="24" fill="#black">
-          <use xlink:href="#read">
-          </use>
-        </svg>
-      </a>  
-    </p>
-    
-  </div> 
-  
-  </div>
   
 <!--  Projects  -->
 
 <div class="event-container">
-  <h2>Projects</h2>
   
+  <!-- 
+   <h2>Projects</h2>
     
       <div class="container-fluid my-2 ">
         <p><a class="code " href="/projects/Sora-AI-powered-mobile-app/">{ code }</a> Aura: AI-powered mobile app <br>
@@ -588,7 +547,7 @@ He is an  aspiring AI researcher. In his hobbies, Jeremie is  a software develop
        A small mobile app developed with React Native and OpenAI APIs to generate human-like images.
       </div>
     
-  
+   -->
 </div>  
 <!-- <a class=" btn yellow rounded-top rounded-bottom " href="">Plus
   <svg width="24" height="24" fill="#black">
@@ -656,7 +615,7 @@ He is an  aspiring AI researcher. In his hobbies, Jeremie is  a software develop
     
 
       
-<footer class="mt-4">
+<footer class="mt-4 justify-content-center">
   
  
     
@@ -666,7 +625,7 @@ He is an  aspiring AI researcher. In his hobbies, Jeremie is  a software develop
     <p>Copyright © 2016&nbsp;-&nbsp;2024 Jeremie N. Mabiala; All rights reserved.</p>
     
   <p class="text-white text-center">
-    Powered by <a class="yellow" href="https://jekyllrb.com/">Jekyll</a>. This is a minimal and beautiful jekyll theme I designed. Feel free to steal it from github.</p>
+    Powered by <a class="yellow" href="https://jekyllrb.com/">Jekyll</a>. This is a minimal and beautiful jekyll. Feel free to steal it from github.</p>
 </footer>
 
 

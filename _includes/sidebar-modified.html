@@ -38,6 +38,7 @@
 <!--  Tutorials  -->
 
 <!--  Events  and News :  -->
+{% if site.tutorial %}
 <div class="event-container">
   <h2>Tutorials and Courses </h2>
   {% for tutorial in site.tutorials | limit:3   %}
@@ -71,19 +72,22 @@
   </div> 
   {% endfor %}
   </div>
+
+{% endif %}
   
 <!--  Projects  -->
 
 <div class="event-container">
-  <h2>Projects</h2>
-  {% if site.projects.size > 0 %}
+  
+  <!-- {% if site.projects.size > 0 %}
+   <h2>Projects</h2>
     {% for project in site.projects limit:3 %}
       <div class="container-fluid my-2 ">
         <p><a class="code " href="{{ project.url | relative }}">{ code }</a> {{ project.title }} <br>
        {{ project.summary }}
       </div>
     {% endfor %}
-  {% endif %}
+  {% endif %} -->
 </div>  
 <!-- <a class=" btn yellow rounded-top rounded-bottom " href="{{ event.url | relative_url }}">Plus
   <svg width="24" height="24" fill="#black">
