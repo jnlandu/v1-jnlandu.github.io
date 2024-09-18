@@ -4,7 +4,7 @@ title:  Deep Learning Indaba 2024, African parlour in AI and Machine Learning.
 location: Dakar, Senegal
 date: "01 Sept - 09 Sept 24"
 img: "./assets/static/img/logo.jpeg"
-description:  I was privileged  to attend the africa's first and biggest gathering in our domain, Machine Learning. The Deep Learning Indaba (DLI)  brings together researchers, students, and professionals from Africa and around the world to share knowledge, collaborate, and foster the growth of AI research and innovation on the continent. I priveleged to posed with Sammy Bengio, a researcher from Apple Inc.
+description:  I was privileged to attend Africa's first and biggest gathering in our domain, Machine Learning. The Deep Learning Indaba (DLI) brings together researchers, students, and professionals from Africa and around the world to share knowledge, collaborate, and foster the growth of AI research and innovation on the continent. I was privileged to pose with Sammy Bengio, a researcher from Apple Inc.
 ---
 
 ### What is the Deep Learning Indaba?
