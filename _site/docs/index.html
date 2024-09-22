@@ -5,6 +5,13 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ <!-- Link to Google Fonts -->
+<!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@400;700&family=Lora:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"> -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@400;700&family=Lora:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<!-- <link rel="stylesheet" href="styles.css"> -->
+
+<script async src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
 <link rel="preload" href="/fonts/lato-v14-latin-300.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/fonts/lato-v14-latin-700.woff2" as="font" type="font/woff2" crossorigin />
 
@@ -15,8 +22,8 @@
 <meta property="og:title" content="Docs" />
 <meta name="author" content="Jeremie N. Mabiala" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="This is a minimal and beautiful jekyll theme I designed. Feel free to steal it from github." />
-<meta property="og:description" content="This is a minimal and beautiful jekyll theme I designed. Feel free to steal it from github." />
+<meta name="description" content="This is a minimal and beautiful jekyll. Feel free to steal it from github." />
+<meta property="og:description" content="This is a minimal and beautiful jekyll. Feel free to steal it from github." />
 <link rel="canonical" href="http://localhost:4000/docs/" />
 <meta property="og:url" content="http://localhost:4000/docs/" />
 <meta property="og:site_name" content="N. Mabiala" />
@@ -27,7 +34,7 @@
 <meta name="twitter:creator" content="@Jeremie N. Mabiala" />
 <meta name="google-site-verification" content="u4WXQl0Eu66rsQo2kRdCNx" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Jeremie N. Mabiala"},"description":"This is a minimal and beautiful jekyll theme I designed. Feel free to steal it from github.","headline":"Docs","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/logo.png"},"name":"Jeremie N. Mabiala"},"url":"http://localhost:4000/docs/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Jeremie N. Mabiala"},"description":"This is a minimal and beautiful jekyll. Feel free to steal it from github.","headline":"Docs","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/logo.png"},"name":"Jeremie N. Mabiala"},"url":"http://localhost:4000/docs/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -62,11 +69,6 @@
 
 
 <!-- <link rel="stylesheet" href="/assets/css/skin.css"> -->
-
-
-
-<script async src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
-
 <!-- 
  -->
  <!--  Logos  -->
@@ -193,6 +195,24 @@
  
 
   </svg>
+ <script>
+    window.WebFontConfig = {
+      custom: {
+        families: ['KaTeX_AMS', 'KaTeX_Caligraphic:n4,n7', 'KaTeX_Fraktur:n4,n7',
+          'KaTeX_Main:n4,n7,i4,i7', 'KaTeX_Math:i4,i7', 'KaTeX_Script',
+          'KaTeX_SansSerif:n4,n7,i4', 'KaTeX_Size1', 'KaTeX_Size2', 'KaTeX_Size3',
+          'KaTeX_Size4', 'KaTeX_Typewriter'],
+      },
+    };
+  </script>
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+
  
   </head>
 
@@ -209,7 +229,7 @@ id="btn-back-to-top"
 
      
       <header>
-            <div class="row d-flex header-other-device">
+            <div class="row d-flex header-other-device mobile-margins">
     
         <div class="">
           <!-- <span class="yellow"> Welcome to my blog</span>  -->
@@ -218,9 +238,9 @@ id="btn-back-to-top"
             in Artifical Inteliligence. You can find below  my writings: tutorials, tips, thoughs, and videos. Please, don't forget to leave me a feedback. I will appreciate it. It will make me improve.
           </p>
         </div>
+        <p class="text-danger"> I am currently updating the site. Please, feel free to contact me, jeremie at aims.ac.za or jeremy@aimsammi.org, in case of any misconvenience.
+          </p>
       
-
-       
         
          
          <!-- 
@@ -275,7 +295,7 @@ id="btn-back-to-top"
       </aside> -->
 
       <!-- <main class="site-main" id="site-main" aria-label="Content" tabindex="1"> -->
-        <main class="main row d-flex other-device">
+        <main class="row d-flex other-device justified-text  b-mobile-margins">
 
           <article class="post">
 
@@ -295,7 +315,7 @@ id="btn-back-to-top"
     
 
       
-<footer class="mt-4">
+<footer class="mt-4 justify-content-center">
   
  
     
@@ -305,7 +325,7 @@ id="btn-back-to-top"
     <p>Copyright © 2016&nbsp;-&nbsp;2024 Jeremie N. Mabiala; All rights reserved.</p>
     
   <p class="text-white text-center">
-    Powered by <a class="yellow" href="https://jekyllrb.com/">Jekyll</a>. This is a minimal and beautiful jekyll theme I designed. Feel free to steal it from github.</p>
+    Powered by <a class="yellow" href="https://jekyllrb.com/">Jekyll</a>. This is a minimal and beautiful jekyll. Feel free to steal it from github.</p>
 </footer>
 
 

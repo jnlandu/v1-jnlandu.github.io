@@ -1,67 +1,70 @@
 ---
 layout: default
 ---
-<div class="col-md-6">
-<!-- <div class="col-md-8 mb-1  "> -->
-    <h1 class="h3 ">Courses attended</h1>
-    <h1 class="h6 text-white "> 
-      In this section , you can find some of the courses that attended.
+{{ content }}
+<div class="col-md-8">
+    <h2>Cours Attended</h2>
+    <h1 class="h6 text-white"> 
+      In this section, you can find some of the courses I have attended.
     </h1>
-  <div class="course-title">
-  <h1 class="h5 yellow"> Foundation of Machine Learning</h1>
-  <div class="h6 text-white course-summary">
-      This course was provided by Prof. <a class="yellow" href="https://scholar.google.com/citations?user=5wuvTfoAAAAJ&hl=en">Moustapha Cisse</a>. The course had two parts: Statistical learning Theory  and an introductoion to Deep Learning. In the first, we delved into theoretical aspects of machine learning, namely the statistical learning theory,
-       where we discussed of supervised and unsupervised learning. We discussed of the ERM problem, Variance-Bias tradeoff, Overfitting and Underfitting, Linear Regression, Classification, Generalized linear models, and dimensionality reduction techiques such:
-       <ul class="h6 text-white">
+    <div class="course-title">
+      <h1 class="h5 yellow">Foundation of Machine Learning</h1>
+      <div class="h6 text-white course-summary">
+        This course was provided by Prof. <a class="yellow" href="https://scholar.google.com/citations?user=5wuvTfoAAAAJ&hl=en">Moustapha Cisse</a>. The course had two parts: Statistical Learning Theory and an introduction to Deep Learning. In the first part, we explored theoretical aspects of machine learning, particularly statistical learning theory, covering both supervised and unsupervised learning. We discussed the ERM problem, bias-variance tradeoff, overfitting and underfitting, linear regression, classification, generalized linear models, and dimensionality reduction techniques such as:
+        <ul class="h6 text-white">
           <li>Random projections</li>
-          <li> Principal Component Anlysis</li>
-          <li> Prinicpal Canonical Analysis</li>
-       </ul> 
-      In the second part, we delved into Neural network, weights initialization, CNN, RCNN, Attention Mechanism and Transformers.<br>
-      Please, find <a class="yellow" href="here">here</a> the materials I used and some codes that I implemented. Also check my tutorials below.
-  </p>
-  </div>
-</div>
+          <li>Principal Component Analysis</li>
+          <li>Canonical Correlation Analysis</li>
+        </ul>
+        In the second part, we covered neural networks, weight initialization, CNNs, RNNs, attention mechanisms, and transformers.<br>
+        Please find <a class="yellow" href="here">here</a> the materials I used and some code I implemented. Also, check out my tutorials below.
+      </div>
+    </div>
+    
 <div class="course-title">
-  <h1 class="h5 yellow">Kernel Methods for Machine Learning </h1>
-  <p>
-      This courses was given by  <a class="yellow" href="https://jpvert.github.io/">J.P Vert</a> from  <a class="yellow" href="https://www.owkin.com/">Owkin</a> and the T. A  Menegeaux and Juliette-Marie from Inria.
-      This course  covered basic concepts of machine learning in high dimension, and the importance of regularization. We also discussed about Support Vector Machine (SVM).
-      We studied in detail high-dimensional libnear models regularized by euclidean norm or the manhattan norm, including the ridge and lasso
-      regression, the ridge classification. One of the key ideas of this course
-      was to show us that, some learning problems which can be intricated to solve in finite dimensional euclidean space, can easily be solved
-      in  infinite dimensional spaces, provided a good feature mapping.  The kernel is just a similarity function between data points. We them showed how positive kernel, via the representer theorem, transform the ERM problem 
-      of euclidean space into  an ERM problem of large dimensional space. Kernels allows to transform linear models into non-linear models
-      , usable even for non-vectorial data such as strings and graphs. We also discussed 
-      Reproducing Kernel Hilbert Spaces (RKHS), and related theorems. Please find my <a class="yellow" href="codes">codes</a> and the course page <a class="yellow" href="here">here</a>.
-  
-  </p>
+  <h1 class="h5 yellow">Kernel Methods for Machine Learning</h1>
+<p>
+    This course was given by <a class="yellow" href="https://jpvert.github.io/">J.P. Vert</a> from <a class="yellow" href="https://www.owkin.com/">Owkin</a>, with T.A. Menegeaux and Juliette-Marie from Inria.
+    The course covered basic concepts of machine learning in high dimensions and the importance of regularization. We also discussed Support Vector Machines (SVM).
+    We studied in detail high-dimensional linear models regularized by the Euclidean norm or the Manhattan norm, including ridge and lasso
+    regression, as well as ridge classification. One of the key ideas of this course
+    was to demonstrate that some learning problems, which can be complex to solve in finite-dimensional Euclidean space, can be easily addressed
+    in infinite-dimensional spaces, provided a good feature mapping. The kernel is simply a similarity function between data points. We were then shown how positive kernels, via the representer theorem, transform the ERM problem 
+    in Euclidean space into an ERM problem in large-dimensional space. Kernels allow for transforming linear models into non-linear models,
+    applicable even to non-vectorial data such as strings and graphs. We also discussed 
+    Reproducing Kernel Hilbert Spaces (RKHS) and related theorems. Please find my <a class="yellow" href="codes">code</a> and the course page <a class="yellow" href="here">here</a>.
+</p>
+
   </div>
   <div class="course-title">
-  <h1 class="h5 yellow">Optimization for Machine Learning </h1>
-  <p>
-      Many problems in statistcal learning leatning consists of finding the best set of parameters or the best functions  given some data. These are estimations problems.
-      These problemes encountered almost everywhere in Machine Learning and Deep Learning can easily be formulated as 
-      optimization problems. These formulation helps to understand performance of learning algorithms.
-       In this course, the classical convex optimization theory was presented. Classical gradients methods and its variants were discuessed, as well Variance reduced methods and accelerated gradients methods.
-  
-       The purpose of the course was to present theorectical formulation  of convex problems, the asymptotic behaviors of (Stochastic) Gradient methods. For instance, it was shown, 
-       although Stochastic gradient  descent (SGD) is efficient  - because it does not make use 
-       of the full dataset - it never converges to the optimal solution, with out restrictive assumptions. We also implemented from scratch these algorithms and we did theorectical exercices.
-       Please, refer to matertials <a class="yellow" href="optim">Optim</a>. The course was given by Dr <a class="yellow" href="https://www.linkedin.com/in/lionel-ngoupeyou-tondji-057a25128/?originalSubdomain=de"> Lionel Tondji</a>, 
-       a former student of AMMI. Find <a class="yellow" href="ammi-photos/optim">here</a>, the good byes photos.
-  
-  </p>
+    <h1 class="h5 yellow">Optimization for Machine Learning</h1>
+    <p>
+        Many problems in statistical learning consist of finding the best set of parameters or the best functions given some data. These are estimation problems.
+        These problems, encountered almost everywhere in Machine Learning and Deep Learning, can easily be formulated as 
+        optimization problems. These formulations help to understand the performance of learning algorithms.
+        In this course, classical convex optimization theory was presented. Classical gradient methods and their variants were discussed, as well as variance-reduced methods and accelerated gradient methods.
+        
+        The purpose of the course was to present the theoretical formulation of convex problems and the asymptotic behaviors of (Stochastic) Gradient methods. For instance, it was shown that 
+        although Stochastic Gradient Descent (SGD) is efficient—because it does not make use of the full dataset—it never converges to the optimal solution without restrictive assumptions. We also implemented these algorithms from scratch and worked on theoretical exercises.
+        Please refer to the materials <a class="yellow" href="optim">here</a>. The course was given by Dr. <a class="yellow" href="https://www.linkedin.com/in/lionel-ngoupeyou-tondji-057a25128/?originalSubdomain=de">Lionel Tondji</a>, 
+        a former student of AMMI. Find the goodbye photos <a class="yellow" href="ammi-photos/optim">here</a>.
+    </p>    
   </div>
   <div class="course-title">
-  <h1 class="h5 yellow">Computer vision </h1>
-  <p>
-      This course was split in two:  part one is an introduction to computer vision  and was given by Dr <a class="yellow" href="https://lvdmaaten.github.io/"> Laurens van der Maaten</a> from <a class="yellow" href="https://ai.meta.com/">Meta AI</a> and 
-  co-inventor of <a class="yellow" href="https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding"> t-SNE</a> . The second part of the course focused on Object Detection and was given by  Dr <a class="yellow" href="https://scholar.google.fr/citations?user=cLPaHcIAAAAJ&hl=en">Natalia Neverova </a>
-  from <a class="yellow" href="https://ai.meta.com/">Meta AI</a>.
-  In the first part, we discussed in depth CNN,  RNN, Unet, and we implemented these architectures and other related from scratch. See my <a class="yellow" href="git">repo</a> for the codes. The last part focused on Detection. We discussed about visional models, diffusion models, distillation, 
-  video understanding, etc. The main tools used in this part was the FAIR <a class="yellow" href="https://ai.meta.com/tools/detectron2/">Detectron2</a> with each we experimented vision models such R-CNN, Mask R-CNN, Fast R-CNN, RPN. Please, check my  series of tutorials on  <a class="yellow" href="https://en.wikipedia.org/wiki/Object_detection">Object Detection with Detectron2</a>.
-  </p>
+    <h1 class="h5 yellow">Computer Vision</h1>
+    <p>
+      This course was split into two parts: the first part was an introduction to computer vision, taught by Dr. 
+      <a class="yellow" href="https://lvdmaaten.github.io/">Laurens van der Maaten</a> 
+      from <a class="yellow" href="https://ai.meta.com/">Meta AI</a>, and co-inventor of 
+      <a class="yellow" href="https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding">t-SNE</a>. 
+      The second part focused on object detection and was given by Dr. <a class="yellow" href="https://scholar.google.fr/citations?user=cLPaHcIAAAAJ&hl=en">Natalia Neverova</a>
+       from <a class="yellow" href="https://ai.meta.com/">Meta AI</a>.
+      
+      In the first part, we discussed CNNs, RNNs, U-Net, and implemented these architectures and related ones from scratch. 
+      See my <a class="yellow" href="git">repo</a> for the code. The second part focused on detection. We covered vision models,
+       diffusion models, distillation, video understanding, and more. The main tool used in this part was FAIR's <a class="yellow" href="https://ai.meta.com/tools/detectron2/">Detectron2</a>, with which we experimented using vision models like R-CNN, Mask R-CNN, Fast R-CNN, and RPN. Please check out my series of tutorials on <a class="yellow" href="https://en.wikipedia.org/wiki/Object_detection">Object Detection with Detectron2</a>.
+    </p>
+    
 
   </div>
 
@@ -74,16 +77,16 @@ layout: default
     </ul>
   For additional informations, pleasse check:
   <ul>
-      <li> My blog post on <a class="yellow"   href="{{ site.baseurl }}/blog"> blog post </a></li>
+      <li> My blog post on <a class=" btn yellow disabled"  href="{{ site.baseurl }}/blog"> blog post </a></li>
       <li> some codes that I implemented and personal projects  on <a class="yellow" href="githbu.com/jnlandu.git"></a>GitHub</li>
   </ul>
 </div>
 
 
-<div class="col-md-6 bg-dark rounded sidebar-mobile-off">
-
+<!--  Add  -->
+<div class="col-md-4 bg-dark rounded sidebar-mobile-off">
+  <!-- {% include events.html  %} -->
   {% include sidebar-modified.html  %}
-     
   
 </div>
 

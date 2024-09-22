@@ -5,6 +5,13 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ <!-- Link to Google Fonts -->
+<!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@400;700&family=Lora:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"> -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@400;700&family=Lora:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<!-- <link rel="stylesheet" href="styles.css"> -->
+
+<script async src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
 <link rel="preload" href="/fonts/lato-v14-latin-300.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/fonts/lato-v14-latin-700.woff2" as="font" type="font/woff2" crossorigin />
 
@@ -15,8 +22,8 @@
 <meta property="og:title" content="About" />
 <meta name="author" content="Jeremie N. Mabiala" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="This is a minimal and beautiful jekyll theme I designed. Feel free to steal it from github." />
-<meta property="og:description" content="This is a minimal and beautiful jekyll theme I designed. Feel free to steal it from github." />
+<meta name="description" content="This is a minimal and beautiful jekyll. Feel free to steal it from github." />
+<meta property="og:description" content="This is a minimal and beautiful jekyll. Feel free to steal it from github." />
 <link rel="canonical" href="http://localhost:4000/about/" />
 <meta property="og:url" content="http://localhost:4000/about/" />
 <meta property="og:site_name" content="N. Mabiala" />
@@ -27,7 +34,7 @@
 <meta name="twitter:creator" content="@Jeremie N. Mabiala" />
 <meta name="google-site-verification" content="u4WXQl0Eu66rsQo2kRdCNx" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Jeremie N. Mabiala"},"description":"This is a minimal and beautiful jekyll theme I designed. Feel free to steal it from github.","headline":"About","name":"Jeremie Nlandu Mabiala","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/logo.png"},"name":"Jeremie N. Mabiala"},"sameAs":["https://twitter.com/ngzhio","https://www.facebook.com/ngzhio","https://github.com/ngzhio"],"url":"http://localhost:4000/about/"}</script>
+{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Jeremie N. Mabiala"},"description":"This is a minimal and beautiful jekyll. Feel free to steal it from github.","headline":"About","name":"Jeremie Nlandu Mabiala","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/logo.png"},"name":"Jeremie N. Mabiala"},"sameAs":["https://twitter.com/ngzhio","https://www.facebook.com/ngzhio","https://github.com/ngzhio"],"url":"http://localhost:4000/about/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -62,11 +69,6 @@
 
 
 <!-- <link rel="stylesheet" href="/assets/css/skin.css"> -->
-
-
-
-<script async src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
-
 <!-- 
  -->
  <!--  Logos  -->
@@ -193,6 +195,24 @@
  
 
   </svg>
+ <script>
+    window.WebFontConfig = {
+      custom: {
+        families: ['KaTeX_AMS', 'KaTeX_Caligraphic:n4,n7', 'KaTeX_Fraktur:n4,n7',
+          'KaTeX_Main:n4,n7,i4,i7', 'KaTeX_Math:i4,i7', 'KaTeX_Script',
+          'KaTeX_SansSerif:n4,n7,i4', 'KaTeX_Size1', 'KaTeX_Size2', 'KaTeX_Size3',
+          'KaTeX_Size4', 'KaTeX_Typewriter'],
+      },
+    };
+  </script>
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+
  
   </head>
 
@@ -209,61 +229,19 @@ id="btn-back-to-top"
 
      
       <header>
-            <div class="row d-flex header-other-device">
+            <div class="row d-flex header-other-device mobile-margins">
     
-      <div class=" col-md-4 mobile-h-rule">
-        <!--  Logo image  and profile  -->
-          <div   class="img-profile  mx-auto my-auto logo  border-dark ">
-            <img src="/assets/static/jeremie-apic-1.jpeg" class="card-img-top  rounded-circle" alt="profile">
-          </div>
-          <div class=""> 
-            <h1 class="h3 text-white text-center"> Jérémie <span class="yellow"> N. Mabiala </span></h1>
-            <p class=" text-center"> Student in Artifical Intelligence
-              <br>
-              <a class="yellow mx-2 rs-click" href="https://x.com/ValentinMabiala"><svg  width="24" height="24" fill="#D9D9D9"><use xlink:href="#location"></use></svg>AIMS Senegal</a> 
-
-
-            </p>
-           
-            <div class="d-flex justify-content-center">
-              <a class="mx-2 rs-click" href="https://x.com/ValentinMabiala"><svg  width="24" height="24" fill="#F90"><use xlink:href="#email"></use></svg></a>
-            <a class="mx-2 rs-click" href="https://x.com/ValentinMabiala"><svg  width="24" height="24" fill="#F90"><use xlink:href="#twitter"></use></svg></a>
-            <a class="mx-2 rs-click" href="https://www.linkedin.com/in/jnlandu00a/"><svg  width="24" height="24" fill="#F90"><use xlink:href="#linkedin"></use></svg></a>
-            <a class="mx-2 rs-click" href="https://x.com/ValentinMabiala"><svg  width="24" height="24" fill="#F90"><use xlink:href="#facebook"></use></svg></a>
-            <a class="mx-2 rs-click" href="https://www.github.com/jnlandu"><svg  width="24" height="24" fill="#F90"><use xlink:href="#github"></use></svg> </a>      
-            </div>
-          </div>
-      </div>
-      
-      <div class="bio-div bio-container col-md-8 mobile-top">
- 
-        <div class="about">
-          <h1 class="text-white"> About Me </h1>
-          <p class="bio">
-          <span class="yellow"> Welcome!</span> 
-            
-<span class="h6 text-white">ML and DL enthusiast, Python and Math Lover, knowledge seeker, life-long learner. Jérémie is currenly a student in Artificial Intelligence at the African 
-Masters in Machine Intellidence (<a class="yellow" href="https://aimsammi.org/">AMMI</a>), a pan-african masters in Artificial
-intelligence in parternership with Google and Meta, hosted by AIMS Senegal.
-Before that, He graduated from <a class="yellow" href="sun.ac.za">Stellenbosch University</a> and <a class="yellow" href="aims.ac.za">AIMS South Africa</a>  
-in February 2024 with a Master degree in Mathematical Sciences where He worked on Mathematical Statistics (<a class="yellow" href="https://en.wikipedia.org/wiki/Functional_data_analysis">Functional Data analysis</a>). 
-His master thesis is titled <b>Gaussian processus for multivariate functional data</b> and is available at  <a class="yellow" href="https://archive.aims.ac.za/">AIMS archive</a>.<br>
-He also holds a licentiate degree (Bac + 6 ) in  Mathematics from the <a class="yellow" href="unikin.ac.cd">University of Kinshasa </a>, where he worked on  Functional Analysis and served
- as teaching assistant and subsidiary lecturer for two years.
-</span>
-<span class="h6  text-white">
-Jeremie is passionate  about  Teaching, <b> Theoretical Aspects of Machine Learning and/or Deep learning</b> and their applicatons. He has also keen interests in Visual Recognition,Reinforcement Learning and Computer Vision.
-</span>
-<p class="h6 text-white">
-He is an  aspiring AI researcher. In his hobbies, Jeremie is  a software developer, an apprentice writer and a poet.  Feel free to checkout my writings below.
-</p>
-
+        <div class="">
+          <!-- <span class="yellow"> Welcome to my blog</span>  -->
+          <h1 class="h2 text-center text-white"> AI, Machine Learning, Maths,and Programming Blog </h1>
+          <p> <span class="yellow"> Welcome 👋 </span>  to personal my blog.  I am   <a  class=" text-white " href=" /about"> Jérémie  </span><span class="yellow"> N. Mabiala </span> </a>. I am  currenty student 
+            in Artifical Inteliligence. You can find below  my writings: tutorials, tips, thoughs, and videos. Please, don't forget to leave me a feedback. I will appreciate it. It will make me improve.
           </p>
-         </div>  
         </div>
-        <p class="text-danger"> This site is  currently being updated (and modified). Feel free to 
-          contact me, jeremie at aims.ac.za. Sorry, still working on the other devices layout. It only suits for mobile right now.</p>
+        <p class="text-danger"> I am currently updating the site. Please, feel free to contact me, jeremie at aims.ac.za or jeremy@aimsammi.org, in case of any misconvenience.
+          </p>
       
+        
          
          <!-- 
         Insert Nav bar here { nav.html}
@@ -317,7 +295,7 @@ He is an  aspiring AI researcher. In his hobbies, Jeremie is  a software develop
       </aside> -->
 
       <!-- <main class="site-main" id="site-main" aria-label="Content" tabindex="1"> -->
-        <main class="main row d-flex other-device">
+        <main class="row d-flex other-device justified-text  b-mobile-margins">
 
           <article class="post">
 
@@ -337,7 +315,7 @@ He is an  aspiring AI researcher. In his hobbies, Jeremie is  a software develop
     
 
       
-<footer class="mt-4">
+<footer class="mt-4 justify-content-center">
   
  
     
@@ -347,7 +325,7 @@ He is an  aspiring AI researcher. In his hobbies, Jeremie is  a software develop
     <p>Copyright © 2016&nbsp;-&nbsp;2024 Jeremie N. Mabiala; All rights reserved.</p>
     
   <p class="text-white text-center">
-    Powered by <a class="yellow" href="https://jekyllrb.com/">Jekyll</a>. This is a minimal and beautiful jekyll theme I designed. Feel free to steal it from github.</p>
+    Powered by <a class="yellow" href="https://jekyllrb.com/">Jekyll</a>. This is a minimal and beautiful jekyll. Feel free to steal it from github.</p>
 </footer>
 
 

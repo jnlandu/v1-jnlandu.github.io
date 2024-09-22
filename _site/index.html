@@ -5,6 +5,13 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ <!-- Link to Google Fonts -->
+<!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@400;700&family=Lora:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"> -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@400;700&family=Lora:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<!-- <link rel="stylesheet" href="styles.css"> -->
+
+<script async src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
 <link rel="preload" href="/fonts/lato-v14-latin-300.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/fonts/lato-v14-latin-700.woff2" as="font" type="font/woff2" crossorigin />
 
@@ -15,8 +22,8 @@
 <meta property="og:title" content="home" />
 <meta name="author" content="Jeremie N. Mabiala" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="This is a minimal and beautiful jekyll theme I designed. Feel free to steal it from github." />
-<meta property="og:description" content="This is a minimal and beautiful jekyll theme I designed. Feel free to steal it from github." />
+<meta name="description" content="This is a minimal and beautiful jekyll. Feel free to steal it from github." />
+<meta property="og:description" content="This is a minimal and beautiful jekyll. Feel free to steal it from github." />
 <link rel="canonical" href="http://localhost:4000/" />
 <meta property="og:url" content="http://localhost:4000/" />
 <meta property="og:site_name" content="N. Mabiala" />
@@ -28,7 +35,7 @@
 <meta name="twitter:creator" content="@Jeremie N. Mabiala" />
 <meta name="google-site-verification" content="u4WXQl0Eu66rsQo2kRdCNx" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Jeremie N. Mabiala"},"description":"This is a minimal and beautiful jekyll theme I designed. Feel free to steal it from github.","headline":"home","name":"Jeremie Nlandu Mabiala","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/logo.png"},"name":"Jeremie N. Mabiala"},"sameAs":["https://twitter.com/ngzhio","https://www.facebook.com/ngzhio","https://github.com/ngzhio"],"url":"http://localhost:4000/"}</script>
+{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Jeremie N. Mabiala"},"description":"This is a minimal and beautiful jekyll. Feel free to steal it from github.","headline":"home","name":"Jeremie Nlandu Mabiala","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/logo.png"},"name":"Jeremie N. Mabiala"},"sameAs":["https://twitter.com/ngzhio","https://www.facebook.com/ngzhio","https://github.com/ngzhio"],"url":"http://localhost:4000/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -63,11 +70,6 @@
 
 
 <!-- <link rel="stylesheet" href="/assets/css/skin.css"> -->
-
-
-
-<script async src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
-
 <!-- 
  -->
  <!--  Logos  -->
@@ -194,6 +196,24 @@
  
 
   </svg>
+ <script>
+    window.WebFontConfig = {
+      custom: {
+        families: ['KaTeX_AMS', 'KaTeX_Caligraphic:n4,n7', 'KaTeX_Fraktur:n4,n7',
+          'KaTeX_Main:n4,n7,i4,i7', 'KaTeX_Math:i4,i7', 'KaTeX_Script',
+          'KaTeX_SansSerif:n4,n7,i4', 'KaTeX_Size1', 'KaTeX_Size2', 'KaTeX_Size3',
+          'KaTeX_Size4', 'KaTeX_Typewriter'],
+      },
+    };
+  </script>
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+
  
   </head>
 
@@ -210,12 +230,12 @@ id="btn-back-to-top"
 
      
       <header>
-            <div class="row d-flex header-other-device">
+            <div class="row d-flex header-other-device mobile-margins">
     
       <div class=" col-md-4 mobile-h-rule">
         <!--  Logo image  and profile  -->
           <div   class="img-profile  mx-auto my-auto logo  border-dark ">
-            <img src="/assets/static/jeremie-apic-1.jpeg" class="card-img-top  rounded-circle" alt="profile">
+            <img src="/assets/static/img/jeremie-apic-1.jpeg" class="card-img-top  rounded-circle" alt="profile">
           </div>
           <div class=""> 
             <h1 class="h3 text-white text-center"> Jérémie <span class="yellow"> N. Mabiala </span></h1>
@@ -237,10 +257,8 @@ id="btn-back-to-top"
       </div>
       
       <div class="bio-div bio-container col-md-8 mobile-top">
- 
-        <div class="about">
           <h1 class="text-white"> About Me </h1>
-          <p class="bio">
+          <p class="justified-text">
           <span class="yellow"> Welcome!</span> 
             
 <span class="h6 text-white">ML and DL enthusiast, Python and Math Lover, knowledge seeker, life-long learner. Jérémie is currenly a student in Artificial Intelligence at the African 
@@ -260,11 +278,10 @@ He is an  aspiring AI researcher. In his hobbies, Jeremie is  a software develop
 </p>
 
           </p>
-         </div>  
         </div>
-        <p class="text-danger"> This site is  currently being updated (and modified). Feel free to 
-          contact me, jeremie at aims.ac.za. Sorry, still working on the other devices layout. It only suits for mobile right now.</p>
-      
+        <p class="text-danger text-center"> I am currently updating the site. Please, feel free to contact me, jeremie at aims.ac.za or jeremy@aimsammi.org, in case of any misconvenience.
+        </p>
+          
          
          <!-- 
         Insert Nav bar here { nav.html}
@@ -318,11 +335,11 @@ He is an  aspiring AI researcher. In his hobbies, Jeremie is  a software develop
       </aside> -->
 
       <!-- <main class="site-main" id="site-main" aria-label="Content" tabindex="1"> -->
-        <main class="main row d-flex other-device">
+        <main class="row d-flex other-device justified-text  b-mobile-margins">
 
-          <div class="col-md-6">
-<!-- <div class="col-md-8 mb-1  "> -->
-    <h1 class="h3 ">Courses attended</h1>
+          
+<div class="col-md-8">
+    <h2 >Cours attended</h2>
     <h1 class="h6 text-white "> 
       In this section , you can find some of the courses that attended.
     </h1>
@@ -393,161 +410,171 @@ He is an  aspiring AI researcher. In his hobbies, Jeremie is  a software develop
     </ul>
   For additional informations, pleasse check:
   <ul>
-      <li> My blog post on <a class="yellow"   href="/blog"> blog post </a></li>
+      <li> My blog post on <a class=" btn yellow disabled"  href="/blog"> blog post </a></li>
       <li> some codes that I implemented and personal projects  on <a class="yellow" href="githbu.com/jnlandu.git"></a>GitHub</li>
   </ul>
 </div>
 
 
-<div class="col-md-6 bg-dark rounded sidebar-mobile-off">
+<!--  Add  -->
+<div class="col-md-4 bg-dark rounded sidebar-mobile-off">
+  <!-- 
+      <div class="bio-div bio-container col-md-8 mobile-top">
+ 
+        <div class="about">
+          <h1 class="text-white"> Events and News </h1>
+          <p class="bio">
+          <span class="yellow"> Welcome!</span> 
+            
+<span class="h6 text-white">ML and DL enthusiast, Python and Math Lover, knowledge seeker, life-long learner. Jérémie is currenly a student in Artificial Intelligence at the African 
+Masters in Machine Intellidence (<a class="yellow" href="https://aimsammi.org/">AMMI</a>), a pan-african masters in Artificial
+intelligence in parternership with Google and Meta, hosted by AIMS Senegal.
+Before that, He graduated from <a class="yellow" href="sun.ac.za">Stellenbosch University</a> and <a class="yellow" href="aims.ac.za">AIMS South Africa</a>  
+in February 2024 with a Master degree in Mathematical Sciences where He worked on Mathematical Statistics (<a class="yellow" href="https://en.wikipedia.org/wiki/Functional_data_analysis">Functional Data analysis</a>). 
+His master thesis is titled <b>Gaussian processus for multivariate functional data</b> and is available at  <a class="yellow" href="https://archive.aims.ac.za/">AIMS archive</a>.<br>
+He also holds a licentiate degree (Bac + 6 ) in  Mathematics from the <a class="yellow" href="unikin.ac.cd">University of Kinshasa </a>, where he worked on  Functional Analysis and served
+ as teaching assistant and subsidiary lecturer for two years.
+</span>
+<span class="h6  text-white">
+Jeremie is passionate  about  Teaching, <b> Theoretical Aspects of Machine Learning and/or Deep learning</b> and their applicatons. He has also keen interests in Visual Recognition,Reinforcement Learning and Computer Vision.
+</span>
+<p class="h6 text-white">
+He is an  aspiring AI researcher. In his hobbies, Jeremie is  a software developer, an apprentice writer and a poet.  Feel free to checkout my writings below.
+</p>
 
+          </p>
+         </div>  
+        </div>
+ -->
   
 <!--  Events  and News :  -->
 <div class="event-container">
-<p class=" text-white h2">Events and News</span>
-</p>
+<h2 class="">News</h2>
 
-
-<div class="row  d-flex justify-content-center my-3 ">
-  <!-- <div class="col-md-4 flex-fill mr-0  ">
-    <a href="https://deeplearningindaba.com/2024/workshops/"> <img class="img-fluid" 
-      src="./assets/static/logo.jpeg"
-      > </a>
-  </div> -->
-  <div class="col-md-8 flex-fill me-0 border-primary">
-  <h3 class="mb-0" > <a class=" yellow post-link" href="/events/apic-summer-school/">Summer School on Probability, Information Theory, Combinatorics</a></h3>
-  <span class="yellow mt-1 post-content"> <svg  width="17" height="17" fill="#F90"><use xlink:href="#location"></use></svg> Kigali, Rwanda
-    <svg  width="17" height="17" fill="#F90"><use xlink:href="#calendar"></use></svg> 2024-08-12 00:00:00 +0000
-  </span><br>
-  <p class="mt-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus sint impedit doloremque reprehenderit, facilis quo optio veritatis molestias autem sit amet magni laborum veniam corporis quam nostrum nam iure incidunt. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed autem atque fuga quam ab architecto repudiandae amet perferendis, ea excepturi cupiditate nisi dolorem? Earum error adipisci nobis, dignissimos culpa quidem?.
   
-  <!-- <div class="d-flex justify-content-center">
-  <a class=" bg-yellow text-center w-50 rounded-top rounded-bottom nav-link text-black mb-3" href="/events/apic-summer-school/">More<svg width="24" height="24" fill="#black"><use xlink:href="#read"></use></svg></a>  
-  </div> -->
-  <a class=" bg-yellow text-center w-50 rounded-top rounded-bottom text-black mb-3" href="/events/apic-summer-school/">More<svg width="24" height="24" fill="#black"><use xlink:href="#read"></use></svg></a>  
-  </p>
-
+  <div class="row">
+    <h5 class="mb-0"> - <a class=" yellow post-link" href="/events/Thesis-defense-AIMS/">I defended my Master's thesis at AIMS South Africa.</a>
+    </h5>
+    
+      <small class="mt-0"> <svg  width="17" height="17" fill="#F90"><use xlink:href="#location"></use></svg> Muizenberg, Cape Town.
+        <svg  width="17" height="17" fill="#F90"><use xlink:href="#calendar"></use></svg> January 31, 2024
+      </small>
    
-
-</div>
-</div>
-
-<div class="row  d-flex justify-content-center my-3 ">
-  <!-- <div class="col-md-4 flex-fill mr-0  ">
-    <a href="https://deeplearningindaba.com/2024/workshops/"> <img class="img-fluid" 
-      src="./assets/static/logo.jpeg"
-      > </a>
-  </div> -->
-  <div class="col-md-8 flex-fill me-0 border-primary">
-  <h3 class="mb-0" > <a class=" yellow post-link" href="/events/deep-learning-indaba/">Deep Learning Indaba 2024, African parlour in AI and Machine Learning.</a></h3>
-  <span class="yellow mt-1 post-content"> <svg  width="17" height="17" fill="#F90"><use xlink:href="#location"></use></svg> Dakar, Senegal
-    <svg  width="17" height="17" fill="#F90"><use xlink:href="#calendar"></use></svg> 2024-09-01 00:00:00 +0000
-  </span><br>
-  <p class="mt-2">The Deep Learning Indaba is an annual conference aimed at strengthening machine learning and artificial intelligence (AI) across Africa. It brings together researchers, students, and professionals to share knowledge, collaborate, and foster the growth of AI research and innovation on the continent. The event includes lectures, workshops, and discussions on various topics in AI, emphasizing the development of African talent and the application of AI to address local challenges.
+    <p>
+      In Jan 31, 2024, I completed my degree from the African Institute for Mathematical Sciences AIMS SA in the beautifull city of Cape Town. There, I had the priviledge to meet gifted students across africa and researchers from around the world ...
+      <a class=" btn yellow rounded-top rounded-bottom " href="/events/Thesis-defense-AIMS/">plus
+        <svg width="24" height="24" fill="#black">
+          <use xlink:href="#read"></use>
+        </svg>
+      </a> 
+    </p>
+    
+  </div> 
   
-  <!-- <div class="d-flex justify-content-center">
-  <a class=" bg-yellow text-center w-50 rounded-top rounded-bottom nav-link text-black mb-3" href="/events/deep-learning-indaba/">More<svg width="24" height="24" fill="#black"><use xlink:href="#read"></use></svg></a>  
-  </div> -->
-  <a class=" bg-yellow text-center w-50 rounded-top rounded-bottom text-black mb-3" href="/events/deep-learning-indaba/">More<svg width="24" height="24" fill="#black"><use xlink:href="#read"></use></svg></a>  
-  </p>
-
+  <div class="row">
+    <h5 class="mb-0"> - <a class=" yellow post-link" href="/events/Welcome-to-AMMI/">I started a Master's in AI in Senegal</a>
+    </h5>
+    
+      <small class="mt-0"> <svg  width="17" height="17" fill="#F90"><use xlink:href="#location"></use></svg> Mbour, Senegal
+        <svg  width="17" height="17" fill="#F90"><use xlink:href="#calendar"></use></svg> August 12, 2024
+      </small>
    
-
-</div>
-</div>
-
-</div>
-
-<!-- Tutorials and projects  -->
-<div class="">
-  <p class="text-center yellow h2 fs-5">Tutorials and Courses 
-    <!-- Curious to know what I do? Check out below  my projects and tutorials. -->
-  </p>
-  <!-- <p class="h2 fs-5">Tutorials</p> -->
+    <p>
+      After earning my degree from Stellenbosch and AIMS, I decided to travel to senegal to start a new challenge. I had the feeling that AI is the future and, as most of people know, it offers a bucnh of opportunities. With my background in Math, I pationately decided to re-orient myself to AI and eveolve...
+      <a class=" btn yellow rounded-top rounded-bottom " href="/events/Welcome-to-AMMI/">plus
+        <svg width="24" height="24" fill="#black">
+          <use xlink:href="#read"></use>
+        </svg>
+      </a> 
+    </p>
+    
+  </div> 
+  
+  <div class="row">
+    <h5 class="mb-0"> - <a class=" yellow post-link" href="/events/apic-summer-school/">Summer School on Probability, Information Theory, Combinatorics</a>
+    </h5>
+    
+      <small class="mt-0"> <svg  width="17" height="17" fill="#F90"><use xlink:href="#location"></use></svg> Kigali, Rwanda
+        <svg  width="17" height="17" fill="#F90"><use xlink:href="#calendar"></use></svg> August 12, 2024
+      </small>
    
-      <!-- <div class="row  container-fluid d-flex justify-content-center "> -->
-      <!-- <div class="col-md-4 flex-fill mr-0 my-1  ">
-          <img class="img-fluid" src="./assets/static/html-1.jpg">
-      </div> -->
-      <div class="col-md-8 flex-fill me-0 my-3 border-primary">
-          
-          <span class="yellow">FREE!</span>  Become a python web devlopper with Flask
-          
-          <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus sint impedit doloremque reprehenderit, facilis quo optio veritatis molestias autem sit amet magni laborum veniam corporis quam nostrum nam iure incidunt. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed autem atque fuga quam ab architecto repudiandae amet perferendis, ea excepturi cupiditate nisi dolorem? Earum error adipisci nobis, dignissimos culpa quidem?. </p>
-      </div>
-      <div class="d-flex justify-content-center">
-          <a class=" bg-yellow text-center w-50 rounded-top rounded-bottom nav-link text-black mb-3" href="/tutorials/full-tutorials-on-flask/">More<svg width="24" height="24" fill="#black"><use xlink:href="#read"></use></svg></a>  
-      </div>
-      <!-- </div> -->
-
+    <p>
+      I visited the city of Kigali and I was priviledged to attend the The African-Probability, Information Theory and Computations (A-PIC) summer school where I got to reconnect with peers and learn cutting-edge research in Coding-Theory, Automata, and Computations ...
+      <a class=" btn yellow rounded-top rounded-bottom " href="/events/apic-summer-school/">plus
+        <svg width="24" height="24" fill="#black">
+          <use xlink:href="#read"></use>
+        </svg>
+      </a> 
+    </p>
+    
+  </div> 
   
-      <!-- <div class="row  container-fluid d-flex justify-content-center "> -->
-      <!-- <div class="col-md-4 flex-fill mr-0 my-1  ">
-          <img class="img-fluid" src="./assets/static/logo.jpeg">
-      </div> -->
-      <div class="col-md-8 flex-fill me-0 my-3 border-primary">
-          
-          <span class="yellow">PAY!</span> Introduction to nextjs 14
-          
-          <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus sint impedit doloremque reprehenderit, facilis quo optio veritatis molestias autem sit amet magni laborum veniam corporis quam nostrum nam iure incidunt. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed autem atque fuga quam ab architecto repudiandae amet perferendis, ea excepturi cupiditate nisi dolorem? Earum error adipisci nobis, dignissimos culpa quidem?. </p>
-      </div>
-      <div class="d-flex justify-content-center">
-          <a class=" bg-yellow text-center w-50 rounded-top rounded-bottom nav-link text-black mb-3" href="/tutorials/nextjs-crash-course/">More<svg width="24" height="24" fill="#black"><use xlink:href="#read"></use></svg></a>  
-      </div>
-      <!-- </div> -->
-
-  
-      <!-- <div class="row  container-fluid d-flex justify-content-center "> -->
-      <!-- <div class="col-md-4 flex-fill mr-0 my-1  ">
-          <img class="img-fluid" src="">
-      </div> -->
-      <div class="col-md-8 flex-fill me-0 my-3 border-primary">
-          
-          <span class="yellow">PAY!</span> Intriduction to Html, Css, and JavaScript
-          
-          <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus sint impedit doloremque reprehenderit, facilis quo optio veritatis molestias autem sit amet magni laborum veniam corporis quam nostrum nam iure incidunt. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed autem atque fuga quam ab architecto repudiandae amet perferendis, ea excepturi cupiditate nisi dolorem? Earum error adipisci nobis, dignissimos culpa quidem?. </p>
-      </div>
-      <div class="d-flex justify-content-center">
-          <a class=" bg-yellow text-center w-50 rounded-top rounded-bottom nav-link text-black mb-3" href="/tutorials/html-css-js/">More<svg width="24" height="24" fill="#black"><use xlink:href="#read"></use></svg></a>  
-      </div>
-      <!-- </div> -->
-
+  <div class="row">
+    <h5 class="mb-0"> - <a class=" yellow post-link" href="/events/deep-learning-indaba/">Deep Learning Indaba 2024, African parlour in AI and Machine Learning.</a>
+    </h5>
+    
+      <small class="mt-0"> <svg  width="17" height="17" fill="#F90"><use xlink:href="#location"></use></svg> Dakar, Senegal
+        <svg  width="17" height="17" fill="#F90"><use xlink:href="#calendar"></use></svg> September 01, 2024
+      </small>
+   
+    <p>
+      I was privileged  to attend the africa's first and biggest gathering in our domain, Machine Learning. The Deep Learning Indaba (DLI)  brings together researchers, students, and professionals from Africa and around the world to share knowledge, collaborate, and foster the growth of AI research and innovation on the continent. I priveleged to posed with Sammy Bengio, a researcher from Apple Inc.
+      <a class=" btn yellow rounded-top rounded-bottom " href="/events/deep-learning-indaba/">plus
+        <svg width="24" height="24" fill="#black">
+          <use xlink:href="#read"></use>
+        </svg>
+      </a> 
+    </p>
+    
+  </div> 
   
 
-
-  <!--  -->
 </div>
+
+<!--  Tutorials  -->
+
+<!--  Events  and News :  -->
+
+  
 <!--  Projects  -->
-<div class="projects-container">
-<p class="text-center h2 fs-5 yellow">Projects 
-  <!-- Curious to know what I do? Check out below  my projects and tutorials. -->
-</p>
-<!-- <p class="h2 fs-5">Tutorials</p> -->
-<div class="container-fluid my-3 ">
-  <p><a class="code " href="https://www.github.com/jnlandu/">{ code }</a> Aura: AI-powered mobile app <br>
-  A small mobile app developed with React Native and OpenAI APIs to generate human-like images. 
-</div>
-<div class="container-fluid my-3 ">
-  <p><a class="code " href="https://www.github.com/jnlandu/">{ code }</a> Aura: AI-powered mobile app <br>
-  A small mobile app developed with React Native and OpenAI APIs to generate human-like images. 
-</div>
-<div class="container-fluid my-3 ">
-  <p><a class="code " href="https://www.github.com/jnlandu/">{ code }</a> Aura: AI-powered mobile app <br>
-  A small mobile app developed with React Native and OpenAI APIs to generate human-like images. 
-</div>
+
+<div class="event-container">
+  
+  <!-- 
+   <h2>Projects</h2>
+    
+      <div class="container-fluid my-2 ">
+        <p><a class="code " href="/projects/Sora-AI-powered-mobile-app/">{ code }</a> Aura: AI-powered mobile app <br>
+       A small mobile app developed with React Native and OpenAI APIs to generate human-like images.
+      </div>
+    
+      <div class="container-fluid my-2 ">
+        <p><a class="code " href="/projects/Sora-AI-powered-mobile-app2/">{ code }</a> Aura: AI-powered mobile app <br>
+       A small mobile app developed with React Native and OpenAI APIs to generate human-like images.
+      </div>
+    
+      <div class="container-fluid my-2 ">
+        <p><a class="code " href="/projects/Sora-AI-powered-mobile-app3/">{ code }</a> Aura: AI-powered mobile app <br>
+       A small mobile app developed with React Native and OpenAI APIs to generate human-like images.
+      </div>
+    
+   -->
 </div>  
+<!-- <a class=" btn yellow rounded-top rounded-bottom " href="">Plus
+  <svg width="24" height="24" fill="#black">
+    <use xlink:href="#read"></use>
+  </svg>
+</a> -->
 
 
 
   <!--  include tricks and tutorial forms -->
-    
-  </div>
+  
 
     
   
 
 
-     
   
 </div>
 
@@ -599,7 +626,7 @@ He is an  aspiring AI researcher. In his hobbies, Jeremie is  a software develop
     
 
       
-<footer class="mt-4">
+<footer class="mt-4 justify-content-center">
   
  
     
@@ -609,7 +636,7 @@ He is an  aspiring AI researcher. In his hobbies, Jeremie is  a software develop
     <p>Copyright © 2016&nbsp;-&nbsp;2024 Jeremie N. Mabiala; All rights reserved.</p>
     
   <p class="text-white text-center">
-    Powered by <a class="yellow" href="https://jekyllrb.com/">Jekyll</a>. This is a minimal and beautiful jekyll theme I designed. Feel free to steal it from github.</p>
+    Powered by <a class="yellow" href="https://jekyllrb.com/">Jekyll</a>. This is a minimal and beautiful jekyll. Feel free to steal it from github.</p>
 </footer>
 
 

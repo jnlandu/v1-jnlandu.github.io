@@ -1,15 +1,11 @@
 ---
-layout: post
-title:  Summer School on Probability, Information Theory, Combinatorics
+layout: posts
+title: Summer School on Probability, Information Theory, Combinatorics
 location: Kigali, Rwanda
+url: "https://www.uni-frankfurt.de/147012250/A_PIC_24"
 date: "12 Aug - 21 Aug.24"
-picture: "./assets/static/logo.jpeg"
-description: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus 
-  sint impedit doloremque reprehenderit, facilis quo optio veritatis molestias 
-  autem sit amet magni laborum veniam corporis quam nostrum nam iure incidunt.
-  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed autem atque fuga quam 
-  ab architecto repudiandae amet perferendis, ea excepturi cupiditate nisi
-  dolorem? Earum error adipisci nobis, dignissimos culpa quidem?.
+img: "./assets/static/img/aims-rw.jpeg"
+description: I visited the city of Kigali and was privileged to attend the African Probability, Information Theory, and Computations (A-PIC) summer school, where I had the opportunity to reconnect with peers and learn about cutting-edge research in coding theory, automata, and computations
 ---
 
 ### What is the Deep Learning Indaba?
