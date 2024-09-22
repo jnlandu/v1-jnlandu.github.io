@@ -5,7 +5,7 @@ location: Kigali, Rwanda
 url: "https://www.uni-frankfurt.de/147012250/A_PIC_24"
 date: "12 Aug - 21 Aug.24"
 img: "./assets/static/img/aims-rw.jpeg"
-description: I visited the city of Kigali and I was priviledged to attend the The African-Probability, Information Theory and Computations (A-PIC) summer school where I got to reconnect with peers and learn cutting-edge research in Coding-Theory, Automata, and Computations ...
+description: I visited the city of Kigali and was privileged to attend the African Probability, Information Theory, and Computations (A-PIC) summer school, where I had the opportunity to reconnect with peers and learn about cutting-edge research in coding theory, automata, and computations
 ---
 
 ### What is the Deep Learning Indaba?
